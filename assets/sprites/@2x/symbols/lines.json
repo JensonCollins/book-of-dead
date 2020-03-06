@@ -1,0 +1,92 @@
+{"frames": {
+
+"line_1.png":
+{
+	"frame": {"x":870,"y":936,"w":866,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":16},
+	"sourceSize": {"w":866,"h":16}
+},
+"line_10.png":
+{
+	"frame": {"x":2,"y":2,"w":866,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":315},
+	"sourceSize": {"w":866,"h":315}
+},
+"line_2.png":
+{
+	"frame": {"x":870,"y":936,"w":866,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":16},
+	"sourceSize": {"w":866,"h":16}
+},
+"line_3.png":
+{
+	"frame": {"x":870,"y":936,"w":866,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":16},
+	"sourceSize": {"w":866,"h":16}
+},
+"line_4.png":
+{
+	"frame": {"x":870,"y":2,"w":866,"h":311},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":311},
+	"sourceSize": {"w":866,"h":311}
+},
+"line_5.png":
+{
+	"frame": {"x":870,"y":315,"w":866,"h":310},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":310},
+	"sourceSize": {"w":866,"h":311}
+},
+"line_7.png":
+{
+	"frame": {"x":2,"y":628,"w":866,"h":162},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":162},
+	"sourceSize": {"w":866,"h":162}
+},
+"line_6.png":
+{
+	"frame": {"x":2,"y":792,"w":866,"h":161},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":161},
+	"sourceSize": {"w":866,"h":162}
+},
+"line_8.png":
+{
+	"frame": {"x":2,"y":319,"w":866,"h":307},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":307},
+	"sourceSize": {"w":866,"h":308}
+},
+"line_9.png":
+{
+	"frame": {"x":870,"y":627,"w":866,"h":307},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":866,"h":307},
+	"sourceSize": {"w":866,"h":308}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "lines.png",
+	"format": "RGBA8888",
+	"size": {"w":1738,"h":955},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:45253743c5d8c5b0095a424dab195f88:bf3ae69f4d3665125b7f9b8f8387fff5:ff60e7ce346ceaf85880a4da344e8e2d$"
+}
+}

@@ -1,0 +1,673 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Settings</title>
+		<link href="bootstrap/bootstrap.css" rel="stylesheet">
+		<link href="js/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+        <link href="js/ion.rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
+        <link href="../Fonts/ROBOTO_CONDENSED_REGULAR.css" rel="stylesheet" type="text/css" />
+		<style>
+			body {
+				font-family: "ROBOTO_CONDENSED_REGULAR";
+				padding: 0px;
+			}
+
+			.fullscreen {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			.tab {
+				background-color: #fff;
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.tab-nav {
+				background-color: #000;
+			}
+
+			.tab-nav ul {
+				margin: 0;
+				padding: 0;
+			}
+
+			.tab-nav ul li {
+				display: inline-block;
+				list-style: none;
+				margin: 0;
+				padding: 10px 20px;
+				font-size: 40px;
+			}
+
+			.tab-nav ul li.active {
+				border-bottom: 3px solid #ffc300;
+			}
+
+			.tab-nav ul li a {
+				text-decoration: none;
+				color: #fff;
+			}
+
+			.tab-content {
+				overflow-x: hidden;
+				overflow-y: auto;
+				color: #000;
+				font-family: 'ROBOTO_CONDENSED_REGULAR';
+				font-weight: bold;
+			}
+
+			.pull-right {
+				float: right;
+			}
+
+			.pull-left {
+				float: left;
+			}
+
+			#auto_play_btn {
+				position: absolute;
+				right: 20px;
+				top: 100px;
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				border: none;
+				color: #000;
+				font-size: 40px;
+				background-image: url(sprites/ui/auto_play.png);
+				background-size: cover;
+				font-weight: bold;
+			}
+
+			#auto_play_btn:focus {
+				outline: none;
+			}
+
+			button#sound {
+				float: right;
+				width: 160px;
+				height: 80px;
+				background-image: url(sprites/ui/on.png);
+				background-size: cover;
+				background-color: #fff;
+				border: none;
+			}
+
+			button#sound:focus {
+				outline: none;
+			}
+
+			#paytable {
+				background: url(settings/paytablebg.jpg) no-repeat center center;
+				background-size: cover;
+				border: 2px solid #000;
+				margin: 0px;
+			}
+
+			#game_rule {
+				padding: 20px;
+			}
+
+			#game_rule h1 {
+				font-weight: bold;
+				font-size: 80px;
+			}
+
+			#game_rule h2 {
+				color: #8f1c18;
+				font-style: italic;
+				font-size: 70px;
+			}
+
+			#game_rule p {
+				padding: 10px;
+				font-size: 50px;
+			}
+
+		</style>
+		<script src="js/jquery-1.12.2.min.js" type="text/javascript"></script>
+		<script src="bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/ion.rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
+        <script src="js/components-ion-sliders.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="fullscreen">
+			<div class="tab" id="menu">
+				<div class="tab-nav">
+					<ul>
+						<li class="active"><a href="bet">BET</a></li>
+						<li><a href="settings">SETTINGS</a></li>
+						<li><a href="paytable">PAYTABLE</a></li>
+						<li><a href="game_rule">GAME RULES</a></li>
+					</ul>
+				</div>
+				<div class="tab-content" style="position: relative;">
+					<div id="bet" style="font-size: 30px; padding: 20px 40px;">
+						<div class="row">
+							<div class="col-sm-6 col-md-6" style="border-right: 1px solid #ddd;">
+								<p style="border: 1px solid #000; border-radius: 10px; padding: 10px;">
+									<span>Total Bet:</span>
+									<span class="pull-right" id="total_bet_value">50</span>
+								</p>
+								<div class="row">
+									<div class="col-sm-4">
+										<h2 style="margin-top: 65px;">Coins:</h2>
+									</div>
+									<div class="col-sm-8">
+										<div class="row">
+											<div class="col-sm-2 text-center">
+												<h2 style="margin-top: 70px;">2</h2>
+											</div>
+											<div class="col-sm-8">
+												<input id="coins" type="text" /> 
+											</div>
+											<div class="col-sm-1 text-center">
+												<h2 style="margin-top: 70px;">5</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<h2 style="margin-top: 65px;">Coin Value</h2>
+									</div>
+									<div class="col-sm-8">
+										<div class="row">
+											<div class="col-sm-2 text-center">
+												<h2 style="margin-top: 70px;">1</h2>
+											</div>
+											<div class="col-sm-8">
+												<input id="coin_value" type="text" /> 
+											</div>
+											<div class="col-sm-1 text-center">
+												<h2 style="margin-top: 70px;">1</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<h2 style="margin-top: 65px;">Lines:</h2>
+									</div>
+									<div class="col-sm-8">
+										<div class="row">
+											<div class="col-sm-2 text-center">
+												<h2 style="margin-top: 70px;">1</h2>
+											</div>
+											<div class="col-sm-8">
+												<input id="lines" type="text" /> 
+											</div>
+											<div class="col-sm-1 text-center">
+												<h2 style="margin-top: 70px;">10</h2>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-md-6" style="padding-left: 30px;">
+								<div class="row" style="margin-bottom: 10px;">
+									<div class="col-sm-12">
+										<h2>Auto play:</h2>
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="row">
+										<div class="col-sm-2 text-center">
+											<h2 style="margin-top: 70px;">10</h2>
+										</div>
+										<div class="col-sm-8">
+											<input id="auto_play" type="text" /> 
+										</div>
+										<div class="col-sm-1 text-center">
+											<h2 style="margin-top: 70px;">1000</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button id="auto_play_btn">10</button>
+					</div>
+					<div id="settings">
+						<div class="row">
+							<div class="col-sm-12" style="font-size: 30px; padding: 50px;">
+								<img src="sprites/ui/sound.png">
+								<span><b>Sound</b></span>
+								<button id="sound"></button>
+							</div>
+						</div>
+					</div>
+					<div id="paytable" style="font-size: 30px;">
+						<h1 class="text-center" style="color: #ffa80c; text-shadow: 2px 2px 5px #000; font-size: 100px; margin: 60px;">
+							<b>FREE SPINS</b>
+						</h1>
+						<div class="text-center" style="margin:50px 10px;">
+							<img src="settings/scatter.png" width="20%">
+							<img src="settings/scatter.png" width="20%">
+							<img src="settings/scatter.png" width="20%">
+						</div>
+						<p class="text-center">3 or more scattered Books trigger 10 free spins!</p>
+						<P class="text-center">
+							The Book is WILD! It can substitute for any other symbol to form a winning combo.
+							<br/>The Book is also a SCATTER and will pay anywhere on the reels.
+						</P>
+						<div class="row" style="margin: 50px 30px; border-bottom: 1px solid #aaa;">
+							<div class="col-sm-6">
+								<p class="text-center">
+									Scatter wins are multiplied by the total bet staked and are added to the payline wins.
+								</p>
+							</div>
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-6">
+										<img src="settings/scatter.png" width="80%">
+									</div>
+									<div class="col-sm-6">
+										<div style="margin-bottom: 30px;">
+											<span style="color: #ffa80c; font-size: 40px; margin-right: 30px; text-shadow: 2px 2px 5px #000;">5</span>
+											<span style="font-size: 40px;">200</span>
+										</div>
+										<div style="margin-bottom: 30px;">
+											<span style="color: #ffa80c; font-size: 40px; margin-right: 30px; text-shadow: 2px 2px 5px #000;">4</span>
+											<span style="font-size: 40px;">20</span>
+										</div>
+										<div style="margin-bottom: 30px;">
+											<span style="color: #ffa80c; font-size: 40px; margin-right: 30px; text-shadow: 2px 2px 5px #000;">3</span>
+											<span style="font-size: 40px;">2</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center" style="padding: 30px 10px; border-bottom: 1px solid #ccc;">
+							<p>
+								A special EXPANDING SYMBOL is randomly chosen to help you win more on free spins. Watch it expand to cover the reel when more prizes are in store! Symbols can appear anywhere along an active line win!
+							</p>
+							<div>
+								<img src="settings/symbol_panel.png" width="50%">
+							</div>
+						</div>
+						<div class="row" style="border-bottom: 1px solid #ddd;">
+							<div class="col-sm-12">
+								<h1 class="text-center" style="color: #ffa80c; text-shadow: 2px 2px 5px #000; font-size: 60px; margin: 60px;">
+									<b>WIN UP TO 250000 COINS!</b>
+								</h1>
+								<div class="row">
+									<div class="col-sm-2">
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S09BaseGame.png" width="100%">
+										<div style="padding-left: 20px;">
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">5</span>
+												<span>5000</span>
+											</p>
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">4</span>
+												<span>1000</span>
+											</p>
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">3</span>
+												<span>100</span>
+											</p>
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">2</span>
+												<span>10</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S08BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>2000</span>
+											</p>
+											<p>
+												<span>400</span>
+											</p>
+											<p>
+												<span>40</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S07BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>750</span>
+											</p>
+											<p>
+												<span>100</span>
+											</p>
+											<p>
+												<span>30</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S06BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>750</span>
+											</p>
+											<p>
+												<span>100</span>
+											</p>
+											<p>
+												<span>30</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-1">
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S05BaseGame.png" width="100%">
+										<div style="padding-left: 20px;">
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">5</span>
+												<span>150</span>
+											</p>
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">4</span>
+												<span>40</span>
+											</p>
+											<p>
+												<span style="color: #ffa80c; text-shadow: 2px 2px 5px #000; margin-right: 30px;">3</span>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S04BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>150</span>
+											</p>
+											<p>
+												<span>40</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S03BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>100</span>
+											</p>
+											<p>
+												<span>25</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S02BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>100</span>
+											</p>
+											<p>
+												<span>25</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-2">
+										<img src="settings/S01BaseGame.png" width="100%">
+										<div style="padding-left: 50px;">
+											<p>
+												<span>100</span>
+											</p>
+											<p>
+												<span>25</span>
+											</p>
+											<p>
+												<span>5</span>
+											</p>
+										</div>
+									</div>
+									<div class="col-sm-1">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row" style="padding: 30px 10px;">
+							<div class="col-sm-12">
+								<div class="row" style="margin-bottom: 30px;">
+									<div class="col-sm-1"></div>
+									<div class="col-sm-2">
+										<span>1</span>
+										<img src="settings/payline_1.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>2</span>
+										<img src="settings/payline_2.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>3</span>
+										<img src="settings/payline_3.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>4</span>
+										<img src="settings/payline_4.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>5</span>
+										<img src="settings/payline_5.png" width="80%">
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+								<div class="row" style="margin-bottom: 30px;">
+									<div class="col-sm-1"></div>
+									<div class="col-sm-2">
+										<span>6</span>
+										<img src="settings/payline_6.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>7</span>
+										<img src="settings/payline_7.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>8</span>
+										<img src="settings/payline_8.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>9</span>
+										<img src="settings/payline_9.png" width="80%">
+									</div>
+									<div class="col-sm-2">
+										<span>10</span>
+										<img src="settings/payline_10.png" width="80%">
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+							</div>								
+							<p class="text-center">
+								All wins multiplied by bet staked per line expect for SCATTERS.</br>
+								All wins pay left to right expect SCATTERS which pay any.<br />
+								Only highest win paid per selected lin.
+							</p>
+						</div>
+					</div>
+					<div id="game_rule" style="font-size: 30px;">
+						<h1>
+							Book of Dead<br />
+							Unfinished Games
+						</h1>
+						<p>
+							If your game round is disrupted, all game information and placed bets are stored until you re-ope the game. You may continue your unfinished rounded from the point of interruption. Malfunction voids all pays and plays.
+						</p>
+						<h1>
+							Information
+						</h1>
+						<p>
+							Payline wins occur on the number of selected paylines, according to the information in the paytable and game rules. When winning on multiple paylines in a single game round, all winnings are added together. All winnings from Features (such as Free Spins), Bonus Games and/or Scatters (if applicable) are also added to payline wins. All winning combinations are paid out at the end of a game round. Free Spin features are played with the same bet and same number of selected lines as the game round that triggered the feature - unless otherwise stated. The bet cannot be changed during a currently running game round. Please refer to the game rules for more information.
+						</p>
+						<h1>
+							Game Rules
+						</h1>
+						<p>
+							Book of Dead is a 5-reel video slot game that brings the daring adventure, Rich Wilde, face to face with Anubis and other formidable symbols from Ancient Egypt! Up to 10 lines can be activated, lines are numbered and always activated in numerical order(1, 2, 3, 4, etc.).
+						</p>
+						<p>
+							The Book symbol acts as both a wild symbol and a scatter symbol. As a wild symbol, the Book can subsititute for any other reel symbol to help comprise winning combinations.</p>
+						</p>
+						<p>	
+							As a scatter symbol, three or more Books that appear in any positions on any reels result in a prize. In addition, a sequence of ten free spins is triggered. On any free spin, three scattered Books will extend the free-spin sequence by an additional ten free spins until the maximum prize amount is won!
+						</p>
+						<p>	
+							Before a free spin sequence begins, an ordinary symbol is randomly chosen to act as a special expanding symbol during the entire free-spin sequence. After prizes for regular winning combinations have been recognized, the speical symbol will expand only when additional prized can be awareded along active paylines for winning combinations. Expanded symbols do not need to appear adjacent to each other to result in a winning combination.
+						</p>	
+						<p>	
+							The game also features an optional Gamble round that provides an opportunity to multiply the total prize on any spin in the main game by correctly guessing the color or suit of a hidden card. The Gamble round can be played up to fivetimes in a row.
+						</p>
+						<h1>
+							Actions
+						</h1>
+						<h2>
+							Paytable
+						</h2>
+						<p>
+							- open the menu and navigate to the Paytable page to review the features and payouts of the game.
+						</p>
+						<h2>
+							Auto Play
+						</h2>
+						<p>
+							- You can enable/disable the Auto Play feature in the menu. In Auto Play mode, a number of consecutive games rounds are initiated automatically using your current bet settings. The Auto Play mode is automatically disabled depending on your settings or if your balance becomes too low.
+						</p>
+						<h2>
+							Fast Play
+						</h2>
+						<p>
+							- Toggle on for a significantly faster gameplay.
+						</p>
+						<h2>
+							Spin
+						</h2>
+						<p>
+							-Starts the round by spinning the reels.
+						</p>
+						<h2>
+							Stop(During reel spins)
+						</h2>
+						<p>
+							- Tap andwhere to stop the spinning reels more quickly.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var Tab = function(src) {
+				$("#" + src + ".tab .tab-content").children(":not(:first)").each(function() {
+					$(this).hide();
+				});
+				$("#" + src + ".tab").on("click", ".tab-nav ul li a", function(e) {
+					e.preventDefault();
+					$(this).parent().siblings().removeClass("active");
+					$(this).parent().addClass("active");
+					$("#" + src + ".tab .tab-content").children().hide();
+					$("#" + $(this).attr("href")).show();
+				});
+			};
+
+			$(function() {
+
+				parent.settings_sound_button = $("button#sound");
+
+				var total_bet = function() {
+					return parent.lines * parent.coins * parent.coin_value;
+				};
+
+				var show_total_bet = function() {
+					$("#total_bet_value").text(total_bet());
+					$("#bet_value").text(total_bet());
+					parent.show_bet(total_bet());
+					if (parent.App.Gameplay.lines) parent.App.Gameplay.lines.value = parent.lines;
+					if (parent.App.Gameplay.levels) parent.App.Gameplay.levels.value = parent.coins;
+					if (parent.App.Gameplay.coins) parent.App.Gameplay.coins.value = parent.coin_value;
+
+					if (parent.App.Gameplay.bet) parent.App.Gameplay.bet.amount = total_bet();
+
+				};
+
+				Tab("menu");
+				$("input#coins").on('change', function() {
+					parent.coins = $(this).val();
+					show_total_bet();
+				});
+				$("input#coin_value").on('change', function() {
+					parent.coin_value = $(this).val();
+					show_total_bet();
+				});
+				$("input#lines").on('change', function() {
+					parent.lines = $(this).val();
+					show_total_bet();
+				});
+				$("input#auto_play").on('change', function() {
+					parent.auto_play = $(this).val();
+					$("#auto_play_btn").text(parent.auto_play.toString());
+					show_total_bet();
+				});
+				$("button#auto_play_btn").on('click', function() {
+					parent.hide_game_settings_dialog();
+					if (parent.App.Gameplay.state !== 'ready') return;
+			        parent.App.Gameplay.current_auto_amount = parent.auto_play;
+			        parent.App.Gameplay.total_auto_amount = this.current_auto_amount;
+			        parent.App.Gameplay.refreshAutoItemBack(parent.auto_play);
+			        parent.App.Gameplay.buttonHandleAutoStartButton();
+				});
+
+				// init
+				parent.coins = 2;
+				parent.coin_value = 1;
+				parent.lines = 10;
+				parent.auto_play = 10;
+				parent.sound = true;
+
+				show_total_bet();
+
+				$("#auto_play_btn").text('10');
+
+				$("button#sound").click(function() {
+					if (parent.sound) {
+						$(this).css("background-image", "url(sprites/ui/off.png)");
+						parent.sound = false;
+					} else {
+						$(this).css("background-image", "url(sprites/ui/on.png)");
+						parent.sound = true;
+					}
+					parent.App.Gameplay.buttonHandlerAudioSet();
+				});
+			});
+		</script>
+
+	</body>
+</html>

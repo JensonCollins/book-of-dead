@@ -1,0 +1,52 @@
+{"frames": {
+
+"book.png":
+{
+	"frame": {"x":2,"y":2,"w":610,"h":341},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":610,"h":341},
+	"sourceSize": {"w":615,"h":343}
+},
+"button_mask.png":
+{
+	"frame": {"x":178,"y":345,"w":133,"h":49},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":133,"h":49},
+	"sourceSize": {"w":133,"h":49}
+},
+"check.png":
+{
+	"frame": {"x":313,"y":374,"w":18,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":18,"h":16},
+	"sourceSize": {"w":19,"h":17}
+},
+"checkbox_border.png":
+{
+	"frame": {"x":313,"y":345,"w":27,"h":27},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":27,"h":27},
+	"sourceSize": {"w":27,"h":27}
+},
+"continue_button.png":
+{
+	"frame": {"x":2,"y":345,"w":174,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":174,"h":51},
+	"sourceSize": {"w":174,"h":51}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "loading_ui.png",
+	"format": "RGBA8888",
+	"size": {"w":614,"h":398},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e73548f1151cc4861b7c8e795c055078:176bf5ee63971f012cce75bbf81eed1b:688381b5b637b4727e592b5619a55c30$"
+}
+}

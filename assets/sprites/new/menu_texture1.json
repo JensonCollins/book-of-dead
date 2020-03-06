@@ -1,0 +1,290 @@
+{
+  "frames": {
+    "paytableBack": {
+      "frame": {
+        "x": 0,
+        "y": 85,
+        "w": 1070,
+        "h": 635
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1070,
+        "h": 635
+      },
+      "sourceSize": {
+        "w": 1070,
+        "h": 635
+      }
+    },
+    "mainPanelBg": {
+      "frame": {
+        "x": 0,
+        "y": 725,
+        "w": 1025,
+        "h": 75
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1025,
+        "h": 75
+      },
+      "sourceSize": {
+        "w": 1025,
+        "h": 75
+      }
+    },
+    "paylineHelpBg": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 1100,
+        "h": 80
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1100,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 1100,
+        "h": 80
+      }
+    },
+    "EB.png": {
+      "frame": {
+        "x": 1075,
+        "y": 115,
+        "w": 965,
+        "h": 360
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 965,
+        "h": 360
+      },
+      "sourceSize": {
+        "w": 965,
+        "h": 360
+      }
+    },
+    "winUpCoinsBg": {
+      "frame": {
+        "x": 1220,
+        "y": 0,
+        "w": 585,
+        "h": 55
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 585,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 585,
+        "h": 55
+      }
+    },
+    "IB.png": {
+      "frame": {
+        "x": 1105,
+        "y": 0,
+        "w": 110,
+        "h": 110
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 110,
+        "h": 110
+      },
+      "sourceSize": {
+        "w": 110,
+        "h": 110
+      }
+    },
+    "JB.png": {
+      "frame": {
+        "x": 1075,
+        "y": 480,
+        "w": 255,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 255,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 255,
+        "h": 95
+      }
+    },
+    "paytableBg": {
+      "frame": {
+        "x": 1335,
+        "y": 480,
+        "w": 165,
+        "h": 70
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 165,
+        "h": 70
+      },
+      "sourceSize": {
+        "w": 165,
+        "h": 70
+      }
+    },
+    "spinButtonBg": {
+      "frame": {
+        "x": 1810,
+        "y": 0,
+        "w": 165,
+        "h": 90
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 165,
+        "h": 90
+      },
+      "sourceSize": {
+        "w": 165,
+        "h": 90
+      }
+    },
+    "plusBg": {
+      "frame": {
+        "x": 1980,
+        "y": 0,
+        "w": 55,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 65
+      }
+    },
+    "SB.png": {
+      "frame": {
+        "x": 1075,
+        "y": 85,
+        "w": 5,
+        "h": 5
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 5,
+        "h": 5
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 50
+      }
+    },
+    "minusBg": {
+      "frame": {
+        "x": 1335,
+        "y": 555,
+        "w": 55,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 65
+      }
+    },
+    "coinValueBg": {
+      "frame": {
+        "x": 1505,
+        "y": 480,
+        "w": 150,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 150,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 150,
+        "h": 85
+      }
+    }
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "menu_texture1_level1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2040,
+      "h": 800
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:b7dadbf272b7899b40ae281e0fa56821:e730055493ba1c2b5991ef4913545d05:3cda789079074d420257547fa627a6ab$",
+    "files": {
+      "level0": {
+        "url": "menu_texture1_level0.png",
+        "size": 1316939
+      },
+      "level1": {
+        "url": "menu_texture1_level1.png",
+        "size": 1316939
+      },
+      "level2": {
+        "url": "menu_texture1_level2.png",
+        "size": 466417
+      }
+    }
+  }
+}

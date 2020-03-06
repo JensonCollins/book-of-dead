@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YHxSyZTh4uurNZLMOBNdq6JbwZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sprites" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites" />
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\new" />
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\backgrounds" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="" />
+      <created>1582613324060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582613324060</updated>
+      <workItem from="1582613325586" duration="17822000" />
+      <workItem from="1582643339810" duration="10019000" />
+      <workItem from="1582701035099" duration="798000" />
+      <workItem from="1582747371249" duration="737000" />
+      <workItem from="1582767536415" duration="89000" />
+      <workItem from="1583081882328" duration="691000" />
+      <workItem from="1583131406356" duration="4743000" />
+      <workItem from="1583186460621" duration="623000" />
+      <workItem from="1583217901317" duration="1228000" />
+      <workItem from="1583260390080" duration="258000" />
+      <workItem from="1583260806204" duration="15239000" />
+      <workItem from="1583315996768" duration="4316000" />
+      <workItem from="1583324498080" duration="1797000" />
+      <workItem from="1583334637857" duration="10797000" />
+      <workItem from="1583345534134" duration="1558000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="184" key="#Images" timestamp="1583279713613">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583341493265">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583341493265" />
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1583342786162">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583342786162" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1583341874221">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583341874221" />
+  </component>
+</project>

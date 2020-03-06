@@ -1,0 +1,92 @@
+{"frames": {
+
+"B01ScatterBaseGame_0001.png":
+{
+	"frame": {"x":2,"y":2,"w":120,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":120,"h":122},
+	"sourceSize": {"w":126,"h":126}
+},
+"S01BaseGame.png":
+{
+	"frame": {"x":612,"y":2,"w":119,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":3,"w":119,"h":120},
+	"sourceSize": {"w":126,"h":126}
+},
+"S02BaseGame.png":
+{
+	"frame": {"x":962,"y":2,"w":109,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":9,"y":3,"w":109,"h":120},
+	"sourceSize": {"w":126,"h":126}
+},
+"S03BaseGame.png":
+{
+	"frame": {"x":733,"y":2,"w":113,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":3,"w":113,"h":120},
+	"sourceSize": {"w":126,"h":126}
+},
+"S04BaseGame.png":
+{
+	"frame": {"x":848,"y":2,"w":112,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":3,"w":112,"h":120},
+	"sourceSize": {"w":126,"h":126}
+},
+"S05BaseGame.png":
+{
+	"frame": {"x":1073,"y":2,"w":120,"h":119},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":4,"w":120,"h":119},
+	"sourceSize": {"w":126,"h":126}
+},
+"S06BaseGame.png":
+{
+	"frame": {"x":124,"y":2,"w":120,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":120,"h":122},
+	"sourceSize": {"w":126,"h":126}
+},
+"S07BaseGame.png":
+{
+	"frame": {"x":246,"y":2,"w":120,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":120,"h":122},
+	"sourceSize": {"w":126,"h":126}
+},
+"S08BaseGame.png":
+{
+	"frame": {"x":368,"y":2,"w":120,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":120,"h":120},
+	"sourceSize": {"w":126,"h":126}
+},
+"S09BaseGame.png":
+{
+	"frame": {"x":490,"y":2,"w":120,"h":120},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":3,"w":120,"h":120},
+	"sourceSize": {"w":126,"h":126}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "symbols.png",
+	"format": "RGBA8888",
+	"size": {"w":1195,"h":126},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:2989783f3fff05e89d7d957cb903203d:392e6f5b7a11d800f1b11d435207dd76:d295ed7153fe372207e34d26d380974a$"
+}
+}

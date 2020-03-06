@@ -1,0 +1,92 @@
+{"frames": {
+
+"coins_1.png":
+{
+	"frame": {"x":450,"y":180,"w":47,"h":38},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":138,"y":103,"w":47,"h":38},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_10.png":
+{
+	"frame": {"x":2,"y":218,"w":22,"h":11},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":274,"y":183,"w":22,"h":11},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_2.png":
+{
+	"frame": {"x":380,"y":180,"w":68,"h":42},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":122,"y":79,"w":68,"h":42},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_3.png":
+{
+	"frame": {"x":449,"y":2,"w":114,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":101,"y":52,"w":114,"h":85},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_4.png":
+{
+	"frame": {"x":428,"y":89,"w":148,"h":89},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":83,"y":41,"w":148,"h":89},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_5.png":
+{
+	"frame": {"x":268,"y":2,"w":179,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":67,"y":38,"w":179,"h":76},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_6.png":
+{
+	"frame": {"x":2,"y":137,"w":232,"h":79},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":41,"y":45,"w":232,"h":79},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_7.png":
+{
+	"frame": {"x":2,"y":2,"w":264,"h":133},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":25,"y":61,"w":264,"h":133},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_8.png":
+{
+	"frame": {"x":268,"y":80,"w":158,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":157,"y":104,"w":158,"h":86},
+	"sourceSize": {"w":325,"h":194}
+},
+"coins_9.png":
+{
+	"frame": {"x":236,"y":168,"w":142,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":138,"y":117,"w":142,"h":77},
+	"sourceSize": {"w":325,"h":194}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "coins_particle.png",
+	"format": "RGBA8888",
+	"size": {"w":579,"h":247},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:846adde06068416e804b9af0bc4319d8:5fff7658165c233a89d25e630ffd324b:7b2ea04e10f8ca02f82e47a2abca51e3$"
+}
+}
