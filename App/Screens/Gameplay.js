@@ -301,6 +301,11 @@ App.Gameplay = new Screen({
                             ]
                         }
                     ]
+                },
+                {
+                    name: 'test',
+                    type: 'gown_check',
+                    selected: true
                 }
             ]
         },
@@ -680,12 +685,6 @@ App.Gameplay = new Screen({
             ]
         },
         {
-            name: 'ParticleContainer',
-            visible: true,
-            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
-            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
-        },
-        {
             name: 'ControlBottomContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
             scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
@@ -922,6 +921,65 @@ App.Gameplay = new Screen({
                                         fontFamily: 'Oswald',
                                         fontWeight: 'Bold',
                                         fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'autostart button bar',
+                            position: [422, -10],
+                            visible: false,
+                            scale: [1.2, 1],
+                            childs: [
+                                {
+                                    name: 'autostart button',
+                                    control: 'slider',
+                                    type: 'sprite',
+                                    image: 'autoButtonBg',
+                                    button: 'button',
+                                    position: [0, 0]
+                                },
+                                {
+                                    name: 'autostart button glow',
+                                    type: 'sprite',
+                                    image: 'autoButtonBg',
+                                    blendMode: 3,
+                                    alpha: 0
+                                },
+                                {
+                                    name: 'autostart button disabled',
+                                    type: 'sprite',
+                                    button: 'disabled button',
+                                    image: 'autoButtonBg',
+                                    alpha: 0,
+                                    visible: false,
+                                },
+                                {
+                                    name: 'autostart button text',
+                                    type: 'text',
+                                    text: 'AUTO PLAY',
+                                    position: [0, -20],
+                                    styles: {
+                                        fontSize: '20px',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                        stroke: "#000000",
+                                        strokeThickness: 1,
+                                    }
+                                },
+                                {
+                                    name: 'autoValue text',
+                                    type: 'text',
+                                    text: '50',
+                                    position: [0, 13],
+                                    styles: {
+                                        fontSize: '40px',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                        stroke: "#000000",
+                                        strokeThickness: 1,
                                     }
                                 }
                             ]
@@ -1412,7 +1470,12 @@ App.Gameplay = new Screen({
                                     name: 'setting button',
                                     type: 'sprite',
                                     button: 'button',
-                                    image: 'bottomMenu'
+                                    image: 'bottomMenu',
+                                    childs: [
+                                        {
+                                            name: 'setting button glow'
+                                        }
+                                    ]
                                 },
                             ]
                         },
@@ -1499,6 +1562,12 @@ App.Gameplay = new Screen({
                     ]
                 }
             ]
+        },
+        {
+            name: 'ParticleContainer',
+            visible: true,
+            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
+            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
         },
         {
             name: 'MenuContainer',
@@ -2421,6 +2490,891 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'SettingsContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            childs: [
+                {
+                    type: 'graphics',
+                    alpha: 0.5,
+                    draw: [
+                        ['beginFill', 0x000000],
+                        ['drawRect', [-1200 / 2, -900 / 2, 1200, 900]]
+                    ]
+                },
+                {
+                    type: 'sprite',
+                    image: 'modal2.png',
+                    position: [0, -10],
+                    scale: [1.15, 1.6],
+                },
+                {
+                    scale: [0.8, 1],
+                    childs: [
+                        {
+                            name: 'Settings title',
+                            type: 'text',
+                            position: [0, -210],
+                            text: 'Settings',
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                fontWeight: 600,
+                                fill: 0xebb122
+                            }
+                        },
+                        {
+                            position: [-160, -90],
+                            childs: [
+                                {
+                                    name: 'settings coinValueUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinValueUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinValueUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueDown back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'COIN VALUE',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings coinValue text',
+                                            type: 'text',
+                                            text: '0.10',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings coinValueDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinValueDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinValueDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'settings coins container',
+                            position: [0, -90],
+                            childs: [
+                                {
+                                    name: 'settings coinsUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinsUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinsUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinsUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: true,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings coins back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'COINS',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings coins text',
+                                            type: 'text',
+                                            text: '5',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings coinsDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinsDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinsDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinsDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'settings lines container',
+                            position: [160, -90],
+                            childs: [
+                                {
+                                    name: 'settings linesUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings linesUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings linesUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings linesUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: true,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings lines back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'LINES',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings lines text',
+                                            type: 'text',
+                                            text: '10',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings linesDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings linesDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings linesDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings linesDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    childs: [
+                        {
+                            name: 'settings sound switch',
+                            type: 'gown_check',
+                            selected: true,
+                            skinName: 'switch',
+                            position: [-180, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Sound',
+                            scale: [0.7, 1],
+                            position: [-110, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        },
+                        {
+                            name: 'settings adjustBet switch',
+                            type: 'gown_check',
+                            selected: false,
+                            skinName: 'switch',
+                            position: [20, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Auto adjust bet',
+                            scale: [0.7, 1],
+                            position: [125, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                },
+                {
+                    position: [0, 60],
+                    childs: [
+                        {
+                            name: 'settings fastPlay switch',
+                            type: 'gown_check',
+                            selected: false,
+                            skinName: 'switch',
+                            position: [-180, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Fast play',
+                            scale: [0.7, 1],
+                            position: [-100, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        },
+                        {
+                            name: 'settings spacebar switch',
+                            type: 'gown_check',
+                            selected: true,
+                            skinName: 'switch',
+                            position: [20, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Spacebar to spin',
+                            scale: [0.7, 1],
+                            position: [125, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: 'settings okBtn bar',
+                    position: [0, 200],
+                    scale: 1.5,
+                    childs: [
+                        {
+                            name: 'settings okBtn',
+                            type: 'sprite',
+                            button: 'button',
+                            image: 'okButton.png'
+                        },
+                        {
+                            name: 'settings okBtn glow',
+                            type: 'sprite',
+                            image: 'okButton.png',
+                            alpha: 0,
+                            blendMode: 3
+                        },
+                        {
+                            name: 'settings okBtn text',
+                            type: 'text',
+                            text: 'OK',
+                            scale: [0.4, 0.5],
+                            styles: {
+                                fontSize: '35px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: 'AutoPlayContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            childs: [
+                {
+                    name: 'AutoPlayOverlay',
+                    type: 'graphics',
+                    alpha: 0.5,
+                    draw: [
+                        ['beginFill', 0x000000],
+                        ['drawRect', [-1200 / 2, -900 / 2, 1200, 900]]
+                    ]
+                },
+                {
+                    name: 'AutoplayBack',
+                    type: 'sprite',
+                    position: [0, -10],
+                    scale: [1.15, 1.6],
+                    image: 'modal1.png',
+                },
+                {
+                    childs: [
+                        {
+                            name: 'AutoplayTopContainer',
+                            position: [0, -290],
+                            childs: [
+                                {
+                                    name: 'Autoplay title',
+                                    type: 'text',
+                                    position: [0, -30],
+                                    scale: [0.7, 1],
+                                    text: 'AUTO PLAY',
+                                    styles: {
+                                        fontSize: '30px',
+                                        align: 'center',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 600,
+                                        fill: 0xebb122
+                                    }
+                                },
+                                {
+                                    name: 'AutoplayItems',
+                                    position: [0, 20],
+                                    childs: [
+                                        {
+                                            name: 'autoplay item 10',
+                                            button: 'autoplay button',
+                                            step: 10,
+                                            position: [-160, 0],
+                                            scale: [1, 1.5],
+                                            childs: [
+                                                {
+                                                    name: 'autoplay item 10 active',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_enable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item 10 disable',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_disable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item text',
+                                                    type: 'text',
+                                                    text: '10',
+                                                    styles: {
+                                                        fontSize: '20px',
+                                                        align: 'center',
+                                                        fontWeight: 600,
+                                                        fill: 0x000000
+                                                    }
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: 'autoplay item 20',
+                                            button: 'autoplay button',
+                                            step: 20,
+                                            position: [-80, 0],
+                                            scale: [1, 1.5],
+                                            childs: [
+                                                {
+                                                    name: 'autoplay item 20 active',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_enable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item 20 disable',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_disable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item text',
+                                                    type: 'text',
+                                                    text: '20',
+                                                    styles: {
+                                                        fontSize: '20px',
+                                                        align: 'center',
+                                                        fontWeight: 600,
+                                                        fill: 0x000000
+                                                    }
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: 'autoplay item 50',
+                                            button: 'autoplay button',
+                                            step: 50,
+                                            scale: [1, 1.5],
+                                            childs: [
+                                                {
+                                                    name: 'autoplay item 50 active',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_enable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item 50 disable',
+                                                    type: 'sprite',
+                                                    visible: false,
+                                                    image: 'autoitem_disable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item text',
+                                                    type: 'text',
+                                                    text: '50',
+                                                    styles: {
+                                                        fontSize: '20px',
+                                                        align: 'center',
+                                                        fontWeight: 600,
+                                                        fill: 0x000000
+                                                    }
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: 'autoplay item 75',
+                                            button: 'autoplay button',
+                                            step: 75,
+                                            position: [80, 0],
+                                            scale: [1, 1.5],
+                                            childs: [
+                                                {
+                                                    name: 'autoplay item 75 active',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_enable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item 75 disable',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_disable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item text',
+                                                    type: 'text',
+                                                    text: '75',
+                                                    styles: {
+                                                        fontSize: '20px',
+                                                        align: 'center',
+                                                        fontWeight: 600,
+                                                        fill: 0x000000
+                                                    }
+                                                }
+                                            ],
+                                        },
+                                        {
+                                            name: 'autoplay item 100',
+                                            button: 'autoplay button',
+                                            step: 100,
+                                            position: [160, 0],
+                                            scale: [1, 1.5],
+                                            childs: [
+                                                {
+                                                    name: 'autoplay item 100 active',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_enable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item 100 disable',
+                                                    type: 'sprite',
+                                                    image: 'autoitem_disable.png',
+                                                },
+                                                {
+                                                    name: 'autoplay item text',
+                                                    type: 'text',
+                                                    text: '100',
+                                                    styles: {
+                                                        fontSize: '20px',
+                                                        align: 'center',
+                                                        fontWeight: 600,
+                                                        fill: 0x000000
+                                                    }
+                                                }
+                                            ],
+                                        },
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: 'AutoplayCenterContainer',
+                            position: [0, -200],
+                            childs: [
+                                {
+                                    type: 'text',
+                                    text: 'Stop autoplay',
+                                    scale: [0.7, 1],
+                                    position: [-145, 0],
+                                    styles: {
+                                        fontSize: '25px',
+                                        align: 'center',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 600,
+                                        fill: 0xffffff
+                                    }
+                                },
+                                {
+                                    name: 'nAnyWin',
+                                    type: 'gown_check',
+                                    skinName: 'switch',
+                                    selected: false,
+                                    position: [-190, 30],
+                                    width: 40,
+                                    height: 25
+                                },
+                                {
+                                    type: 'text',
+                                    text: 'On any win',
+                                    scale: [0.7, 1],
+                                    position: [-106, 42],
+                                    styles: {
+                                        fontSize: '22px',
+                                        align: 'center',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 600,
+                                        fill: 0xffffff
+                                    }
+                                },
+                                {
+                                    name: 'nFreespinWon',
+                                    type: 'gown_check',
+                                    skinName: 'switch',
+                                    selected: true,
+                                    position: [15, 30],
+                                    width: 40,
+                                    height: 25
+                                },
+                                {
+                                    type: 'text',
+                                    text: 'If free spins are won',
+                                    scale: [0.7, 1],
+                                    position: [130, 42],
+                                    styles: {
+                                        fontSize: '22px',
+                                        align: 'center',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 600,
+                                        fill: 0xffffff
+                                    }
+                                },
+                                {
+                                    visible: false,
+                                    position: [-150, 100],
+                                    childs: [
+                                        {
+                                            name: 'gown_slider',
+                                            type: 'gown_slider',
+                                            width: 300,
+                                            minimum: 0,
+                                            maximum: 100
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: 'autoplay okBtn bar',
+                    position: [100, 295],
+                    scale: 1.5,
+                    childs: [
+                        {
+                            name: 'autoplay okBtn',
+                            type: 'sprite',
+                            scale: [0.8, 1],
+                            button: 'button',
+                            image: 'okButton.png'
+                        },
+                        {
+                            name: 'autoplay okBtn glow',
+                            type: 'sprite',
+                            scale: [0.8, 1],
+                            image: 'okButton.png',
+                            alpha: 0,
+                            blendMode: 3
+                        },
+                        {
+                            name: 'autoplay okBtn text',
+                            type: 'text',
+                            text: 'OK',
+                            scale: [0.4, 0.5],
+                            styles: {
+                                fontSize: '30px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: 'autoplay cancelBtn bar',
+                    position: [-100, 295],
+                    scale: 1.5,
+                    childs: [
+                        {
+                            name: 'autoplay cancelBtn',
+                            type: 'sprite',
+                            scale: [0.8, 1],
+                            button: 'button',
+                            image: 'cancelButton.png'
+                        },
+                        {
+                            name: 'autoplay cancelBtn glow',
+                            type: 'sprite',
+                            scale: [0.8, 1],
+                            image: 'cancelButton.png',
+                            alpha: 0,
+                            blendMode: 3
+                        },
+                        {
+                            name: 'autoplay cancelBtn text',
+                            type: 'text',
+                            text: 'CANCEL',
+                            scale: [0.4, 0.5],
+                            styles: {
+                                fontSize: '30px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'OverlayContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1500, 725],
             scaleStrategyLandscape: ['fit-to-screen', 1500, 725],
@@ -2719,6 +3673,12 @@ App.Gameplay = new Screen({
             }
             // server end
 
+            this['settings sound switch'].on('change', ({ selected }) => {
+                this.buttonHandlerAudioSet();
+            });
+            this['settings fastPlay switch'].on('change', ({ selcted }) => {
+                this.buttonHandlerSpeedSet();
+            });
             this.is_bonus = false;
 
             this.const = {
@@ -3680,21 +4640,13 @@ App.Gameplay = new Screen({
         // this['button auto'].texture = this.getTexture(this.autobuttonNormalbg);
 
         if (this.winSound) {
-
             this.winSound.stop();
             this.winSound = false;
-
-            // if (this.mainSound) this.mainSound.volume = this.sound_mode ? 1 : 0;
-
         }
 
         if (this.state !== 'ready') return;
 
         this.state = 'spin';
-
-        // this.stopMultiplierAnimation(this.nomean_multiplier.toString() + "x");
-        // this.stopReelfireAnimation(this.nomean_multiplier.toString() + 'x_fire');
-        // this.startReelfireAnimation("main_fire");
 
         this.currentTweens.hide();
         this.currentTweens.hideQuick();
@@ -3706,9 +4658,6 @@ App.Gameplay = new Screen({
         this.flashTweens.hideQuick();
         this.wildSprites = [];
 
-        // for (var i = 1; i < 6; i++)
-        //     this['line' + i.toString()].alpha = 0.5;
-
         var self = this;
 
         this.spinCombination = null;
@@ -3718,14 +4667,17 @@ App.Gameplay = new Screen({
             // this.setStatusControlBar(['autostop button'], this.const.STATUS_TYPE.NORMAL);
             // this.setStatusControlBar(['autostart button'], this.const.STATUS_TYPE.INVISIBLE);
             // this.setStatusCenterBar('forward button', this.const.STATUS_TYPE.NORMAL);
-            this['autostop button bar'].visible = true;
+            this['start button bar'].visible = false;
+            this['autostart button bar'].visible = true;
+            this['autoplay button text'].text = 'STOP';
             if (this.current_auto_amount === 0) {
                 // this.setStatusCenterBar('start button', this.const.STATUS_TYPE.NORMAL);
                 // this.setStatusControlBar([], this.const.STATUS_TYPE.NORMAL);
                 // this.setStatusControlBar(['autostop button'], this.const.STATUS_TYPE.INVISIBLE);
                 // this.setStatusControlBar(['autostart button'], this.const.STATUS_TYPE.VISIBLE);
                 this['start button bar'].visible = true;
-                this['autostop button bar'].visible = false;
+                this['autostart button bar'].visible = false;
+                this['autoplay button text'].text = 'AUTO PLAY';
                 this.auto_mode = false;
             }
             this.refreshAutoamount();
@@ -4902,34 +5854,19 @@ App.Gameplay = new Screen({
         let nameGlow1 = container.name;
 
         if (this[nameGlow1].tween) this[nameGlow1].tween.stop();
-
-        if (this[nameGlow1].pressed === true) {
-            this[nameGlow1].tween = this.tween({
-                to: ['scale', [this[nameGlow1].scale._x + 0.1, this[nameGlow1].scale._y + 0.1], 150, 0, Power1.easeOut]
-            }, nameGlow1);
-            this[nameGlow1].pressed = false;
-        }
-    }
-    ,
+    },
 
     handleAutoButtonUp: function (container, e) {
         let name = container.name;
 
         if (this[name].tween) this[name].tween.stop();
 
-        if (this[name].pressed === true) {
-            this[name].tween = this.tween({
-                to: ['scale', [this[name].scale._x + 0.1, this[name].scale._y + 0.1], 150, 0, Power1.easeOut]
-            }, name);
-            this[name].pressed = false;
-
-            switch (name) {
-                default:
-                    if (name.indexOf('menu_body autoplay') === 0) {
-                        this.buttonHandleAutoItem(container, 'menu_body autoplay');
-                    }
-                    break;
-            }
+        switch (name) {
+            default:
+                if (name.indexOf('autoplay item') === 0) {
+                    this.buttonHandleAutoItem(this[name].step);
+                }
+                break;
         }
     }
     ,
@@ -4937,12 +5874,7 @@ App.Gameplay = new Screen({
     handleAutoButtonDown: function (container, e) {
         let nameGlow1 = container.name;
         if (this[nameGlow1].tween) this[nameGlow1].tween.stop();
-        this[nameGlow1].pressed = true;
-        this[nameGlow1].tween = this.tween({
-            to: ['scale', [this[nameGlow1].scale._x - 0.1, this[nameGlow1].scale._y - 0.1], 150, 0, Power1.easeOut]
-        }, nameGlow1);
-    }
-    ,
+    },
 
     handleMusicButtonDown: function (container, e) {
 
@@ -5112,18 +6044,7 @@ App.Gameplay = new Screen({
         this[nameGlow].tween = this.tween({
             to: ['alpha', 0, 150, 0, Power1.easeOut]
         }, nameGlow);
-/*
-        let nameGlow1 = container.name;
 
-        if (this[nameGlow1].tween) this[nameGlow1].tween.stop();
-
-        if (this[nameGlow1].pressed === true) {
-            this[nameGlow1].tween = this.tween({
-                to: ['scale', [this[nameGlow1].scale._x + 0.1, this[nameGlow1].scale._y + 0.1], 150, 0, Power1.easeOut]
-            }, nameGlow1);
-            this[nameGlow1].pressed = false;
-        }
-*/
         let name = container.name;
 
         switch (name) {
@@ -5152,24 +6073,45 @@ App.Gameplay = new Screen({
                 this.hideMenuContainer();
                 break;
             case 'coinsUp button':
+            case 'settings coinsUp button':
                 this.coinBarClicked(true);
                 break;
             case 'coinsDown button':
+            case 'settings coinsDown button':
                 this.coinBarClicked(false);
                 break;
             case 'linesUp button':
+            case 'settings linesUp button':
                 this.lineBarClicked(true);
                 break;
             case 'linesDown button':
+            case 'settings linesDown button':
                 this.lineBarClicked(false);
                 break;
             case 'home button':
                 this.showMenuContainer(3);
-                // this.setStatusControlBar(['home button', 'autostart button'], this.const.STATUS_TYPE.NORMAL);
-                // this.setStatusControlBar(['autostart button'], this.const.STATUS_TYPE.INVISIBLE);
+                break;
+            case 'autoplay button':
+                if (!this.auto_mode) {
+                    this.showAutoplayContainer(true);
+                } else {
+                    this['start button bar'].visible = true;
+                    this['autostart button bar'].visible = false;
+                    this['autoplay button text'].text = 'AUTO PLAY';
+                    this.auto_mode = false;
+                }
+                break;
+            case 'autoplay cancelBtn':
+                this.showAutoplayContainer(false);
                 break;
             case 'coinvalue button':
                 this.buttonhandlerCoinValue();
+                break;
+            case 'settings coinValueUp button':
+                this.coinValueBarClicked(true);
+                break;
+            case 'settings coinValueDown button':
+                this.coinValueBarClicked(false);
                 break;
             case 'autostart button':
                 this.refreshAutoItemBack(this.current_auto_amount);
@@ -5195,6 +6137,17 @@ App.Gameplay = new Screen({
                 }
                 break;
 
+            case 'autoplay okBtn':
+                this.buttonHandleAutoStartButton();
+                this.showAutoplayContainer(false);
+                break;
+
+            case 'setting button':
+                this.showSettingsContainer(true);
+                break;
+            case 'settings okBtn':
+                this.showSettingsContainer(false);
+                break;
             case 'sound button':
                 this.buttonHandlerAudioSet();
                 break;
@@ -5269,19 +6222,41 @@ App.Gameplay = new Screen({
         this.setBetAmountValues(cur_step, this.levels.step, this.coins.step, this.weight.step);
     },
 
+    coinValueBarClicked: function(up = true) {
+        if (this.state !== 'ready' || this.auto_mode) return;
+        let cur_step = this.weight.step;
+        if (up === true) {
+            if (cur_step < this.coin_weight_list.length) {
+                cur_step ++;
+            }
+        } else {
+            if (cur_step > 1) {
+                cur_step--;
+            }
+        }
+        this.refreshCoinValuBar(cur_step);
+        this.setBetAmountValues(this.lines.step, this.levels.step, this.coins.step, cur_step);
+    },
+
     refreshCoinBar: function (cur_step) {
         switch (cur_step) {
             case 1:
                 this.setStatusControlBar(['coinsDown button'], this.const.STATUS_TYPE.DISABLED);
                 this.setStatusControlBar(['coinsUp button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinsDown button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['settings coinsUp button'], this.const.STATUS_TYPE.NORMAL);
                 break;
             case this.coin_value_list.length:
                 this.setStatusControlBar(['coinsDown button'], this.const.STATUS_TYPE.NORMAL);
                 this.setStatusControlBar(['coinsUp button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['settings coinsDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinsUp button'], this.const.STATUS_TYPE.DISABLED);
                 break;
             default:
                 this.setStatusControlBar(['coinsDown button'], this.const.STATUS_TYPE.NORMAL);
                 this.setStatusControlBar(['coinsUp button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinsDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinsUp button'], this.const.STATUS_TYPE.NORMAL);
                 break;
         }
     },
@@ -5291,16 +6266,43 @@ App.Gameplay = new Screen({
             case 1:
                 this.setStatusControlBar(['linesDown button'], this.const.STATUS_TYPE.DISABLED);
                 this.setStatusControlBar(['linesUp button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings linesDown button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['settings linesUp button'], this.const.STATUS_TYPE.NORMAL);
                 break;
             case this.line_value_list.length:
                 this.setStatusControlBar(['linesDown button'], this.const.STATUS_TYPE.NORMAL);
                 this.setStatusControlBar(['linesUp button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['settings linesDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings linesUp button'], this.const.STATUS_TYPE.DISABLED);
                 break;
             default:
                 this.setStatusControlBar(['linesDown button'], this.const.STATUS_TYPE.NORMAL);
                 this.setStatusControlBar(['linesUp button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings linesDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings linesUp button'], this.const.STATUS_TYPE.NORMAL);
                 break;
         }
+    },
+
+    refreshCoinValuBar: function(cur_step) {
+        switch (cur_step) {
+            case 1:
+                this.setStatusControlBar(['settings coinValueDown button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['settings coinValueUp button'], this.const.STATUS_TYPE.NORMAL);
+                break;
+            case this.coin_weight_list.length:
+                this.setStatusControlBar(['settings coinValueDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinValueUp button'], this.const.STATUS_TYPE.DISABLED);
+                break;
+            default:
+                this.setStatusControlBar(['settings coinValueDown button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['settings coinValueUp button'], this.const.STATUS_TYPE.NORMAL);
+                break;
+        }
+    },
+
+    showAutoplayContainer: function(show = true) {
+        this['AutoPlayContainer'].visible = show;
     },
 
     showMenuContainer: function (header_index) {
@@ -5372,39 +6374,23 @@ App.Gameplay = new Screen({
         this.refreshAutoamount();
     },
 
-    buttonHandleAutoItem: function (container, name) {
+    buttonHandleAutoItem: function (step) {
         if (this.state !== 'ready') return;
-
-        this.current_auto_amount = container.step;
-        this.total_auto_amount = this.current_auto_amount;
-        // this.refreshPanelValues();
-        this.refreshAutoItemBack(container.step);
-    }
-    ,
+        this.current_auto_amount = step;
+        this.refreshAutoItemBack(step);
+    },
 
     refreshAutoItemBack: function (number) {
-        let items = [10, 20, 30, 40, 50, 100, 250, 500, 750, 1000];
-        // for (let i = 0; i < items.length; i++) {
-        //     if (number !== items[i]) {
-        //         let tweenname = "menu_body autoplay " + items[i] + " disabled";
-        //         let selected_name = "menu_body autoplay " + items[i] + " selected";
-        //         this.tween({
-        //             to: ['alpha', 1, 150, 0, Power1.easeOut]
-        //         }, tweenname);
-        //         this.tween({
-        //             to: ['alpha', 0, 150, 0, Power1.easeOut]
-        //         }, selected_name);
-        //     } else {
-        //         let tweenname = "menu_body autoplay " + number + " disabled";
-        //         let selected_name = "menu_body autoplay " + number + " selected";
-        //         this.tween({
-        //             to: ['alpha', 0, 150, 0, Power1.easeOut]
-        //         }, tweenname);
-        //         this.tween({
-        //             to: ['alpha', 1, 150, 0, Power1.easeOut]
-        //         }, selected_name);
-        //     }
-        // }
+        let items = [10, 20, 50, 75, 100];
+        for (let i = 0; i < items.length; i++) {
+            if (number !== items[i]) {
+                this[`autoplay item ${items[i]} active`].visible = false;
+                this[`autoplay item ${items[i]} disable`].visible = true;
+            } else {
+                this[`autoplay item ${items[i]} active`].visible = true;
+                this[`autoplay item ${items[i]} disable`].visible = false;
+            }
+        }
         if (number === 0) {
             this.current_auto_amount = 0;
             this['start button'].visible = true;
@@ -5419,10 +6405,8 @@ App.Gameplay = new Screen({
     ,
 
     refreshAutoamount: function () {
-        this['autostop button text'].text = this.current_auto_amount;
-        // this['forward button text'].text = this.current_auto_amount;
-    }
-    ,
+        this['autoValue text'].text = this.current_auto_amount;
+    },
 
     setStatusCenterBar: function (name, status) {
         // let bar_names = ['start button bar', 'auto start button bar', 'forward button bar'];
@@ -5447,11 +6431,17 @@ App.Gameplay = new Screen({
     setStatusControlBar: function (names, status) {
         let bar_names = [
             'start button bar', 'paytable button bar', 'autoplay button bar', 'linesUp button bar',
-            'linesDown button bar', 'coinsUp button bar', 'coinsDown button bar', 'maxBet button bar'
+            'linesDown button bar', 'coinsUp button bar', 'coinsDown button bar', 'maxBet button bar',
+            'settings coinValueUp button bar', 'settings coinValueDown button bar',
+            'settings coinsUp button bar', 'settings coinsDown button bar',
+            'settings linesUp button bar', 'settings linesDown button bar',
         ];
         let button_names = [
             'start button', 'paytable button', 'autoplay button', 'linesUp button',
-            'linesDown button', 'coinsUp button', 'coinsDown button', 'maxBet button'
+            'linesDown button', 'coinsUp button', 'coinsDown button', 'maxBet button',
+            'settings coinValueUp button', 'settings coinValueDown button',
+            'settings coinsUp button', 'settings coinsDown button',
+            'settings linesUp button', 'settings linesDown button',
         ];
         for (let i = 0; i < bar_names.length; i++) {
             if (names.includes(button_names[i])) {
@@ -5555,11 +6545,9 @@ App.Gameplay = new Screen({
     }
     ,
 
-    buttonHandleAutoStartButton: function (container) {
+    buttonHandleAutoStartButton: function () {
         if (this.state !== 'ready') return;
-        this.hideMenuContainer();
         if (this.auto_mode === false) {
-            this.winAnimationMode = false;
             this.auto_mode = true;
             this.spin();
         }
@@ -5575,9 +6563,7 @@ App.Gameplay = new Screen({
         this['start button'].texture = this.getTexture(this.startbuttonNormalbg);
         this['start button glow'].texture = this.getTexture(this.startbuttonGlowbg);
         this['statusvalue text'].visible = false;
-        clearInterval(this.back_interval);
-    }
-    ,
+    },
 
     buttonHandleContinueButton: function (container) {
         MRAID.markMeaningfulInteraction();
@@ -5637,6 +6623,7 @@ App.Gameplay = new Screen({
         if(this.weight.step > this.coin_weight_list.length) {
             this.weight.step = 1;
         }
+        this.refreshCoinValuBar(this.weight.step);
         this.setBetAmountValues(this.lines.step, this.levels.step, this.coins.step, this.weight.step)
     },
 
@@ -5654,6 +6641,10 @@ App.Gameplay = new Screen({
         } else {
             this.spin();
         }
+    },
+
+    showSettingsContainer: function(show = true) {
+        this['SettingsContainer'].visible = show;
     },
 
     paytableContainer: function(show = true) {
@@ -5748,6 +6739,9 @@ App.Gameplay = new Screen({
         this['bottomBalance text'].text = `Balance: ${this.credits.value}`;
         this['coinvalue text'].text = `${this.weight.value.toFixed(2).toString()}`;
         this['coins text'].text = `COINS: ${(this.credits.value / this.weight.value).toFixed(0).toString()}`;
+        this['settings coins text'].text = this.coins.value;
+        this['settings lines text'].text = this.lines.value;
+        this['settings coinValue text'].text = this.weight.value.toFixed(2).toString();
         // this.animFieldPoints('bottom totalbet', this.bet.amount);
         // this.animFieldPoints('control totalbet amount', this.bet.amount);
         // this['menu_body totalbet title'].text = this.bet.amount;

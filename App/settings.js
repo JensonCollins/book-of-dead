@@ -652,6 +652,7 @@ Settings = {
         "coin-particle": {"type": "image", "url": "assets/sprites/@2x/particle/coins_particle.json"},
         "buttons_hq": {"type": "atlas", "url": "assets/sprites/@2x/buttons_hq.json"},
         "orient_switch": {"type": "atlas", "url": "assets/images/orient_switch.jpg"},
+        "menuStyle": {"type": "atlas", "url": "App/Libs/gown/theme/metalworks_desktop.json"},
 
         //font loading
         "PNG_VNTH": {"type": "web-font", "url": "Fonts/PNG_VNTH.css"},

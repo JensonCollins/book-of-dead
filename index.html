@@ -122,7 +122,7 @@
                 $("#bet_value").text(bet);
             };
             var show_win = function(win) {
-                if (win) { 
+                if (win) {
                     $("#win_value").text(win);
                 } else {
                     $("#win_value").text('');
@@ -215,6 +215,15 @@
         <script src="App/Libs/GreenSock/1.20.4/TweenLite.js"></script>
 
         <script src="App/Libs/GreenSock/1.20.4/easing/EasePack.js"></script>
+
+        <script src="App/Libs/gown/gown.js"></script>
+        <script>
+            var aeonTheme = new GOWN.ThemeParser("App/Libs/gown/theme/aeon_desktop.json");
+            aeonTheme.once(GOWN.Theme.COMPLETE, () => {}, this);
+            var menuTheme = new GOWN.ThemeParser("App/Libs/gown/theme/menuStyle.json");
+            menuTheme.once(GOWN.Theme.COMPLETE, () => {}, this);
+            GOWN.loader.load();
+        </script>
 
         <script src="App/Libs/Pixi.Classes/Class.js"></script>
 
