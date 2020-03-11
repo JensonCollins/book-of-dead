@@ -926,6 +926,48 @@ App.Gameplay = new Screen({
                             ]
                         },
                         {
+                            name: 'collect button bar',
+                            position: [625, 0],
+                            scale: [1.2, 1],
+                            visible: false,
+                            type: 'sprite',
+                            childs: [
+                                {
+                                    name: 'collect button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'collect button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                    blendMode: 3
+                                },
+                                {
+                                    name: 'collect button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'collect button text',
+                                    type: 'text',
+                                    text: 'COLLECT',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '24px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
                             name: 'autostart button bar',
                             position: [422, -10],
                             visible: false,
@@ -1059,6 +1101,47 @@ App.Gameplay = new Screen({
                                     name: 'maxBet button text',
                                     type: 'text',
                                     text: 'BET MAX',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'gamble button bar',
+                            position: [210, 0],
+                            scale: [1.2, 1],
+                            visible: false,
+                            childs: [
+                                {
+                                    name: 'gamble button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'gamble button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                    blendMode: 3,
+                                },
+                                {
+                                    name: 'gamble button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'gamble button text',
+                                    type: 'text',
+                                    text: 'GAMBLE',
                                     position: [0, -3],
                                     styles: {
                                         fontSize: '25px',
@@ -2460,6 +2543,290 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'GambleContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1600, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1600, 900],
+            childs: [
+                {
+                    type: 'graphics',
+                    button: 'disabled button',
+                    alpha: 0.4,
+                    draw: [
+                        ['beginFill', 0x000000],
+                        ['drawRect', [-1600 / 2, -900 / 2, 1600, 900]]
+                    ]
+                },
+                {
+                    name: 'gamble back',
+                    position: [0, -35],
+                    type: 'sprite',
+                    image: 'gambleBg',
+                    childs: [
+                        {
+                            name: 'gamble card back',
+                            type: 'sprite',
+                            image: 'card_backBg',
+                        },
+                        {
+                            name: 'gamble red button bar',
+                            position: [-270, 0],
+                            childs: [
+                                {
+                                    name: 'gamble red button',
+                                    type: 'sprite',
+                                    button: 'button',
+                                    image: 'RedButtonBack_enable'
+                                },
+                                {
+                                    name: 'gamble red button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'RedButtonBack_enable',
+                                    blendMode: 3
+                                },
+                                {
+                                    name: 'gamble red button disabled',
+                                    type: 'sprite',
+                                    visible: false,
+                                    image: 'RedButtonBack_disabled'
+                                },
+                                {
+                                    name: 'gamble red button text',
+                                    type: 'text',
+                                    text: 'RED',
+                                    styles: {
+                                        fontSize: '40px',
+                                        align: 'center',
+                                        fontFamily: 'FLANKER_GRIFFO',
+                                        fontWeight: 600,
+                                        fill: 0xffffa4
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'gamble black button bar',
+                            position: [-270, 95],
+                            childs: [
+                                {
+                                    name: 'gamble black button',
+                                    type: 'sprite',
+                                    button: 'button',
+                                    image: 'BlackButtonBack_enable'
+                                },
+                                {
+                                    name: 'gamble black button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'BlackButtonBack_enable',
+                                    blendMode: 3
+                                },
+                                {
+                                    name: 'gamble black button disabled',
+                                    type: 'sprite',
+                                    visible: false,
+                                    image: 'BlackButtonBack_disabled'
+                                },
+                                {
+                                    name: 'gamble black button text',
+                                    type: 'text',
+                                    text: 'BLACK',
+                                    styles: {
+                                        fontSize: '40px',
+                                        align: 'center',
+                                        fontFamily: 'FLANKER_GRIFFO',
+                                        fontWeight: 600,
+                                        fill: 0xffffa4
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            position: [270, 45],
+                            childs: [
+                                {
+                                    name: 'gamble heart button bar',
+                                    position: [-50, -50],
+                                    childs: [
+                                        {
+                                            name: 'gamble heart button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'heart_enable'
+                                        },
+                                        {
+                                            name: 'gamble heart button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'heart_enable',
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'gamble heart button disabled',
+                                            type: 'sprite',
+                                            visible: false,
+                                            image: 'heart_disabled',
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'gamble diamond button bar',
+                                    position: [50, -50],
+                                    childs: [
+                                        {
+                                            name: 'gamble diamond button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'diamond_enable'
+                                        },
+                                        {
+                                            name: 'gamble diamond button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'diamond_enable',
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'gamble diamond button disabled',
+                                            type: 'sprite',
+                                            visible: false,
+                                            image: 'diamond_disabled',
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'gamble club button bar',
+                                    position: [-50, 50],
+                                    childs: [
+                                        {
+                                            name: 'gamble club button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'club_enable'
+                                        },
+                                        {
+                                            name: 'gamble club button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'club_enable',
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'gamble club button disabled',
+                                            type: 'sprite',
+                                            visible: false,
+                                            image: 'club_disabled',
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'gamble spade button bar',
+                                    position: [50, 50],
+                                    childs: [
+                                        {
+                                            name: 'gamble spade button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'spade_enable'
+                                        },
+                                        {
+                                            name: 'gamble spade button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'spade_enable',
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'gamble spade button disabled',
+                                            type: 'sprite',
+                                            visible: false,
+                                            image: 'spade_disabled',
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            name: 'gamble title',
+                            type: 'text',
+                            position: [0, -187],
+                            text: 'Choose Color (pays x2) or Suit (pays x4)',
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        },
+                        {
+                            type: 'text',
+                            text: 'COLOR PAYS',
+                            position: [-270, -134],
+                            styles: {
+                                fontSize: '20px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        },
+                        {
+                            type: 'text',
+                            text: 'SUIT PAYS',
+                            position: [270, -134],
+                            styles: {
+                                fontSize: '20px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        },
+                        {
+                            name: 'gamble colorPays value',
+                            type: 'text',
+                            text: '10',
+                            position: [-270, -88],
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        },
+                        {
+                            name: 'gamble suitPays value',
+                            type: 'text',
+                            text: '20',
+                            position: [270, -88],
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        },
+                        {
+                            type: 'text',
+                            text: 'PREVIOUS CARDS',
+                            position: [-150, 188],
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontWeight: 600,
+                                fill: 0xffffa4
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'LogoContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
             scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
@@ -2967,12 +3334,19 @@ App.Gameplay = new Screen({
                         },
                         {
                             name: 'settings spacebar switch',
-                            type: 'gown_check',
-                            selected: true,
+                            type: 'sprite',
+                            image: 'combo_disable.png',
+                            button: 'button',
+                            selected: false,
                             skinName: 'switch',
-                            position: [20, 20],
+                            position: [40, 32],
                             width: 40,
-                            height: 25
+                            height: 25,
+                            childs: [
+                                {
+                                    name: 'settings spacebar switch glow'
+                                }
+                            ]
                         },
                         {
                             type: 'text',
@@ -3681,6 +4055,14 @@ App.Gameplay = new Screen({
             });
             this.is_bonus = false;
 
+            this.spaceKey = this.keyboard(32);
+
+            this.spaceKey.press = () => {
+                if(this.space_mode)
+                    this.buttonHandleStartButton()
+            };
+
+
             this.const = {
                 RESULT_TYPE: {
                     NORMAL: 0x000000,
@@ -3762,8 +4144,8 @@ App.Gameplay = new Screen({
                 this.coin_value_list = [1, 2, 3, 4, 5];
 
                 this.bet = {
-                    amount: this.totalbet_value_list[0],
-                    drawed: this.totalbet_value_list[0],
+                    amount: 50,
+                    drawed: 50,
                     step: 1
                 };
 
@@ -3997,6 +4379,7 @@ App.Gameplay = new Screen({
             this.auto_mode = false;
             this.sound_mode = true;
             this.speed_mode = false;
+            this.space_mode = false;
             this.creditsNotInc = true;
 
             this.BOARD_SIZE = [245, 680];
@@ -4608,15 +4991,16 @@ App.Gameplay = new Screen({
 
         this['statusvalue text'].visible = true;
 
-        show_win();
+        // show_win();
 
-        if (this.credits.value - this.bet.amount >= 0) {
-            this.credits.value -= this.bet.amount;
+        if (this.credits.value - this.bottombet.amount >= 0) {
+            this.credits.value -= this.bottombet.amount;
             this.credits.drawed = this.credits.value;
+            console.log(this.credits.drawed)
             this.server_win_amount.value = 0;
             this.server_win_amount.drawed = 0;
             // this.animFieldPoints('credits bar', this.credits.drawed);
-            show_balance(this.credits.drawed);
+            // show_balance(this.credits.drawed);
             this.refreshPanelValues();
 
             this.creditsNotInc = true;
@@ -4632,6 +5016,7 @@ App.Gameplay = new Screen({
         this['win bar'].visible = false;
         this['Won text'].visible = false;
         this['congratulation bar'].visible = false;
+        this.hideCollectAnimation();
         this.setStatusControlBar(['maxBet button', 'coinsUp button', 'coinsDown button', 'linesUp button', 'linesDown button'], this.const.STATUS_TYPE.DISABLED);
         // this['start button bar'].visible = false;
         // this['autostop button bar'].visible = false;
@@ -4751,16 +5136,6 @@ App.Gameplay = new Screen({
                         self.freespin_index++;
                         self['freegames text'].text = self.freespin_index + " / " + self.freespin_count;
 
-                        //Reel fire animation
-                        self.stopReelfireAnimation("main_fire");
-                        self.startReelSplashAnimation("main_fire");
-                        setTimeout(() => {
-                            self.stopReelSplashAnimation("main_fire");
-                            self.startReelfireAnimation(self.nomean_multiplier.toString() + 'x_fire');
-                            self.startMultiplierAnimation(self.nomean_multiplier.toString() + "x");
-                        }, 500);
-                        //Reel fire animation
-
                     } else {
                     }
                 }
@@ -4824,6 +5199,14 @@ App.Gameplay = new Screen({
                     if (this.spinCombination) {
 
                         if (stopReelInterval) clearInterval(stopReelInterval);
+
+                        if(this.speed_mode) {
+                            this.REELS_STOP_TIMEOUT = 100;
+                            this.REELS_STOP_DELAY = 50;
+                        } else {
+                            this.REELS_STOP_TIMEOUT = 1000;
+                            this.REELS_STOP_DELAY = 300;
+                        }
 
                         this.timeout(() => {
 
@@ -4999,175 +5382,12 @@ App.Gameplay = new Screen({
         this.refreshLineBar(this.lines.step);
 
         if (this.spinCombination) {
-            if (!this.is_bonus) {
-                if (this.spinCombination.winData.winLines.length > 0) {
-
-                    this.spinCombinations.push(this.spinCombination);
-
-                    this.winSpinCombination = this.spinCombination;
-
-                    this.state = 'ready';
-
-                    this.win_sound_play = true;
-
-                    this.winAnimationMode = true;
-
-                    if (this.win_anim_mode && this.const.RESULT_TYPE.BIGMONEY) {
-                        // this.startBigMoneyAnimation();
-                    }
-                    if (this.win_anim_mode && this.const.RESULT_TYPE.JACKPOT) {
-                        // this.startJackpotAnimation();
-                    }
-
-                    this.winAnimation();
-                    this.playSound("winline", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
-
-                    if (this.spinCombination.winData.winLines.length > 1) {
-                        this.playSound("coins", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false}, sound => {
-                        });
-                    }
-
-                    this['win bar'].visible = true;
-                    this['congratulation bar'].visible = false;
-                    this['wincoins bar text'].text = '0';
-                    var countCoinsInterval = setInterval(() => {
-                        let coins = parseInt(this['wincoins bar text'].text);
-                        coins++;
-                        if (coins > this.server_win_amount.value) {
-                            coins = this.server_win_amount.value;
-                        }
-                        this['wincoins bar text'].text = coins.toString();
-                    }, 1000 / (this.server_win_amount.value + 1));
-                    setTimeout(() => {
-                        clearInterval(countCoinsInterval);
-                        this['win bar'].visible = false;
-                        this['Won text'].visible = true;
-                        if (this.spinCombination.winData.winLines.length == 1) {
-                            this['congratulation bar'].visible = true;
-                            this['congratulationcoins bar text'].text = this.server_win_amount.value;
-                            this['congratulationcontent bar text'].text = 'Congratulations!';
-                            setTimeout(() => {
-                                this['congratulationcontent bar text'].text =
-                                    'Won ' +
-                                    this.server_win_amount.value.toString() +
-                                    ' coins on line ' +
-                                    this.spinCombination.winData.winLines[0][4].toString();
-                                    setTimeout(() => {
-                                        this['congratulation bar'].visible = false;
-                                    }, 1000);
-                            }, 500);
-                        }
-                    }, this.spinCombination.winData.winLines.length > 1 ? 3000 : 1500);
-
-                    if (this.spinCombination.winData.winLines.length > 1) {
-                        setTimeout(() => {
-                            let frames = [];
-                            for (let k = 1; k <= 10; k++) {
-                                frames.push('coins_' + k.toString() + '.png');
-                            }
-                            this.buildChild(this['ParticleContainer'], {
-                                name: 'coins particle',
-                                type: 'movie-clip',
-                                frames: frames,
-                                scale: [3, 3],
-                                position: [0, 350],
-                                speed: 0.2,
-                                loop: false
-                            });
-                            this['coins particle'].gotoAndPlay(0);
-                            setTimeout(() => {
-                                this['ParticleContainer'].removeChildren();
-                            }, 1000);
-                        }, 500);
-                    }
-
-                    let logoTween = this.tween({
-                        to: [
-                            ['scale', [1.05, 1.05], 300, Power1.easeInOut],
-                            ['position', [0, 20], 300, Power1.easeInOut],
-                        ],
-                        next: [
-                            ['scale', [1.0, 1.0], 50, Power1.easeInOut],
-                            ['position', [0, 0], 50, Power1.easeInOut]
-                        ],
-                        loop: true
-                    }, 'logo caption');
-
-                    // let logoTitleTween = this.tween({
-                    //     to: [
-                    //         ['tint', 0xfffcca, 100, Power1.easeInOut] // 0xfcff00,
-                    //     ],
-                    //     next: [
-                    //         ['tint', 0xffffff, 50, Power1.easeInOut]
-                    //     ],
-                    //     loop: true
-                    // }, 'title');
-
-                    setTimeout(() => {
-                        this.stopTween(logoTween);
-                        // this.stopTween(logoTitleTween);
-                    }, 1200);
-                    // this['win bar text'].text = this.server_win_amount.value;
-
-                    // this.animatePassiveLines(this.spinCombination.winData);
-
-                    // this.credits.value += this.server_win_amount.value;
-                    this.credits.drawed = this.credits.value;
-
-                    this.server_win_amount.drawed = this.server_win_amount.value;
-                    this.refreshPanelValues();
-
-                } else {
-
-                    this.spinCombinations.push(0);
-
-                    // this.animFieldPoints('win', 0);
-
-                    this.winAnimationMode = false;
-
-                    this.state = 'ready';
-                    this.credits.drawed = this.credits.value;
-                    this.server_win_amount.drawed = this.server_win_amount.value;
-                    this.refreshPanelValues();
-
-                    // this.drawJackpot();
-
-                    if (this.freespin_end && this.isfreespin) {
-                        setTimeout(() => {
-                            this['bonus_win title'].text = this.total_freespin_amount;
-                            this['BonusWinContainer'].visible = true;
-                            this.freespin_count = 0;
-                            this.freespin_index = 0;
-                            this.total_freespin_amount = 0;
-                            this.isfreespin = false;
-                            this.freespin_end = false;
-                            setTimeout(() => {
-                                this['BonusWinContainer'].visible = false;
-                                this.completeFreespin();
-                            }, 3000);
-                        }, 3000);
-                    }
-                    setTimeout(() => {
-                        if (this.state === 'ready' && this.auto_mode) {
-                            this.spin();
-                        }
-                    }, 500);
-                }
-            } else {
-                // this.credits.value += parseInt(this.bonus_amount);
-                // this.credits.drawed += parseInt(this.bonus_amount);
+            if(this.auto_mode) {
+                this.showWinAnimation();
                 this.state = 'ready';
-                this.refreshPanelValues();
-
-                this.showBounupane("+" + this.bonus_amount);
-                this.playSound('bonus.mp3', {}, {volume: this.sound_mode ? 1 : 0, loop: false});
-
-                setTimeout(() => {
-                    this.bonusclose();
-                    this.state = 'ready';
-                    if(this.auto_mode)
-                        this.spin();
-                }, 3000);
+            } else {
+                this.state = 'ready';
+                this.showCollectAnimation();
             }
         } else {
             this.state = 'ready';
@@ -6053,7 +6273,7 @@ App.Gameplay = new Screen({
                 break;
             case 'start button':
                 /*if (!this.isfreespin)*/
-                this.buttonHandleStartButton(container);
+                this.buttonHandleStartButton();
                 /*else
                     this.buttonHandleFreeStartButton(container);*/
                 break;
@@ -6148,6 +6368,10 @@ App.Gameplay = new Screen({
             case 'settings okBtn':
                 this.showSettingsContainer(false);
                 break;
+            case 'settings spacebar switch':
+                this.buttonHandlerSpaceBar();
+                break;
+
             case 'sound button':
                 this.buttonHandlerAudioSet();
                 break;
@@ -6169,6 +6393,32 @@ App.Gameplay = new Screen({
             case 'paytable button':
                 this.paytableContainer(true);
                 break;
+
+            case 'collect button':
+                this.hideCollectAnimation();
+                this.showWinAnimation();
+                break;
+
+            case 'gamble button':
+                this.hideCollectAnimation();
+                this.showGambleContainer(true);
+                this.showGambleAnimiation();
+                break;
+
+            /********---Gamble buttons event start---********/
+            case 'gamble red button':
+                break;
+            case 'gamble black button':
+                break;
+            case 'gamble heart button':
+                break;
+            case 'gamble diamond button':
+                break;
+            case 'gamble club button':
+                break;
+            case 'gamble spade button':
+                break;
+            /********---Gamble buttons event end---********/
 
             case 'help page down button':
                 this.paytableContainer(false);
@@ -6315,16 +6565,225 @@ App.Gameplay = new Screen({
             this['MenuContainer'].visible = true;
             this.refreshMenuHeaderItemBack(header_index);
         }
-    }
-    ,
+    },
 
     hideMenuContainer: function () {
         this.playSound("btn_popupclose", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
         this['MenuContainer'].visible = false;
         this['MainContainer'].visible = true;
         this['win bar'].visible = false;
-    }
-    ,
+    },
+
+    showGambleAnimiation: function() {
+        this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button', 'gamble red button', 'gamble black button'], this.const.STATUS_TYPE.VISIBLE);
+        this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
+        this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.DISABLED);
+        this.gambleInterval = setInterval(() => {
+            console.log('gamble interval');
+            this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.NORMAL);
+            this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.DISABLED);
+            setTimeout(() => {
+                this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.DISABLED);
+            }, 500);
+        }, 1000);
+    },
+
+    showCollectAnimation: function () {
+        this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.VISIBLE);
+        this.setStatusControlBar(['gamble button'], this.const.STATUS_TYPE.DISABLED);
+        this.setStatusControlBar(['collect button'], this.const.STATUS_TYPE.NORMAL);
+        this.collectInterval = setInterval(() => {
+            this.setStatusControlBar(['gamble button'], this.const.STATUS_TYPE.NORMAL);
+            this.setStatusControlBar(['collect button'], this.const.STATUS_TYPE.DISABLED);
+            setTimeout(() => {
+                this.setStatusControlBar(['gamble button'], this.const.STATUS_TYPE.DISABLED);
+                this.setStatusControlBar(['collect button'], this.const.STATUS_TYPE.NORMAL);
+            }, 500);
+        }, 1000);
+    },
+
+    hideCollectAnimation: function () {
+        clearInterval(this.collectInterval);
+        // this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.NORMAL);
+        // this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.INVISIBLE);
+        setTimeout(() => {
+            this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.NORMAL);
+            this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.INVISIBLE);
+        }, 501)
+    },
+
+    showWinAnimation: function () {
+        if (!this.is_bonus) {
+            if (this.spinCombination.winData.winLines.length > 0) {
+
+                this.spinCombinations.push(this.spinCombination);
+
+                this.winSpinCombination = this.spinCombination;
+
+
+                this.win_sound_play = true;
+
+                this.winAnimationMode = true;
+
+                if (this.win_anim_mode && this.const.RESULT_TYPE.BIGMONEY) {
+                    // this.startBigMoneyAnimation();
+                }
+                if (this.win_anim_mode && this.const.RESULT_TYPE.JACKPOT) {
+                    // this.startJackpotAnimation();
+                }
+
+                this.winAnimation();
+                this.playSound("winline", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+
+                if (this.spinCombination.winData.winLines.length > 1) {
+                    this.playSound("coins", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false}, sound => {
+                    });
+                }
+
+                this['win bar'].visible = true;
+                this['congratulation bar'].visible = false;
+                this['wincoins bar text'].text = '0';
+                var countCoinsInterval = setInterval(() => {
+                    let coins = parseInt(this['wincoins bar text'].text);
+                    coins++;
+                    if (coins > this.server_win_amount.value) {
+                        coins = this.server_win_amount.value;
+                    }
+                    this['wincoins bar text'].text = coins.toString();
+                }, 1000 / (this.server_win_amount.value + 1));
+                setTimeout(() => {
+                    clearInterval(countCoinsInterval);
+                    this['win bar'].visible = false;
+                    this['Won text'].visible = true;
+                    if (this.spinCombination.winData.winLines.length == 1) {
+                        this['congratulation bar'].visible = true;
+                        this['congratulationcoins bar text'].text = this.server_win_amount.value;
+                        this['congratulationcontent bar text'].text = 'Congratulations!';
+                        setTimeout(() => {
+                            this['congratulationcontent bar text'].text =
+                                'Won ' +
+                                this.server_win_amount.value.toString() +
+                                ' coins on line ' +
+                                this.spinCombination.winData.winLines[0][4].toString();
+                            setTimeout(() => {
+                                this['congratulation bar'].visible = false;
+                            }, 1000);
+                        }, 500);
+                    }
+                }, this.spinCombination.winData.winLines.length > 1 ? 3000 : 1500);
+
+                if (this.spinCombination.winData.winLines.length > 1) {
+                    setTimeout(() => {
+                        let frames = [];
+                        for (let k = 1; k <= 10; k++) {
+                            frames.push('coins_' + k.toString() + '.png');
+                        }
+                        this.buildChild(this['ParticleContainer'], {
+                            name: 'coins particle',
+                            type: 'movie-clip',
+                            frames: frames,
+                            scale: [3, 3],
+                            position: [0, 350],
+                            speed: 0.2,
+                            loop: false
+                        });
+                        this['coins particle'].gotoAndPlay(0);
+                        setTimeout(() => {
+                            this['ParticleContainer'].removeChildren();
+                        }, 1000);
+                    }, 500);
+                }
+
+                /*let logoTween = this.tween({
+                    to: [
+                        ['scale', [1.05, 1.05], 300, Power1.easeInOut],
+                        ['position', [0, 20], 300, Power1.easeInOut],
+                    ],
+                    next: [
+                        ['scale', [1.0, 1.0], 50, Power1.easeInOut],
+                        ['position', [0, 0], 50, Power1.easeInOut]
+                    ],
+                    loop: true
+                }, 'logo caption');*/
+
+                // let logoTitleTween = this.tween({
+                //     to: [
+                //         ['tint', 0xfffcca, 100, Power1.easeInOut] // 0xfcff00,
+                //     ],
+                //     next: [
+                //         ['tint', 0xffffff, 50, Power1.easeInOut]
+                //     ],
+                //     loop: true
+                // }, 'title');
+
+                setTimeout(() => {
+                    // this.stopTween(logoTween);
+                    // this.stopTween(logoTitleTween);
+                }, 1200);
+                // this['win bar text'].text = this.server_win_amount.value;
+
+                // this.animatePassiveLines(this.spinCombination.winData);
+
+                // this.credits.value += this.server_win_amount.value;
+                this.credits.drawed = this.credits.value;
+
+                this.server_win_amount.drawed = this.server_win_amount.value;
+                this.refreshPanelValues();
+
+            } else {
+
+                this.spinCombinations.push(0);
+
+                // this.animFieldPoints('win', 0);
+
+                this.winAnimationMode = false;
+
+                this.state = 'ready';
+                this.credits.drawed = this.credits.value;
+                this.server_win_amount.drawed = this.server_win_amount.value;
+                this.refreshPanelValues();
+
+                // this.drawJackpot();
+
+                if (this.freespin_end && this.isfreespin) {
+                    setTimeout(() => {
+                        this['bonus_win title'].text = this.total_freespin_amount;
+                        this['BonusWinContainer'].visible = true;
+                        this.freespin_count = 0;
+                        this.freespin_index = 0;
+                        this.total_freespin_amount = 0;
+                        this.isfreespin = false;
+                        this.freespin_end = false;
+                        setTimeout(() => {
+                            this['BonusWinContainer'].visible = false;
+                            this.completeFreespin();
+                        }, 3000);
+                    }, 3000);
+                }
+                setTimeout(() => {
+                    if (this.state === 'ready' && this.auto_mode) {
+                        this.spin();
+                    }
+                }, 500);
+            }
+        } else {
+            // this.credits.value += parseInt(this.bonus_amount);
+            // this.credits.drawed += parseInt(this.bonus_amount);
+            this.state = 'ready';
+            this.refreshPanelValues();
+
+            this.showBounupane("+" + this.bonus_amount);
+            this.playSound('bonus.mp3', {}, {volume: this.sound_mode ? 1 : 0, loop: false});
+
+            setTimeout(() => {
+                this.bonusclose();
+                this.state = 'ready';
+                if(this.auto_mode)
+                    this.spin();
+            }, 3000);
+        }
+    },
 
     showHelpContainer: function (index, bUp) {
         if (bUp === true) {
@@ -6435,6 +6894,9 @@ App.Gameplay = new Screen({
             'settings coinValueUp button bar', 'settings coinValueDown button bar',
             'settings coinsUp button bar', 'settings coinsDown button bar',
             'settings linesUp button bar', 'settings linesDown button bar',
+            'gamble button bar', 'collect button bar',
+            'gamble red button bar', 'gamble black button bar',
+            'gamble heart button bar', 'gamble diamond button bar', 'gamble club button bar', 'gamble spade button bar'
         ];
         let button_names = [
             'start button', 'paytable button', 'autoplay button', 'linesUp button',
@@ -6442,6 +6904,9 @@ App.Gameplay = new Screen({
             'settings coinValueUp button', 'settings coinValueDown button',
             'settings coinsUp button', 'settings coinsDown button',
             'settings linesUp button', 'settings linesDown button',
+            'gamble button', 'collect button',
+            'gamble red button', 'gamble black button',
+            'gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'
         ];
         for (let i = 0; i < bar_names.length; i++) {
             if (names.includes(button_names[i])) {
@@ -6573,7 +7038,7 @@ App.Gameplay = new Screen({
         document.getElementById("footer").style.zIndex = 9999;
     },
 
-    buttonHandleStartButton: function (container) {
+    buttonHandleStartButton: function () {
         this.hideMenuContainer();
         if (this.credits.value < this.bet.amount)
             return;
@@ -6617,6 +7082,15 @@ App.Gameplay = new Screen({
         }
     },
 
+    buttonHandlerSpaceBar: function() {
+        this.space_mode = !this.space_mode;
+        if (this.space_mode) {
+            this['settings spacebar switch'].texture = this.getTexture('combo_enable.png');
+        } else {
+            this['settings spacebar switch'].texture = this.getTexture('combo_disable.png');
+        }
+    },
+
     buttonhandlerCoinValue: function() {
         let cur_step = this.weight.step;
         this.weight.step ++;
@@ -6638,9 +7112,11 @@ App.Gameplay = new Screen({
             this.setBetAmountValues(this.lines.step, this.levels.step, this.coins.step, this.weight.step);
             this.refreshLineBar(this.lines.step);
             this.refreshCoinBar(this.coins.step);
-        } else {
-            this.spin();
         }
+    },
+
+    showGambleContainer: function(show = true) {
+        this['GambleContainer'].visible = show;
     },
 
     showSettingsContainer: function(show = true) {
@@ -6683,7 +7159,7 @@ App.Gameplay = new Screen({
         let weight_value  = this.coin_weight_list[weight_step - 1];
 
         let betAmount = line_value * coin_value;
-
+        console.log(betAmount);
         if (this.credits.value < betAmount) {
             console.warn("BetAmount is lower than Credit Value");
             return false;
@@ -6705,29 +7181,6 @@ App.Gameplay = new Screen({
         this.bottombet.amount = weight_value * betAmount;
 
         this.refreshPanelValues();
-    }
-    ,
-
-    setCoinValues: function (coin_step, level_step) {
-
-        let line_value = this.coins_;
-        let level_value = this.totalbet_value_list[level_step - 1];
-
-        let betAmount = line_value * level_value;
-
-        if (this.credits.value < betAmount) {
-            return false;
-        }
-
-        this.lines.value = line_value;
-        this.coins.step = coin_step;
-
-        this.levels.value = level_value;
-        this.levels.step = level_step;
-
-        this.bet.amount = betAmount;
-
-        this.refreshPanelValues();
     },
 
     refreshPanelValues: function () {
@@ -6736,91 +7189,13 @@ App.Gameplay = new Screen({
         this['linesvalue text'].text = this.lines.value;
         this['betvalue text'].text = `BET: ${this.bet.amount}`;
         this['bottomBet text'].text = `BET: ${this.bottombet.amount.toFixed(2).toString()}`;
-        this['bottomBalance text'].text = `Balance: ${this.credits.value}`;
+        this['bottomBalance text'].text = `Balance: ${this.credits.drawed.toFixed(2).toString()}`;
         this['coinvalue text'].text = `${this.weight.value.toFixed(2).toString()}`;
         this['coins text'].text = `COINS: ${(this.credits.value / this.weight.value).toFixed(0).toString()}`;
         this['settings coins text'].text = this.coins.value;
         this['settings lines text'].text = this.lines.value;
         this['settings coinValue text'].text = this.weight.value.toFixed(2).toString();
-        // this.animFieldPoints('bottom totalbet', this.bet.amount);
-        // this.animFieldPoints('control totalbet amount', this.bet.amount);
-        // this['menu_body totalbet title'].text = this.bet.amount;
-        // this.animFieldPoints('coin bar', this.coins.value);
-        // this.animFieldPoints('win bar', this.server_win_amount.drawed, true);
-        // this.animFieldPoints('betamount', this.levels.value * this.line_value_list);
-        // this.animFieldPoints('bet bar', this.bet.amount.toFixed(2).toString());
-        // this.animFieldPoints('total_bet bar', this.bet.amount.toFixed(2).toString());
-        //
-        // if (this.auto_mode) {
-        //     this.animFieldPoints('autoamount', this.current_auto_amount);
-        // }
-        //
-        // if (this.auto_mode === false) {
-        //     this['start button'].visible = true;
-        //     this['stop button'].visible = false;
-        // } else {
-        //     this['start button'].visible = true;
-        //     this['stop button'].visible = false;
-        // }
-    }
-    ,
-
-    startMultiplierAnimation: function (name) {
-        this['multiplier_' + name + ' container'].visible = true;
-        this['multiplier_' + name + ' container'].children[2].visible = true;
-        // this['multiplier_2x container'].children[0].visible = true;
-        this['multiplier_' + name + ' container'].children[2].gotoAndPlay(0);
-        setTimeout(() => {
-            this['multiplier_' + name + ' container'].children[2].stop();
-            this['multiplier_' + name + ' container'].children[2].visible = false;
-            this['multiplier_' + name + ' container'].children[1].visible = true;
-            this['multiplier_' + name + ' container'].children[1].gotoAndPlay(0);
-            this['multiplier_' + name + ' number'].visible = true;
-            this['multiplier_' + name + ' x'].visible = true;
-        }, 450);
-    }
-    ,
-
-    stopMultiplierAnimation: function (name) {
-        this.tween({
-            to: ['visible', false, 250, 0, Power1.easeIn]
-        }, 'multiplier_' + name + ' container');
-        this['multiplier_' + name + ' container'].children[2].visible = false;
-        this['multiplier_' + name + ' container'].children[2].stop();
-        this['multiplier_' + name + ' container'].children[1].visible = false;
-        this['multiplier_' + name + ' container'].children[1].stop();
-        this['multiplier_' + name + ' number'].visible = false;
-        this['multiplier_' + name + ' x'].visible = false;
-    }
-    ,
-
-    startReelfireAnimation: function (name) {
-        this[name + ' container'].visible = true;
-        this[name + ' container'].children[0].visible = true;
-        this[name + ' container'].children[0].gotoAndPlay(0);
-    }
-    ,
-
-    stopReelfireAnimation: function (name) {
-        this[name + ' container'].visible = false;
-        this[name + ' container'].children[0].visible = false;
-        this[name + ' container'].children[0].stop();
-    }
-    ,
-
-    startReelSplashAnimation: function (name) {
-        this[name + ' container'].visible = true;
-        this[name + ' container'].children[1].visible = true;
-        this[name + ' container'].children[1].gotoAndPlay(0);
-    }
-    ,
-
-    stopReelSplashAnimation: function (name) {
-        this[name + ' container'].visible = false;
-        this[name + ' container'].children[1].visible = false;
-        this[name + ' container'].children[1].stop();
-    }
-    ,
+    },
 
     setValues: function () {
         this.startbuttonNormalbg = "spinButtonIdle.png";
@@ -6830,16 +7205,7 @@ App.Gameplay = new Screen({
         this.maxbetButtonDisablebg = "maxBetButtonDisabled.png";
         this.autobuttonNormalbg = "autoPlayButtonUp.png";
         this.autoButtonGlowbg = "autoPlayButtonOver.png";
-    }
-    ,
-
-    /*hideLinecontainer: function () {
-        this['line container'].visible = false;
     },
-
-    showLinecontainer: function () {
-        this['line container'].visible = true;
-    },*/
 
     interval: 0,
     server_initMatrix:
@@ -6911,6 +7277,9 @@ App.Gameplay = new Screen({
     bonus_active:
         [],
     wildSprites: [],
+
+    collectInterval: null,
+    gambleInterval: null,
 
     removeCellMatrix: function (matrix, card_count, direction) {
         for (var i = 0; i < 3; i++) {
@@ -7130,7 +7499,7 @@ App.Gameplay = new Screen({
                 var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[7,1,7,2,7],[7,2,7,5,7],[7,6,7,6,7]],\"arrRetVal\":[],\"betAmount\":9,\"winAmount\":0,\"balance\":10000}}";
 
         */
-        var response = {
+        var response = [{
             error: '0',
             response: {
                 initCards: [
@@ -7154,10 +7523,44 @@ App.Gameplay = new Screen({
                 ],
                 betAmount: 50,
                 winAmount: 10,
-                balance: 50000
+                balance: 49990
             }
-        };
-        var serverData = response;
+        },{
+            error: '0',
+            response: {
+                initCards: [
+                    [4, 0, 9],
+                    [5, 0, 1],
+                    [3, 1, 8],
+                    [4, 6, 3],
+                    [0, 2, 7],
+                ],
+                arrRetVal: [
+                    { retType: 0, win: 5, linePosIdx: 4, cardCount: 5 },
+                    { retType: 0, win: 5, linePosIdx: 6, cardCount: 5 },
+                ],
+                betAmount: 50,
+                winAmount: 10,
+                balance: 49990
+            }
+        },{
+            error: '0',
+            response: {
+                initCards: [
+                    [3, 1, 8],
+                    [5, 0, 1],
+                    [4, 0, 9],
+                    [0, 2, 7],
+                    [4, 6, 3],
+                ],
+                arrRetVal: [
+                ],
+                betAmount: 50,
+                winAmount: 0,
+                balance: 49990
+            }
+        }];
+        var serverData = response[Math.floor(Math.random() * 3)];
         return serverData;
     }
     ,
@@ -7219,8 +7622,7 @@ App.Gameplay = new Screen({
             ]
         };
         return this.apiRequest(options);
-    }
-    ,
+    },
 
     sendSignalToSite: function () {
         var options = {
@@ -7228,8 +7630,7 @@ App.Gameplay = new Screen({
             params: []
         };
         return this.apiRequest(options);
-    }
-    ,
+    },
 
     closeGame: function () {
         var options = {
@@ -7237,8 +7638,43 @@ App.Gameplay = new Screen({
             params: []
         };
         return this.apiRequest(options);
-    }
-    ,
+    },
 
+    keyboard: function(keyCode) {
+        var key = {};
+        key.code = keyCode;
+        key.isDown = false;
+        key.isUp = true;
+        key.press = undefined;
+        key.release = undefined;
+        //The `downHandler`
+        key.downHandler = event => {
+            if (event.keyCode === key.code) {
+                if (key.isUp && key.press) key.press();
+                key.isDown = true;
+                key.isUp = false;
+            }
+            event.preventDefault();
+        };
+
+        //The `upHandler`
+        key.upHandler = event => {
+            if (event.keyCode === key.code) {
+                if (key.isDown && key.release) key.release();
+                key.isDown = false;
+                key.isUp = true;
+            }
+            event.preventDefault();
+        };
+
+        //Attach event listeners
+        window.addEventListener(
+            "keydown", key.downHandler.bind(key), false
+        );
+        window.addEventListener(
+            "keyup", key.upHandler.bind(key), false
+        );
+        return key;
+    }
 })
 ;
