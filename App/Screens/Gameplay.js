@@ -2567,6 +2567,36 @@ App.Gameplay = new Screen({
                             name: 'gamble card back',
                             type: 'sprite',
                             image: 'card_backBg',
+                            childs: [
+                            ]
+                        },
+                        {
+                            name: 'gamble result card',
+                            type: 'sprite',
+                            visible: false,
+                            image: 'card_whiteBg3',
+                            childs: [
+                                {
+                                    name: 'gamble result card A',
+                                    type: 'sprite',
+                                    image: 'card_small_black_A',
+                                    position: [-55, -70]
+                                },
+                                {
+                                    name: 'gamble result card small symbol',
+                                    type: 'sprite',
+                                    image: 'card_big_club',
+                                    position: [-50, -15],
+                                    scale: 0.3
+                                },
+                                {
+                                    name: 'gamble result card big symbol',
+                                    type: 'sprite',
+                                    image: 'card_big_club',
+                                    position: [10, 55],
+                                    scale: 0.8
+                                },
+                            ]
                         },
                         {
                             name: 'gamble red button bar',
@@ -4178,6 +4208,22 @@ App.Gameplay = new Screen({
             this.helpPageVisabilityFlag = false;
 
             this.helpPageIndex = 1;
+
+            let cardFrames = [];
+            for (let i = 0 ;i < 10; i++) {
+                cardFrames.push(`card_backBg${i}`);
+            }
+            cardFrames.push('card_whiteBg0');
+            cardFrames.push('card_whiteBg1');
+            cardFrames.push('card_whiteBg2');
+            cardFrames.push('card_whiteBg3');
+            this.buildChild(this['gamble card back'], {
+                name: 'gamble card animSprite',
+                type: 'movie-clip',
+                frames: cardFrames,
+                speed: 0.4,
+                loop: false
+            });
 
             this.staticTweens = {
                 showTweens: [],
@@ -6402,27 +6448,34 @@ App.Gameplay = new Screen({
             case 'gamble button':
                 this.hideCollectAnimation();
                 this.showGambleContainer(true);
+                this.gambleStop = false;
                 this.showGambleAnimiation();
                 break;
 
             /********---Gamble buttons event start---********/
             case 'gamble red button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('red');
                 break;
             case 'gamble black button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('black');
                 break;
             case 'gamble heart button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('heart');
                 break;
             case 'gamble diamond button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('diamond');
                 break;
             case 'gamble club button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('club');
                 break;
             case 'gamble spade button':
-                this.showGambleContainer(false);
+                // this.showGambleContainer(false);
+                this.buttonhandlerGamble('spade');
                 break;
             /********---Gamble buttons event end---********/
 
@@ -6585,14 +6638,24 @@ App.Gameplay = new Screen({
         this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
         this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.DISABLED);
         this.gambleInterval = setInterval(() => {
-            console.log('gamble interval');
-            this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.NORMAL);
-            this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.DISABLED);
-            setTimeout(() => {
-                this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
-                this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.DISABLED);
-            }, 500);
+            if(!this.gambleStop){
+                this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.NORMAL);
+                this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.DISABLED);
+                setTimeout(() => {
+                    if(!this.gambleStop) {
+                        this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
+                        this.setStatusControlBar(['gamble red button', 'gamble black button'], this.const.STATUS_TYPE.DISABLED);
+                    }
+                }, 500);
+            }
         }, 1000);
+    },
+
+    hideGambleAnimation: function() {
+        this.gambleStop = true;
+        this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button', 'gamble red button', 'gamble black button'], this.const.STATUS_TYPE.VISIBLE);
+        this.setStatusControlBar(['gamble heart button', 'gamble diamond button', 'gamble club button', 'gamble spade button'], this.const.STATUS_TYPE.NORMAL);
+        clearInterval(this.gambleInterval);
     },
 
     showCollectAnimation: function () {
@@ -7121,6 +7184,75 @@ App.Gameplay = new Screen({
         }
     },
 
+    setRandomGambleCard: function() {
+        this['gamble card animSprite'].gotoAndPlay(0);
+        this.selectedSymbol = this.cardSymbols[Math.floor(Math.random() * 4)];
+        switch (this.selectedSymbol) {
+            case 'heart':
+            case 'diamond':
+                this.selectedColor = 'red';
+                break;
+            case 'club':
+            case 'spade':
+                this.selectedColor = 'black';
+                break;
+        }
+        if(this.selectedColor === 'red') {
+            this['gamble result card A'].texture = this.getTexture('card_small_red_A');
+        } else {
+            this['gamble result card A'].texture = this.getTexture('card_small_black_A');
+        }
+        this['gamble result card small symbol'].texture = this.getTexture(`card_big_${this.selectedSymbol}`);
+        this['gamble result card big symbol'].texture = this.getTexture(`card_big_${this.selectedSymbol}`);
+        setTimeout(() => {
+            this['gamble result card'].visible = true;
+        }, 500);
+    },
+
+    buttonhandlerGamble: function(button) {
+        this.setRandomGambleCard();
+        this.hideGambleAnimation();
+        switch (button) {
+            case 'red':
+            case 'black':
+                if(button === this.selectedColor) {
+                    setTimeout(() => {
+                        this.rollbackGamble();
+                    }, 2000);
+                } else {
+                    this.finishGamble();
+                }
+                break;
+            case 'heart':
+            case 'diamond':
+            case 'club':
+            case 'spade':
+                if(button === this.selectedSymbol) {
+                    setTimeout(() => {
+                        this.rollbackGamble();
+                    }, 2000);
+                } else {
+                    this.finishGamble();
+                }
+                break;
+        }
+    },
+
+    rollbackGamble: function() {
+        this['gamble result card'].visible = false;
+        this['gamble card animSprite'].gotoAndStop(0);
+        this.gambleStop = false;
+        this.showGambleAnimiation();
+    },
+
+    finishGamble: function() {
+        setTimeout(() => {
+            this['gamble result card'].visible = false;
+            this['gamble card animSprite'].gotoAndStop(0);
+            this.showGambleContainer(false);
+        }, 2000);
+    },
+
     showGambleContainer: function(show = true) {
         this['GambleContainer'].visible = show;
     },
@@ -7286,6 +7418,10 @@ App.Gameplay = new Screen({
 
     collectInterval: null,
     gambleInterval: null,
+
+    cardSymbols: ['heart', 'diamond', 'club', 'spade'],
+    selectedSymbol: '',
+    selectedColor: '',
 
     removeCellMatrix: function (matrix, card_count, direction) {
         for (var i = 0; i < 3; i++) {

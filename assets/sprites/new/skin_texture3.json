@@ -1740,7 +1740,7 @@
         "h": 46
       }
     },
-    "card_backBg": {
+    "card_backBg0": {
       "frame": {
         "x": 370,
         "y": 555,
@@ -2600,7 +2600,7 @@
         "h": 10
       }
     },
-    "card_whiteBg": {
+    "card_whiteBg0": {
       "frame": {
         "x": 1150,
         "y": 465,
