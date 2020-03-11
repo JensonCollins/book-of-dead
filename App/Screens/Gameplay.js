@@ -6407,16 +6407,22 @@ App.Gameplay = new Screen({
 
             /********---Gamble buttons event start---********/
             case 'gamble red button':
+                this.showGambleContainer(false);
                 break;
             case 'gamble black button':
+                this.showGambleContainer(false);
                 break;
             case 'gamble heart button':
+                this.showGambleContainer(false);
                 break;
             case 'gamble diamond button':
+                this.showGambleContainer(false);
                 break;
             case 'gamble club button':
+                this.showGambleContainer(false);
                 break;
             case 'gamble spade button':
+                this.showGambleContainer(false);
                 break;
             /********---Gamble buttons event end---********/
 
