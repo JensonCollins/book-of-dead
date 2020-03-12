@@ -1,0 +1,296 @@
+{
+  "frames": {
+    "S05BaseGame.png": {
+      "frame": {
+        "x": 1175,
+        "y": 0,
+        "w": 180,
+        "h": 180
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 180,
+        "h": 180
+      }
+    },
+    "EG.png": {
+      "frame": {
+        "x": 1885,
+        "y": 0,
+        "w": 100,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 100
+      }
+    },
+    "HF.png": {
+      "frame": {
+        "x": 1885,
+        "y": 0,
+        "w": 100,
+        "h": 100
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 100
+      }
+    },
+    "IG.png": {
+      "frame": {
+        "x": 1950,
+        "y": 105,
+        "w": 25,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 25,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 60
+      }
+    },
+    "S04BaseGame.png": {
+      "frame": {
+        "x": 1715,
+        "y": 0,
+        "w": 165,
+        "h": 175
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 165,
+        "h": 175
+      },
+      "sourceSize": {
+        "w": 165,
+        "h": 175
+      }
+    },
+    "JG.png": {
+      "frame": {
+        "x": 1885,
+        "y": 105,
+        "w": 60,
+        "h": 60
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 60
+      }
+    },
+    "S03BaseGame.png": {
+      "frame": {
+        "x": 1360,
+        "y": 0,
+        "w": 170,
+        "h": 180
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 170,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 170,
+        "h": 180
+      }
+    },
+    "S02BaseGame.png": {
+      "frame": {
+        "x": 1005,
+        "y": 0,
+        "w": 165,
+        "h": 185
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 165,
+        "h": 185
+      },
+      "sourceSize": {
+        "w": 165,
+        "h": 185
+      }
+    },
+    "S01BaseGame.png": {
+      "frame": {
+        "x": 1535,
+        "y": 0,
+        "w": 175,
+        "h": 175
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 175,
+        "h": 175
+      },
+      "sourceSize": {
+        "w": 175,
+        "h": 175
+      }
+    },
+    "S06BaseGame.png": {
+      "frame": {
+        "x": 405,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 200,
+        "h": 195
+      }
+    },
+    "S07BaseGame.png": {
+      "frame": {
+        "x": 605,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 195,
+        "h": 195
+      }
+    },
+    "S08BaseGame.png": {
+      "frame": {
+        "x": 205,
+        "y": 0,
+        "w": 195,
+        "h": 200
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 195,
+        "h": 200
+      },
+      "sourceSize": {
+        "w": 195,
+        "h": 200
+      }
+    },
+    "S09BaseGame.png": {
+      "frame": {
+        "x": 805,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 195,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 195,
+        "h": 195
+      }
+    },
+    "B01ScatterBaseGame_0001.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 200
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 200
+      },
+      "sourceSize": {
+        "w": 200,
+        "h": 200
+      }
+    }
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "skin_texture4_level1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1985,
+      "h": 200
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:958ada5843573f8b3b2feae32497ca39:a0b61b65a2884441a1d0a33993480ffc:59c4750d670c3620ba764de0175201da$"
+  }
+}

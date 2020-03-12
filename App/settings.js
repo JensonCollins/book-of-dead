@@ -653,7 +653,9 @@ Settings = {
         "buttons_hq": {"type": "atlas", "url": "assets/sprites/@2x/buttons_hq.json"},
         "orient_switch": {"type": "atlas", "url": "assets/images/orient_switch.jpg"},
         // "menuStyle": {"type": "atlas", "url": "App/Libs/gown/theme/metalworks_desktop.json"},
+        "skin_texture2": {"type": "atlas", "url": "assets/sprites/new/skin_texture2.json"},
         "skin_texture3": {"type": "atlas", "url": "assets/sprites/new/skin_texture3.json"},
+        "skin_texture4": {"type": "atlas", "url": "assets/sprites/new/skin_texture4.json"},
 
         //font loading
         "PNG_VNTH": {"type": "web-font", "url": "Fonts/PNG_VNTH.css"},

@@ -939,19 +939,18 @@ App.Gameplay = new Screen({
                                     button: 'button',
                                 },
                                 {
-                                    name: 'collect button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                    blendMode: 3
-                                },
-                                {
                                     name: 'collect button disabled',
                                     type: 'graphics',
                                     alpha: 0.5,
                                     position: [-1, 0],
                                     visible: false,
                                     draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'collect button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
                                 },
                                 {
                                     name: 'collect button text',
@@ -1124,19 +1123,18 @@ App.Gameplay = new Screen({
                                     button: 'button',
                                 },
                                 {
-                                    name: 'gamble button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                    blendMode: 3,
-                                },
-                                {
                                     name: 'gamble button disabled',
                                     type: 'graphics',
                                     alpha: 0.5,
                                     position: [-1, 0],
                                     visible: false,
                                     draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'gamble button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
                                 },
                                 {
                                     name: 'gamble button text',
@@ -2609,17 +2607,16 @@ App.Gameplay = new Screen({
                                     image: 'RedButtonBack_enable'
                                 },
                                 {
-                                    name: 'gamble red button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'RedButtonBack_enable',
-                                    blendMode: 3
-                                },
-                                {
                                     name: 'gamble red button disabled',
                                     type: 'sprite',
                                     visible: false,
                                     image: 'RedButtonBack_disabled'
+                                },
+                                {
+                                    name: 'gamble red button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'RedButtonBack_enable',
                                 },
                                 {
                                     name: 'gamble red button text',
@@ -2646,17 +2643,16 @@ App.Gameplay = new Screen({
                                     image: 'BlackButtonBack_enable'
                                 },
                                 {
-                                    name: 'gamble black button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'BlackButtonBack_enable',
-                                    blendMode: 3
-                                },
-                                {
                                     name: 'gamble black button disabled',
                                     type: 'sprite',
                                     visible: false,
                                     image: 'BlackButtonBack_disabled'
+                                },
+                                {
+                                    name: 'gamble black button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'BlackButtonBack_enable',
                                 },
                                 {
                                     name: 'gamble black button text',
@@ -2686,18 +2682,17 @@ App.Gameplay = new Screen({
                                             image: 'heart_enable'
                                         },
                                         {
-                                            name: 'gamble heart button glow',
-                                            type: 'sprite',
-                                            alpha: 0,
-                                            image: 'heart_enable',
-                                            blendMode: 3
-                                        },
-                                        {
                                             name: 'gamble heart button disabled',
                                             type: 'sprite',
                                             visible: false,
                                             image: 'heart_disabled',
-                                        }
+                                        },
+                                        {
+                                            name: 'gamble heart button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'heart_enable',
+                                        },
                                     ]
                                 },
                                 {
@@ -2711,18 +2706,17 @@ App.Gameplay = new Screen({
                                             image: 'diamond_enable'
                                         },
                                         {
-                                            name: 'gamble diamond button glow',
-                                            type: 'sprite',
-                                            alpha: 0,
-                                            image: 'diamond_enable',
-                                            blendMode: 3
-                                        },
-                                        {
                                             name: 'gamble diamond button disabled',
                                             type: 'sprite',
                                             visible: false,
                                             image: 'diamond_disabled',
-                                        }
+                                        },
+                                        {
+                                            name: 'gamble diamond button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'diamond_enable',
+                                        },
                                     ]
                                 },
                                 {
@@ -2736,18 +2730,17 @@ App.Gameplay = new Screen({
                                             image: 'club_enable'
                                         },
                                         {
-                                            name: 'gamble club button glow',
-                                            type: 'sprite',
-                                            alpha: 0,
-                                            image: 'club_enable',
-                                            blendMode: 3
-                                        },
-                                        {
                                             name: 'gamble club button disabled',
                                             type: 'sprite',
                                             visible: false,
                                             image: 'club_disabled',
-                                        }
+                                        },
+                                        {
+                                            name: 'gamble club button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'club_enable',
+                                        },
                                     ]
                                 },
                                 {
@@ -2761,18 +2754,17 @@ App.Gameplay = new Screen({
                                             image: 'spade_enable'
                                         },
                                         {
-                                            name: 'gamble spade button glow',
-                                            type: 'sprite',
-                                            alpha: 0,
-                                            image: 'spade_enable',
-                                            blendMode: 3
-                                        },
-                                        {
                                             name: 'gamble spade button disabled',
                                             type: 'sprite',
                                             visible: false,
                                             image: 'spade_disabled',
-                                        }
+                                        },
+                                        {
+                                            name: 'gamble spade button glow',
+                                            type: 'sprite',
+                                            alpha: 0,
+                                            image: 'spade_enable',
+                                        },
                                     ]
                                 }
                             ]
@@ -2851,6 +2843,24 @@ App.Gameplay = new Screen({
                                 fontWeight: 600,
                                 fill: 0xffffa4
                             }
+                        },
+                        {
+                            name: 'previousCard container',
+                            position: [50, 185],
+                            scale: 0.6,
+                            mask: 'previouscard mask',
+                            childs: [
+
+                            ]
+                        },
+                        {
+                            name: 'previouscard mask',
+                            type: 'graphics',
+                            position: [200, 185],
+                            draw: [
+                                ['beginFill', 0x000000],
+                                ['drawRect', [-350 / 2, -50 / 2, 350, 50]]
+                            ]
                         }
                     ]
                 }
@@ -3796,6 +3806,19 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'DetailsContainer',
+            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
+            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
+            childs: [
+                {
+                    name: 'details parent',
+                    position: [0, -37],
+                    childs: [
+                    ]
+                },
+            ]
+        },
+        {
             name: 'BonusContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
             scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
@@ -4444,7 +4467,7 @@ App.Gameplay = new Screen({
             this.REELS_START_TIMEOUT = 0;
             this.REELS_START_DELAY = 0;
 
-            this.SYMBOLS_SCALE = [3.3, 3.6];
+            this.SYMBOLS_SCALE = [1, 1.16];
 
             this.reels = [];
             let init_card = [
@@ -4493,6 +4516,7 @@ App.Gameplay = new Screen({
 
                     this.buildChild(this['reel ' + i], {
                         name: 'reel ' + i + ' symbol container ' + j,
+                        event: 'symbol',
                         scale: this.SYMBOLS_SCALE,
                         position: [0, this.ROWS_OFFSET * j]
                     });
@@ -4520,6 +4544,13 @@ App.Gameplay = new Screen({
                         type: 'sprite',
                         visible: false
                     });
+
+                    /*this.buildChild(this['reel ' + i + ' symbol container ' + j], {
+                        name: 'reel ' + i + ' symbol ' + j + ' details',
+                        type: 'sprite',
+                        image: 'detailBack',
+                        zOrder: 999999
+                    });*/
 
                     var card_index = 0;
                     if (j >= (this.ROWS_COUNT + 1)) {
@@ -4958,6 +4989,43 @@ App.Gameplay = new Screen({
 
         },
 
+        'Gameplay symbol over': function(container, e) {
+
+        },
+
+        'Gameplay symbol down': function(container, e) {
+            let spriteName = this[container.name].children[0].texture.textureCacheIds[0];
+            let xPositions = [-300, -70, 150, 50, 300];
+            let x = container.name.split(' ')[1];
+            let y = 0;
+            let template = this.getTextTemplate(spriteName, x < 3 ? 1: -1);
+            switch(this[container.name].y) {
+                case 920:
+                    y = -230;
+                    break;
+                case 1150:
+                    y = 0;
+                    break;
+                case 1380:
+                    y = 230;
+                    break;
+            }
+            this.buildChild(this['details parent'], {
+                name: 'detailedSymbol',
+                type: 'sprite',
+                image: 'detailBack',
+                scale: [x < 3 ? -1 : 1, 1],
+                position: [xPositions[x], y]
+            });
+            for (let i = 0 ; i < template.length; i++) {
+                this.buildChild(this['detailedSymbol'], template[i]);
+            }
+        },
+
+        'Gameplay symbol out': function(container, e) {
+            this['details parent'].removeChildren()
+        },
+
         'Gameplay button over': function (container, e) {
             this.handleButtonOver(container, e);
         },
@@ -5042,7 +5110,6 @@ App.Gameplay = new Screen({
         if (this.credits.value - this.bottombet.amount >= 0) {
             this.credits.value -= this.bottombet.amount;
             this.credits.drawed = this.credits.value;
-            console.log(this.credits.drawed)
             this.server_win_amount.value = 0;
             this.server_win_amount.drawed = 0;
             // this.animFieldPoints('credits bar', this.credits.drawed);
@@ -5466,7 +5533,7 @@ App.Gameplay = new Screen({
         let name = container.replace('container ', '');
 
         this[name + ' crisp'].texture = this.getTexture(image);
-        this[name + ' blur'].texture = this.getTexture("blur_" + image);
+        this[name + ' blur'].texture = this.getTexture(image);
 
         this[name + ' highlight'].removeChildren();
 
@@ -7087,6 +7154,273 @@ App.Gameplay = new Screen({
         }
     },
 
+    getTextTemplate: function(spriteName, sign) {
+        switch (spriteName) {
+            case 'S01BaseGame.png':
+            case 'S02BaseGame.png':
+            case 'S03BaseGame.png':
+                return this.getThreeTemplate('x5', '100', 'x4', '25', 'x3', '5', sign);
+            case 'S04BaseGame.png':
+            case 'S05BaseGame.png':
+                return this.getThreeTemplate('x5', '150', 'x4', '40', 'x3', '5', sign);
+            case 'S06BaseGame.png':
+            case 'S07BaseGame.png':
+                return this.getFourTemplate('x5', '750', 'x4', '100', 'x3', '30', 'x2', '5', sign);
+            case 'S08BaseGame.png':
+                return this.getFourTemplate('x5', '2000', 'x4', '400', 'x3', '40', 'x2', '5', sign);
+            case 'S09BaseGame.png':
+                return this.getFourTemplate('x5', '5000', 'x4', '1000', 'x3', '100', 'x2', '10', sign);
+            case 'B01ScatterBaseGame_0001.png':
+                return [{
+                    type: 'text',
+                    text: 'Three symbols \n activate the FREE \n SPIN feature.',
+                    scale: [-1 * sign, 1],
+                    position: [-30, 0],
+                    styles: {
+                        fontSize: '20px',
+                        align: 'center',
+                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                        fill: 0x4b2316,
+                        fontWeight: 700
+                    }
+                }]
+        }
+    },
+
+    getThreeTemplate: function(x1, x2, y1, y2, z1, z2, sign) {
+        return [
+            {
+                type: 'text',
+                text: x1,
+                scale: [-1 * sign, 1],
+                position: [15, -40],
+                styles: {
+                    fontSize: '35px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: x2,
+                scale: [-1 * sign, 1],
+                position: [-50, -40],
+                styles: {
+                    fontSize: '35px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+            {
+                type: 'text',
+                text: y1,
+                scale: [-1 * sign, 1],
+                position: [15, 0],
+                styles: {
+                    fontSize: '35px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: y2,
+                scale: [-1 * sign, 1],
+                position: [-50, 0],
+                styles: {
+                    fontSize: '35px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+            {
+                type: 'text',
+                text: z1,
+                scale: [-1 * sign, 1],
+                position: [15, 40],
+                styles: {
+                    fontSize: '35px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: z2,
+                scale: [-1 * sign, 1],
+                position: [-50, 40],
+                styles: {
+                    fontSize: '35px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+        ]
+    },
+
+    getFourTemplate: function(x1, x2, y1, y2, z1, z2, a1, a2, sign) {
+        return [
+            {
+                type: 'text',
+                text: x1,
+                scale: [-1 * sign, 1],
+                position: [15, -54],
+                styles: {
+                    fontSize: '30px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: x2,
+                scale: [-1 * sign, 1],
+                position: [-50, -54],
+                styles: {
+                    fontSize: '30px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+            {
+                type: 'text',
+                text: y1,
+                scale: [-1 * sign, 1],
+                position: [15, -18],
+                styles: {
+                    fontSize: '30px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: y2,
+                scale: [-1 * sign, 1],
+                position: [-50, -18],
+                styles: {
+                    fontSize: '30px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+            {
+                type: 'text',
+                text: z1,
+                scale: [-1 * sign, 1],
+                position: [15, 18],
+                styles: {
+                    fontSize: '30px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: z2,
+                scale: [-1 * sign, 1],
+                position: [-50, 18],
+                styles: {
+                    fontSize: '30px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+            {
+                type: 'text',
+                text: a1,
+                scale: [-1 * sign, 1],
+                position: [15, 54],
+                styles: {
+                    fontSize: '30px',
+                    align: 'center',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0x4b2316,
+                    dropShadow: true,
+                    dropShadowAngle: 0.5,
+                    dropShadowColor: 0xf9d657,
+                    dropShadowDistance: 1,
+                    dropShadowBlur: 5,
+                }
+            },
+            {
+                type: 'text',
+                text: a2,
+                scale: [-1 * sign, 1],
+                position: [-50, 54],
+                styles: {
+                    fontSize: '30px',
+                    align: 'left',
+                    fontFamily: 'BRITANNIC_BOLD',
+                    fill: 0xffe939,
+                    stroke: "#99670b",
+                    strokeThickness: 2,
+                    lineJoin: "bevel",
+                }
+            },
+        ]
+    },
+
     /*------------------New method definition ended------------------*/
 
     completeFreespin: function () {
@@ -7108,7 +7442,6 @@ App.Gameplay = new Screen({
     },
 
     buttonHandleStartButton: function () {
-        this.hideMenuContainer();
         if (this.credits.value < this.bet.amount)
             return;
 
@@ -7241,6 +7574,7 @@ App.Gameplay = new Screen({
     rollbackGamble: function() {
         this['gamble result card'].visible = false;
         this['gamble card animSprite'].gotoAndStop(0);
+        this.addPreviousCard();
         this.gambleStop = false;
         this.showGambleAnimiation();
     },
@@ -7251,6 +7585,18 @@ App.Gameplay = new Screen({
             this['gamble card animSprite'].gotoAndStop(0);
             this.showGambleContainer(false);
         }, 2000);
+    },
+
+    addPreviousCard: function() {
+        this.previousCards.push(this.selectedSymbol);
+        this['previousCard container'].removeChildren();
+        for (let i = this.previousCards.length - 1; i >= 0; i--) {
+            this.buildChild(this['previousCard container'], {
+                type: 'sprite',
+                image: `${this.previousCards[i]}_enable`,
+                position: [100 * (this.previousCards.length - i - 1), 0]
+            })
+        }
     },
 
     showGambleContainer: function(show = true) {
@@ -7422,6 +7768,7 @@ App.Gameplay = new Screen({
     cardSymbols: ['heart', 'diamond', 'club', 'spade'],
     selectedSymbol: '',
     selectedColor: '',
+    previousCards: [],
 
     removeCellMatrix: function (matrix, card_count, direction) {
         for (var i = 0; i < 3; i++) {
