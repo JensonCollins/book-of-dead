@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture2_level1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture4_level1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/@2x/symbols/symbols.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/@2x/symbols/symbols.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/new/skin_texture3.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +81,7 @@
       <workItem from="1583908800520" duration="14507000" />
       <workItem from="1583939280826" duration="24000000" />
       <workItem from="1583995912150" duration="10898000" />
-      <workItem from="1584026198128" duration="10623000" />
+      <workItem from="1584026198128" duration="13531000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -117,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583963369994</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Details showing">
+      <created>1584044840411</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584044840412</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,21 +131,22 @@
     <MESSAGE value="gamble is adding now" />
     <MESSAGE value="gamble container hide" />
     <MESSAGE value="static gamble completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="static gamble completed" />
+    <MESSAGE value="Details showing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Details showing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1583963368305">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584044837278">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583963368305" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1583963372440">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584044837278" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584044843367">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583963372440" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584044843367" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583956446922">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -157,10 +159,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583776128881" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584037077358">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584046930065">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584037077358" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584046930065" />
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1583517524276" />
   </component>
 </project>

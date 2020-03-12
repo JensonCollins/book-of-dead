@@ -1590,7 +1590,6 @@ App.Gameplay = new Screen({
                         {
                             name: 'help button',
                             position: [-800, 0],
-                            button: 'button',
                             type: 'sprite',
                             image: 'questionMark'
                         },
@@ -4152,7 +4151,7 @@ App.Gameplay = new Screen({
                 this.gamespec = cashinfo.response.gamespec;
                 this.gamesession_id = cashinfo.response.gamesession_id;
             }
-            show_balance(this.credits.drawed);
+            // show_balance(this.credits.drawed);
             //server end
 
             if (!this.is_local_mode) {
@@ -5014,7 +5013,7 @@ App.Gameplay = new Screen({
                 name: 'detailedSymbol',
                 type: 'sprite',
                 image: 'detailBack',
-                scale: [x < 3 ? -1 : 1, 1],
+                scale: [x < 3 ? -1.1 : 1.1, 1.1],
                 position: [xPositions[x], y]
             });
             for (let i = 0 ; i < template.length; i++) {
@@ -5496,8 +5495,8 @@ App.Gameplay = new Screen({
 
         if (this.spinCombination) {
             if(this.auto_mode) {
-                this.showWinAnimation();
                 this.state = 'ready';
+                this.showWinAnimation();
             } else {
                 this.state = 'ready';
                 this.showCollectAnimation();
@@ -6034,7 +6033,7 @@ App.Gameplay = new Screen({
                             if ((callback) && (this.state === 'ready')) callback.call(this);
                         }
                     }
-                    show_win(win);
+                    // show_win(win);
                 });
 
             }, lineNum * 2700);
