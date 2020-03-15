@@ -634,7 +634,6 @@ Settings = {
         // atlas loading
         "logo_texture0": {"type": "atlas", "url": "assets/sprites/logo_texture0.json"},
         "feature_preview": {"type": "atlas", "url": "assets/sprites/feature_preview_texture0.json"},
-        "skin_texture1": {"type": "atlas", "url": "assets/sprites/new/skin_texture1.json"},
         "menu_texture0": {"type": "atlas", "url": "assets/sprites/new/menu_texture0.json"},
         "menu_texture1": {"type": "atlas", "url": "assets/sprites/new/menu_texture1.json"},
         "statusbar_texture": {"type": "atlas", "url": "assets/sprites/new/statusbar_texture0.json"},
@@ -653,6 +652,8 @@ Settings = {
         "buttons_hq": {"type": "atlas", "url": "assets/sprites/@2x/buttons_hq.json"},
         "orient_switch": {"type": "atlas", "url": "assets/images/orient_switch.jpg"},
         // "menuStyle": {"type": "atlas", "url": "App/Libs/gown/theme/metalworks_desktop.json"},
+        "skin_texture0": {"type": "atlas", "url": "assets/sprites/new/skin_texture0.json"},
+        "skin_texture1": {"type": "atlas", "url": "assets/sprites/new/skin_texture1.json"},
         "skin_texture2": {"type": "atlas", "url": "assets/sprites/new/skin_texture2.json"},
         "skin_texture3": {"type": "atlas", "url": "assets/sprites/new/skin_texture3.json"},
         "skin_texture4": {"type": "atlas", "url": "assets/sprites/new/skin_texture4.json"},

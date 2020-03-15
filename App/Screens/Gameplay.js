@@ -52,6 +52,10 @@ App.Gameplay = new Screen({
                                 {
                                     name: 'game board symbols highlighted container',
                                     childs: []
+                                },
+                                {
+                                    name: 'game board border container',
+                                    childs: []
                                 }
                             ]
                         },
@@ -301,11 +305,6 @@ App.Gameplay = new Screen({
                             ]
                         }
                     ]
-                },
-                {
-                    name: 'test',
-                    type: 'gown_check',
-                    selected: true
                 }
             ]
         },
@@ -321,6 +320,7 @@ App.Gameplay = new Screen({
                     position: [0, -50],
                     scale: 1.2,
                     image: 'paytableBack',
+                    button: 'disabled button',
                     childs: [
                         {
                             name: 'helpContainer 1',
@@ -372,7 +372,7 @@ App.Gameplay = new Screen({
                                             type: 'sprite',
                                             image: 'B01ScatterBaseGame_0001.png',
                                             position: [-40, 20],
-                                            scale: 1.3
+                                            scale: 0.4
                                         },
                                         {
                                             type: 'text',
@@ -678,965 +678,6 @@ App.Gameplay = new Screen({
                                         }
                                     ]
                                 }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: 'ControlBottomContainer',
-            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
-            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
-            visible: true,
-            childs: [
-                {
-                    name: 'ControlParent',
-                    position: [0, 450],
-                    scale: [1, 1.2],
-                    childs: [
-                        {
-                            name: 'mainPanel',
-                            type: 'sprite',
-                            position: [-85, -65],
-                            scale: [1.2, 1],
-                            image: 'mainPanelBg',
-                            childs: [
-                                {
-                                    name: 'coins text',
-                                    type: 'text',
-                                    position: [-400, -10],
-                                    text: 'COINS: 1000000',
-                                    styles: {
-                                        fontSize: '25px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: 0xfff59f,
-                                    }
-                                },
-                                {
-                                    name: 'win bar',
-                                    visible: false,
-                                    position: [20, 0],
-                                    childs: [
-                                        {
-                                            name: 'win bar text',
-                                            type: 'text',
-                                            text: 'WIN:',
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '35px',
-                                                fontFamily: 'Oswald-Bold',
-                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#000000",
-                                                strokeThickness: 2,
-                                                lineJoin: "bevel",
-                                            },
-                                            position: [-120, 0]
-                                        },
-                                        {
-                                            name: 'wincoins bar text',
-                                            type: 'text',
-                                            text: '200',
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '40px',
-                                                fontFamily: 'Oswald-Bold',
-                                                fill: [0xf6be19, 0xffffff, 0xf6be19],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#361b06",
-                                                strokeThickness: 2,
-                                                lineJoin: "bevel",
-                                            }
-                                        },
-                                        {
-                                            name: 'coinslabel bar text',
-                                            type: 'text',
-                                            text: 'COINS',
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '35px',
-                                                fontFamily: 'Oswald-Bold',
-                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#000000",
-                                                strokeThickness: 2,
-                                                lineJoin: "bevel",
-                                            },
-                                            position: [150, 0]
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'Won text',
-                                    visible: false,
-                                    position: [20, 0],
-                                    childs: [
-                                        {
-                                            name: 'wonBig text',
-                                            type: 'text',
-                                            text: 'WIN: 5 COINS',
-                                            position: [0, -10],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '24px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        },
-                                        {
-                                            name: 'wonSmall text',
-                                            type: 'text',
-                                            text: 'Won 5 coins on line 7',
-                                            position: [0, 10],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '18px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'statusvalue text',
-                                    type: 'text',
-                                    text: 'Good luck',
-                                    position: [20, 0],
-                                    visible: false,
-                                    styles: {
-                                        align: 'center',
-                                        fontSize: '34px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: 0xfff59f,
-                                    }
-                                },
-                                {
-                                    name: 'betvalue text',
-                                    type: 'text',
-                                    position: [420, -10],
-                                    text: 'BET: 10',
-                                    styles: {
-                                        fontSize: '25px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: 0xfff59f,
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'paytable button bar',
-                            position: [625, -70],
-                            scale: [1.2, 1],
-                            type: 'sprite',
-                            childs: [
-                                {
-                                    name: 'paytable button',
-                                    type: 'sprite',
-                                    image: 'paytableBg',
-                                    button: 'button',
-                                },
-                                {
-                                    name: 'paytable button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                    blendMode: 3
-                                },
-                                {
-                                    name: 'paytable button disabled',
-                                    type: 'graphics',
-                                    alpha: 0.5,
-                                    position: [-1, 0],
-                                    button: 'disabled button',
-                                    visible: false,
-                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
-                                },
-                                {
-                                    name: 'paytable button text',
-                                    type: 'text',
-                                    text: 'PAYTABLE',
-                                    position: [0, -3],
-                                    styles: {
-                                        fontSize: '25px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'autoplay button bar',
-                            position: [625, 0],
-                            scale: [1.2, 1],
-                            type: 'sprite',
-                            childs: [
-                                {
-                                    name: 'autoplay button',
-                                    type: 'sprite',
-                                    image: 'paytableBg',
-                                    button: 'button',
-                                },
-                                {
-                                    name: 'autoplay button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                    blendMode: 3
-                                },
-                                {
-                                    name: 'autoplay button disabled',
-                                    type: 'graphics',
-                                    alpha: 0.5,
-                                    position: [-1, 0],
-                                    button: 'disabled button',
-                                    visible: false,
-                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
-                                },
-                                {
-                                    name: 'autoplay button text',
-                                    type: 'text',
-                                    text: 'AUTO PLAY',
-                                    position: [0, -3],
-                                    styles: {
-                                        fontSize: '24px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'collect button bar',
-                            position: [625, 0],
-                            scale: [1.2, 1],
-                            visible: false,
-                            type: 'sprite',
-                            childs: [
-                                {
-                                    name: 'collect button',
-                                    type: 'sprite',
-                                    image: 'paytableBg',
-                                    button: 'button',
-                                },
-                                {
-                                    name: 'collect button disabled',
-                                    type: 'graphics',
-                                    alpha: 0.5,
-                                    position: [-1, 0],
-                                    visible: false,
-                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
-                                },
-                                {
-                                    name: 'collect button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                },
-                                {
-                                    name: 'collect button text',
-                                    type: 'text',
-                                    text: 'COLLECT',
-                                    position: [0, -3],
-                                    styles: {
-                                        fontSize: '24px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'autostart button bar',
-                            position: [422, -10],
-                            visible: false,
-                            scale: [1.2, 1],
-                            childs: [
-                                {
-                                    name: 'autostart button',
-                                    control: 'slider',
-                                    type: 'sprite',
-                                    image: 'autoButtonBg',
-                                    button: 'button',
-                                    position: [0, 0]
-                                },
-                                {
-                                    name: 'autostart button glow',
-                                    type: 'sprite',
-                                    image: 'autoButtonBg',
-                                    blendMode: 3,
-                                    alpha: 0
-                                },
-                                {
-                                    name: 'autostart button disabled',
-                                    type: 'sprite',
-                                    button: 'disabled button',
-                                    image: 'autoButtonBg',
-                                    alpha: 0,
-                                    visible: false,
-                                },
-                                {
-                                    name: 'autostart button text',
-                                    type: 'text',
-                                    text: 'AUTO PLAY',
-                                    position: [0, -20],
-                                    styles: {
-                                        fontSize: '20px',
-                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                        fontWeight: 'Bold',
-                                        fill: 0xfff59f,
-                                        stroke: "#000000",
-                                        strokeThickness: 1,
-                                    }
-                                },
-                                {
-                                    name: 'autoValue text',
-                                    type: 'text',
-                                    text: '50',
-                                    position: [0, 13],
-                                    styles: {
-                                        fontSize: '40px',
-                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                        fontWeight: 'Bold',
-                                        fill: 0xfff59f,
-                                        stroke: "#000000",
-                                        strokeThickness: 1,
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'start button bar',
-                            position: [422, -10],
-                            scale: [1.2, 1],
-                            childs: [
-                                {
-                                    name: 'start button',
-                                    control: 'slider',
-                                    type: 'sprite',
-                                    image: 'spinButtonBg',
-                                    button: 'button',
-                                    position: [0, 0]
-                                },
-                                {
-                                    name: 'start button glow',
-                                    type: 'sprite',
-                                    image: 'spinButtonBg',
-                                    blendMode: 3,
-                                    alpha: 0
-                                },
-                                {
-                                    name: 'start button disabled',
-                                    type: 'sprite',
-                                    button: 'disabled button',
-                                    image: 'spinButtonBg',
-                                    alpha: 0,
-                                    visible: false,
-                                },
-                                {
-                                    name: 'start button text',
-                                    type: 'text',
-                                    text: 'SPIN',
-                                    styles: {
-                                        fontSize: '45px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0xddbd77, 0xe5d8b4, 0xca9d45],
-                                        stroke: "#000000",
-                                        strokeThickness: 1,
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'maxBet button bar',
-                            position: [210, 0],
-                            scale: [1.2, 1],
-                            type: 'sprite',
-                            childs: [
-                                {
-                                    name: 'maxBet button',
-                                    type: 'sprite',
-                                    image: 'paytableBg',
-                                    button: 'button',
-                                },
-                                {
-                                    name: 'maxBet button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                    blendMode: 3,
-                                },
-                                {
-                                    name: 'maxBet button disabled',
-                                    type: 'graphics',
-                                    alpha: 0.5,
-                                    position: [-1, 0],
-                                    visible: false,
-                                    button: 'disabled button',
-                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
-                                },
-                                {
-                                    name: 'maxBet button text',
-                                    type: 'text',
-                                    text: 'BET MAX',
-                                    position: [0, -3],
-                                    styles: {
-                                        fontSize: '25px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'gamble button bar',
-                            position: [210, 0],
-                            scale: [1.2, 1],
-                            visible: false,
-                            childs: [
-                                {
-                                    name: 'gamble button',
-                                    type: 'sprite',
-                                    image: 'paytableBg',
-                                    button: 'button',
-                                },
-                                {
-                                    name: 'gamble button disabled',
-                                    type: 'graphics',
-                                    alpha: 0.5,
-                                    position: [-1, 0],
-                                    visible: false,
-                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
-                                },
-                                {
-                                    name: 'gamble button glow',
-                                    type: 'sprite',
-                                    alpha: 0,
-                                    image: 'paytableBg',
-                                },
-                                {
-                                    name: 'gamble button text',
-                                    type: 'text',
-                                    text: 'GAMBLE',
-                                    position: [0, -3],
-                                    styles: {
-                                        fontSize: '25px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            name: 'lines bar',
-                            scale: [1.2, 1],
-                            position: [-25, 0],
-                            childs: [
-                                {
-                                    name: 'linesUp button bar',
-                                    position: [75, 0],
-                                    childs: [
-                                        {
-                                            name: 'linesUp button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'plusBg',
-                                        },
-                                        {
-                                            name: 'linesUp button glow',
-                                            type: 'sprite',
-                                            image: 'plusBg',
-                                            blendMode: 3,
-                                            alpha: 0,
-                                        },
-                                        {
-                                            name: 'linesUp button disabled',
-                                            type: 'graphics',
-                                            rotation: -Math.PI / 2,
-                                            position: [-22, 29],
-                                            alpha: 0.5,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [58, 0]],
-                                                ['lineTo', [29, 45]],
-                                                ['lineTo', [0, 0]],
-                                                ['lineTo', [29, 0]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'lines text',
-                                    childs: [
-                                        {
-                                            name: 'lines back',
-                                            type: 'sprite',
-                                            image: 'smPanelBg'
-                                        },
-                                        {
-                                            name: 'lineslabel text',
-                                            type: 'text',
-                                            text: 'LINES',
-                                            position: [0, -12],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '20px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        },
-                                        {
-                                            name: 'linesvalue text',
-                                            type: 'text',
-                                            text: '10',
-                                            position: [0, 9],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '26px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'linesDown button bar',
-                                    position: [-75, 0],
-                                    childs: [
-                                        {
-                                            name: 'linesDown button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'minusBg',
-                                        },
-                                        {
-                                            name: 'linesDown button glow',
-                                            type: 'sprite',
-                                            image: 'minusBg',
-                                            blendMode: 3,
-                                            alpha: 0,
-                                        },
-                                        {
-                                            name: 'linesDown button disabled',
-                                            type: 'graphics',
-                                            alpha: 0.5,
-                                            visible: false,
-                                            position: [21, -29],
-                                            button: 'disabled button',
-                                            rotation: Math.PI / 2,
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [58, 0]],
-                                                ['lineTo', [29, 45]],
-                                                ['lineTo', [0, 0]],
-                                                ['lineTo', [29, 0]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            name: 'coins bar',
-                            scale: [1.2, 1],
-                            position: [-300, 0],
-                            childs: [
-                                {
-                                    name: 'coinsUp button bar',
-                                    position: [75, 0],
-                                    childs: [
-                                        {
-                                            name: 'coinsUp button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'plusBg',
-                                        },
-                                        {
-                                            name: 'coinsUp button glow',
-                                            type: 'sprite',
-                                            image: 'plusBg',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'coinsUp button disabled',
-                                            type: 'graphics',
-                                            rotation: -Math.PI / 2,
-                                            position: [-22, 29],
-                                            alpha: 0.5,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [58, 0]],
-                                                ['lineTo', [29, 45]],
-                                                ['lineTo', [0, 0]],
-                                                ['lineTo', [29, 0]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'coins label text',
-                                    childs: [
-                                        {
-                                            name: 'coins back',
-                                            type: 'sprite',
-                                            image: 'smPanelBg'
-                                        },
-                                        {
-                                            name: 'coinslabel text',
-                                            type: 'text',
-                                            text: 'COINS',
-                                            position: [0, -12],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '20px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        },
-                                        {
-                                            name: 'coinsvalue text',
-                                            type: 'text',
-                                            text: '5',
-                                            position: [0, 9],
-                                            styles: {
-                                                align: 'center',
-                                                fontSize: '26px',
-                                                fontFamily: 'Oswald',
-                                                fontWeight: 'Bold',
-                                                fill: 0xfff59f,
-                                            }
-                                        }
-
-                                    ]
-                                },
-                                {
-                                    name: 'coinsDown button bar',
-                                    position: [-75, 0],
-                                    childs: [
-                                        {
-                                            name: 'coinsDown button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'minusBg',
-                                        },
-                                        {
-                                            name: 'coinsDown button glow',
-                                            type: 'sprite',
-                                            image: 'minusBg',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'coinsDown button disabled',
-                                            type: 'graphics',
-                                            alpha: 0.5,
-                                            position: [21, -29],
-                                            visible: false,
-                                            button: 'disabled button',
-                                            rotation: Math.PI / 2,
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [58, 0]],
-                                                ['lineTo', [29, 45]],
-                                                ['lineTo', [0, 0]],
-                                                ['lineTo', [29, 0]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            name: 'coinvalue button',
-                            scale: [1.2, 1],
-                            position: [-565, -5],
-                            button: 'button',
-                            childs: [
-                                {
-                                    name: 'coinvalue back',
-                                    type: 'sprite',
-                                    image: 'coinValueBg'
-                                },
-                                {
-                                    name: 'coinvalue label',
-                                    position: [0, -20],
-                                    type: 'text',
-                                    text: 'COIN VALUE',
-                                    styles: {
-                                        fontSize: '20px',
-                                        fontFamily: 'Oswald',
-                                        fill: [0x332610, 0x6c4b17, 0x332610],
-                                    }
-                                },
-                                {
-                                    name: 'coinvalue text',
-                                    position: [0, 12],
-                                    type: 'text',
-                                    text: '0.10',
-                                    styles: {
-                                        fontSize: '35px',
-                                        fontFamily: 'Oswald',
-                                        fontWeight: 'Bold',
-                                        fill: 0x5a1600,
-                                    }
-                                },
-                                {
-                                    name: 'coinvalue button glow'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'congratulation bar',
-                            position: [0, 400],
-                            visible: false,
-                            childs: [
-                                {
-                                    name: 'congratulationprefix bar text',
-                                    type: 'text',
-                                    text: 'WIN:',
-                                    styles: {
-                                        align: 'center',
-                                        fontSize: '40px',
-                                        fontFamily: 'Oswald-Bold',
-                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                        dropShadow: true,
-                                        dropShadowAngle: 0.5,
-                                        dropShadowColor: 0x000000,
-                                        dropShadowDistance: 1,
-                                        dropShadowBlur: 5,
-                                        stroke: "#000000",
-                                        strokeThickness: 2,
-                                        lineJoin: "bevel",
-                                    },
-                                    position: [-100, 0]
-                                },
-                                {
-                                    name: 'congratulationcoins bar text',
-                                    type: 'text',
-                                    text: '200',
-                                    styles: {
-                                        align: 'center',
-                                        fontSize: '40px',
-                                        fontFamily: 'Oswald-Bold',
-                                        fill: [0xf6be19],
-                                        dropShadow: true,
-                                        dropShadowAngle: 0.5,
-                                        dropShadowColor: 0x000000,
-                                        dropShadowDistance: 1,
-                                        dropShadowBlur: 5,
-                                        stroke: "#361b06",
-                                        strokeThickness: 2,
-                                        lineJoin: "bevel",
-                                    },
-                                    position: [-10, 0]
-                                },
-                                {
-                                    name: 'congratulationsuffix bar text',
-                                    type: 'text',
-                                    text: 'COINS',
-                                    styles: {
-                                        align: 'center',
-                                        fontSize: '40px',
-                                        fontFamily: 'Oswald-Bold',
-                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                        dropShadow: true,
-                                        dropShadowAngle: 0.5,
-                                        dropShadowColor: 0x000000,
-                                        dropShadowDistance: 1,
-                                        dropShadowBlur: 5,
-                                        stroke: "#000000",
-                                        strokeThickness: 2,
-                                        lineJoin: "bevel",
-                                    },
-                                    position: [90, 0]
-                                },
-                                {
-                                    name: 'congratulationcontent bar text',
-                                    type: 'text',
-                                    text: 'Congratulations!',
-                                    styles: {
-                                        align: 'center',
-                                        fontSize: '30px',
-                                        fontFamily: 'Oswald-Bold',
-                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                        dropShadow: true,
-                                        dropShadowAngle: 0.5,
-                                        dropShadowColor: 0x000000,
-                                        dropShadowDistance: 1,
-                                        dropShadowBlur: 5,
-                                        stroke: "#000000",
-                                        strokeThickness: 2,
-                                        lineJoin: "bevel",
-                                    },
-                                    position: [0, 40]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    name: 'ControlBottom',
-                    type: 'graphics',
-                    position: [0, 520],
-                    draw: [['beginFill', 0x131313], ['drawRect', [-1920 / 2, -40 / 2, 1920, 40]]],
-                    childs: [
-                        {
-                            name: 'bottomBet text',
-                            type: 'text',
-                            text: 'Bet: 1.00',
-                            styles: {
-                                fill: "#ffffff"
-                            }
-                        },
-                        {
-                            name: 'bottomWin text',
-                            type: 'text',
-                            text: 'Win: ',
-                            position: [300, 0],
-                            styles: {
-                                fill: "#ffffff"
-                            }
-                        },
-                        {
-                            name: 'bottomBalance text',
-                            type: 'text',
-                            text: 'Balance: 100000',
-                            position: [-300, 0],
-                            styles: {
-                                fill: "#ffffff"
-                            }
-                        },
-                        {
-                            name: 'setting button bar',
-                            position: [-920, 0],
-                            childs: [
-                                {
-                                    name: 'setting button',
-                                    type: 'sprite',
-                                    button: 'button',
-                                    image: 'bottomMenu',
-                                    childs: [
-                                        {
-                                            name: 'setting button glow'
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            name: 'sound button',
-                            position: [-880, 0],
-                            button: 'button',
-                            type: 'sprite',
-                            image: 'soundModeEnabled',
-                            childs: [
-                                {
-                                    name: 'sound button glow',
-                                },
-                                {
-                                    name: 'sound button disabled'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'speed button',
-                            position: [-840, 0],
-                            button: 'button',
-                            type: 'sprite',
-                            image: 'speedModeDisabled',
-                            childs: [
-                                {
-                                    name: 'speed button glow'
-                                }
-                            ]
-                        },
-                        {
-                            name: 'help button',
-                            position: [-800, 0],
-                            type: 'sprite',
-                            image: 'questionMark'
-                        },
-                        {
-                            name: 'clock sprite',
-                            type: 'sprite',
-                            image: 'bottomClock',
-                            position: [850, 0]
-                        },
-                        {
-                            name: 'timer',
-                            position: [900, 0],
-                            childs: [
-                                {
-                                    name: 'timer hour',
-                                    position: [-20, 0],
-                                    type: 'text',
-                                    text: '05',
-                                    styles: {
-                                        fontFamily: 'Arial',
-                                        fontSize: '20px',
-                                        fill: 0xffffff,
-                                    },
-                                },
-                                {
-                                    name: 'timer symbol',
-                                    position: [0, -2],
-                                    type: 'text',
-                                    text: ':',
-                                    visible: true,
-                                    styles: {
-                                        fontFamily: 'Arial',
-                                        fontSize: '20px',
-                                        fill: 0xffffff,
-                                    },
-                                },
-                                {
-                                    name: 'timer minute',
-                                    position: [20, 0],
-                                    type: 'text',
-                                    text: '05',
-                                    styles: {
-                                        fontFamily: 'Arial',
-                                        fontSize: '20px',
-                                        fill: 0xffffff,
-                                    },
-                                },
                             ]
                         }
                     ]
@@ -2866,11 +1907,32 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'OverlayContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            childs: [
+                {
+                    name: 'overlay',
+                    alpha: 0.5,
+                    childs: [
+                        {
+                            name: 'overlay rect',
+                            event: 'overlay',
+                            type: 'graphics',
+                            draw: [['beginFill', 0x000000], ['drawRect', [-1200 / 2, -900 / 2, 1200, 900]]]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'LogoContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
             scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
             childs: [
                 {
+                    name: 'normal logo',
                     position: [0, -475],
                     scale: 1.2,
                     childs: [
@@ -2893,6 +1955,35 @@ App.Gameplay = new Screen({
                         },
                     ]
                 },
+                {
+                    name: 'freespin logo',
+                    position: [0, -475],
+                    scale: 1.2,
+                    visible: false,
+                    childs: [
+                        {
+                            name: 'freespin back',
+                            type: 'sprite',
+                            image: 'freeLogoBack'
+                        },
+                        {
+                            name: 'freespin selected symbol',
+                            type: 'sprite',
+                            image: 'small_S07BaseGame.png',
+                            position: [-250, 0]
+                        },
+                        {
+                            name: 'freespin count text',
+                            type: 'text',
+                            text: 'Free spin 2 of 10',
+                            styles: {
+                                fontFamily: 'FLANKER_GRIFFO',
+                                fontSize: '45px',
+                                fill: 0xffffac
+                            }
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -3438,6 +2529,1072 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'FreespinContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            childs: [
+                {
+                    name: 'freespin showing container',
+                    event: 'disabled button',
+                    childs: [
+                        {
+                            name: 'freespin Small Book anim',
+                            type: 'movie-clip',
+                            visible: false,
+                            frames: [
+                                'bookBack0',
+                                'bookBack1',
+                                'bookBack2',
+                                'bookBack3',
+                                'bookBack4',
+                                'bookBack5',
+                                'bookBack6',
+                                'bookBack7',
+                                'bookBack8',
+                                'bookBack9',
+                                'bookBack10',
+                                'bookBack11',
+                                'bookBack12',
+                                'bookBack13',
+                                'bookBack14',
+                            ],
+                            speed: 0.2,
+                            loop: false
+                        },
+                        {
+                            name: 'freespin bigBookBack',
+                            type: 'sprite',
+                            image: 'bigBookBack',
+                            scale: [0.65, 0.85],
+                            visible: false,
+                            childs: [
+                                {
+                                    name: 'freespin bird container',
+                                    visible: false,
+                                    childs: [
+                                        {
+                                            type: 'sprite',
+                                            image: 'yellowBird',
+                                            position: [-250, -320]
+                                        },
+                                        {
+                                            type: 'sprite',
+                                            image: 'yellowBird',
+                                            position: [-250, 150]
+                                        },
+                                        {
+                                            type: 'sprite',
+                                            image: 'yellowBird',
+                                            scale: [-1, 1],
+                                            position: [250, -320]
+                                        },
+                                        {
+                                            type: 'sprite',
+                                            image: 'yellowBird',
+                                            scale: [-1, 1],
+                                            position: [250, 150]
+                                        },
+                                    ]
+                                },
+                                {
+                                    name: 'freespin random symbol',
+                                    type: 'sprite',
+                                    image: 'S07BaseGame.png',
+                                    visible: false,
+                                    position: [-250, -70],
+                                },
+                                {
+                                    name: 'freespin congrat text',
+                                    type: 'text',
+                                    text: 'CONGRATULATIONS!',
+                                    position: [250, -220],
+                                    visible: false,
+                                    styles: {
+                                        fontFamily: 'FLANKER_GRIFFO',
+                                        fontSize: '32px',
+                                        fill: 0x5a1600
+                                    }
+                                },
+                                {
+                                    name: 'freespin result text',
+                                    type: 'text',
+                                    text: 'You won 10\n Free Spins',
+                                    position: [250, -70],
+                                    visible: false,
+                                    styles: {
+                                        fontSize: '60px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 600,
+                                        fill:0x5a1600
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+            ]
+        },
+        {
+            name: 'ControlBottomContainer',
+            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
+            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
+            visible: true,
+            childs: [
+                {
+                    name: 'ControlParent',
+                    position: [0, 450],
+                    scale: [1, 1.2],
+                    childs: [
+                        {
+                            name: 'mainPanel',
+                            type: 'sprite',
+                            position: [-85, -65],
+                            scale: [1.2, 1],
+                            image: 'mainPanelBg',
+                            childs: [
+                                {
+                                    name: 'coins text',
+                                    type: 'text',
+                                    position: [-400, -10],
+                                    text: 'COINS: 1000000',
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                    }
+                                },
+                                {
+                                    name: 'win bar',
+                                    visible: false,
+                                    position: [20, 0],
+                                    childs: [
+                                        {
+                                            name: 'win bar text',
+                                            type: 'text',
+                                            text: 'WIN:',
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '35px',
+                                                fontFamily: 'Oswald-Bold',
+                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
+                                                dropShadow: true,
+                                                dropShadowAngle: 0.5,
+                                                dropShadowColor: 0x000000,
+                                                dropShadowDistance: 1,
+                                                dropShadowBlur: 5,
+                                                stroke: "#000000",
+                                                strokeThickness: 2,
+                                                lineJoin: "bevel",
+                                            },
+                                            position: [-120, 0]
+                                        },
+                                        {
+                                            name: 'wincoins bar text',
+                                            type: 'text',
+                                            text: '200',
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '40px',
+                                                fontFamily: 'Oswald-Bold',
+                                                fill: [0xf6be19, 0xffffff, 0xf6be19],
+                                                dropShadow: true,
+                                                dropShadowAngle: 0.5,
+                                                dropShadowColor: 0x000000,
+                                                dropShadowDistance: 1,
+                                                dropShadowBlur: 5,
+                                                stroke: "#361b06",
+                                                strokeThickness: 2,
+                                                lineJoin: "bevel",
+                                            }
+                                        },
+                                        {
+                                            name: 'coinslabel bar text',
+                                            type: 'text',
+                                            text: 'COINS',
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '35px',
+                                                fontFamily: 'Oswald-Bold',
+                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
+                                                dropShadow: true,
+                                                dropShadowAngle: 0.5,
+                                                dropShadowColor: 0x000000,
+                                                dropShadowDistance: 1,
+                                                dropShadowBlur: 5,
+                                                stroke: "#000000",
+                                                strokeThickness: 2,
+                                                lineJoin: "bevel",
+                                            },
+                                            position: [150, 0]
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'Won text',
+                                    visible: false,
+                                    position: [20, 0],
+                                    childs: [
+                                        {
+                                            name: 'wonBig text',
+                                            type: 'text',
+                                            text: 'WIN: 5 COINS',
+                                            position: [0, -10],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '24px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        },
+                                        {
+                                            name: 'wonSmall text',
+                                            type: 'text',
+                                            text: 'Won 5 coins on line 7',
+                                            position: [0, 10],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '18px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'statusvalue text',
+                                    type: 'text',
+                                    text: 'Good luck',
+                                    position: [20, 0],
+                                    visible: false,
+                                    styles: {
+                                        align: 'center',
+                                        fontSize: '34px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                    }
+                                },
+                                {
+                                    name: 'betvalue text',
+                                    type: 'text',
+                                    position: [420, -10],
+                                    text: 'BET: 10',
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'paytable button bar',
+                            position: [625, -70],
+                            scale: [1.2, 1],
+                            type: 'sprite',
+                            childs: [
+                                {
+                                    name: 'paytable button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'paytable button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                    blendMode: 3
+                                },
+                                {
+                                    name: 'paytable button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    button: 'disabled button',
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'paytable button text',
+                                    type: 'text',
+                                    text: 'PAYTABLE',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'autoplay button bar',
+                            position: [625, 0],
+                            scale: [1.2, 1],
+                            type: 'sprite',
+                            childs: [
+                                {
+                                    name: 'autoplay button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'autoplay button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                    blendMode: 3
+                                },
+                                {
+                                    name: 'autoplay button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    button: 'disabled button',
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'autoplay button text',
+                                    type: 'text',
+                                    text: 'AUTO PLAY',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '24px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'collect button bar',
+                            position: [625, 0],
+                            scale: [1.2, 1],
+                            visible: false,
+                            type: 'sprite',
+                            childs: [
+                                {
+                                    name: 'collect button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'collect button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'collect button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                },
+                                {
+                                    name: 'collect button text',
+                                    type: 'text',
+                                    text: 'COLLECT',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '24px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'autostart button bar',
+                            position: [422, -10],
+                            visible: false,
+                            scale: [1.2, 1],
+                            childs: [
+                                {
+                                    name: 'autostart button',
+                                    control: 'slider',
+                                    type: 'sprite',
+                                    image: 'autoButtonBg',
+                                    button: 'button',
+                                    position: [0, 0]
+                                },
+                                {
+                                    name: 'autostart button glow',
+                                    type: 'sprite',
+                                    image: 'autoButtonBg',
+                                    blendMode: 3,
+                                    alpha: 0
+                                },
+                                {
+                                    name: 'autostart button disabled',
+                                    type: 'sprite',
+                                    button: 'disabled button',
+                                    image: 'autoButtonBg',
+                                    alpha: 0,
+                                    visible: false,
+                                },
+                                {
+                                    name: 'autostart button text',
+                                    type: 'text',
+                                    text: 'AUTO PLAY',
+                                    position: [0, -20],
+                                    styles: {
+                                        fontSize: '20px',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                        stroke: "#000000",
+                                        strokeThickness: 1,
+                                    }
+                                },
+                                {
+                                    name: 'autoValue text',
+                                    type: 'text',
+                                    text: '50',
+                                    position: [0, 13],
+                                    styles: {
+                                        fontSize: '40px',
+                                        fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                        fontWeight: 'Bold',
+                                        fill: 0xfff59f,
+                                        stroke: "#000000",
+                                        strokeThickness: 1,
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'start button bar',
+                            position: [422, -10],
+                            scale: [1.2, 1],
+                            childs: [
+                                {
+                                    name: 'start button',
+                                    control: 'slider',
+                                    type: 'sprite',
+                                    image: 'spinButtonBg',
+                                    button: 'button',
+                                    position: [0, 0]
+                                },
+                                {
+                                    name: 'start button glow',
+                                    type: 'sprite',
+                                    image: 'spinButtonBg',
+                                    blendMode: 3,
+                                    alpha: 0
+                                },
+                                {
+                                    name: 'start button disabled',
+                                    type: 'sprite',
+                                    button: 'disabled button',
+                                    image: 'spinButtonBg',
+                                    alpha: 0,
+                                    visible: false,
+                                },
+                                {
+                                    name: 'start button text',
+                                    type: 'text',
+                                    text: 'SPIN',
+                                    styles: {
+                                        fontSize: '45px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0xddbd77, 0xe5d8b4, 0xca9d45],
+                                        stroke: "#000000",
+                                        strokeThickness: 1,
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'maxBet button bar',
+                            position: [210, 0],
+                            scale: [1.2, 1],
+                            type: 'sprite',
+                            childs: [
+                                {
+                                    name: 'maxBet button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'maxBet button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                    blendMode: 3,
+                                },
+                                {
+                                    name: 'maxBet button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    visible: false,
+                                    button: 'disabled button',
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'maxBet button text',
+                                    type: 'text',
+                                    text: 'BET MAX',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'gamble button bar',
+                            position: [210, 0],
+                            scale: [1.2, 1],
+                            visible: false,
+                            childs: [
+                                {
+                                    name: 'gamble button',
+                                    type: 'sprite',
+                                    image: 'paytableBg',
+                                    button: 'button',
+                                },
+                                {
+                                    name: 'gamble button disabled',
+                                    type: 'graphics',
+                                    alpha: 0.5,
+                                    position: [-1, 0],
+                                    visible: false,
+                                    draw: [['beginFill', 0x000000], ['drawRoundedRect', [-144 / 2, -58 / 2, 144, 58, 1]]],
+                                },
+                                {
+                                    name: 'gamble button glow',
+                                    type: 'sprite',
+                                    alpha: 0,
+                                    image: 'paytableBg',
+                                },
+                                {
+                                    name: 'gamble button text',
+                                    type: 'text',
+                                    text: 'GAMBLE',
+                                    position: [0, -3],
+                                    styles: {
+                                        fontSize: '25px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            name: 'lines bar',
+                            scale: [1.2, 1],
+                            position: [-25, 0],
+                            childs: [
+                                {
+                                    name: 'linesUp button bar',
+                                    position: [75, 0],
+                                    childs: [
+                                        {
+                                            name: 'linesUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'plusBg',
+                                        },
+                                        {
+                                            name: 'linesUp button glow',
+                                            type: 'sprite',
+                                            image: 'plusBg',
+                                            blendMode: 3,
+                                            alpha: 0,
+                                        },
+                                        {
+                                            name: 'linesUp button disabled',
+                                            type: 'graphics',
+                                            rotation: -Math.PI / 2,
+                                            position: [-22, 29],
+                                            alpha: 0.5,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [58, 0]],
+                                                ['lineTo', [29, 45]],
+                                                ['lineTo', [0, 0]],
+                                                ['lineTo', [29, 0]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'lines text',
+                                    childs: [
+                                        {
+                                            name: 'lines back',
+                                            type: 'sprite',
+                                            image: 'smPanelBg'
+                                        },
+                                        {
+                                            name: 'lineslabel text',
+                                            type: 'text',
+                                            text: 'LINES',
+                                            position: [0, -12],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '20px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        },
+                                        {
+                                            name: 'linesvalue text',
+                                            type: 'text',
+                                            text: '10',
+                                            position: [0, 9],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '26px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'linesDown button bar',
+                                    position: [-75, 0],
+                                    childs: [
+                                        {
+                                            name: 'linesDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'minusBg',
+                                        },
+                                        {
+                                            name: 'linesDown button glow',
+                                            type: 'sprite',
+                                            image: 'minusBg',
+                                            blendMode: 3,
+                                            alpha: 0,
+                                        },
+                                        {
+                                            name: 'linesDown button disabled',
+                                            type: 'graphics',
+                                            alpha: 0.5,
+                                            visible: false,
+                                            position: [21, -29],
+                                            button: 'disabled button',
+                                            rotation: Math.PI / 2,
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [58, 0]],
+                                                ['lineTo', [29, 45]],
+                                                ['lineTo', [0, 0]],
+                                                ['lineTo', [29, 0]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'coins bar',
+                            scale: [1.2, 1],
+                            position: [-300, 0],
+                            childs: [
+                                {
+                                    name: 'coinsUp button bar',
+                                    position: [75, 0],
+                                    childs: [
+                                        {
+                                            name: 'coinsUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'plusBg',
+                                        },
+                                        {
+                                            name: 'coinsUp button glow',
+                                            type: 'sprite',
+                                            image: 'plusBg',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'coinsUp button disabled',
+                                            type: 'graphics',
+                                            rotation: -Math.PI / 2,
+                                            position: [-22, 29],
+                                            alpha: 0.5,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [58, 0]],
+                                                ['lineTo', [29, 45]],
+                                                ['lineTo', [0, 0]],
+                                                ['lineTo', [29, 0]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'coins label text',
+                                    childs: [
+                                        {
+                                            name: 'coins back',
+                                            type: 'sprite',
+                                            image: 'smPanelBg'
+                                        },
+                                        {
+                                            name: 'coinslabel text',
+                                            type: 'text',
+                                            text: 'COINS',
+                                            position: [0, -12],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '20px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        },
+                                        {
+                                            name: 'coinsvalue text',
+                                            type: 'text',
+                                            text: '5',
+                                            position: [0, 9],
+                                            styles: {
+                                                align: 'center',
+                                                fontSize: '26px',
+                                                fontFamily: 'Oswald',
+                                                fontWeight: 'Bold',
+                                                fill: 0xfff59f,
+                                            }
+                                        }
+
+                                    ]
+                                },
+                                {
+                                    name: 'coinsDown button bar',
+                                    position: [-75, 0],
+                                    childs: [
+                                        {
+                                            name: 'coinsDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'minusBg',
+                                        },
+                                        {
+                                            name: 'coinsDown button glow',
+                                            type: 'sprite',
+                                            image: 'minusBg',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'coinsDown button disabled',
+                                            type: 'graphics',
+                                            alpha: 0.5,
+                                            position: [21, -29],
+                                            visible: false,
+                                            button: 'disabled button',
+                                            rotation: Math.PI / 2,
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [58, 0]],
+                                                ['lineTo', [29, 45]],
+                                                ['lineTo', [0, 0]],
+                                                ['lineTo', [29, 0]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'coinvalue button',
+                            scale: [1.2, 1],
+                            position: [-565, -5],
+                            button: 'button',
+                            childs: [
+                                {
+                                    name: 'coinvalue back',
+                                    type: 'sprite',
+                                    image: 'coinValueBg'
+                                },
+                                {
+                                    name: 'coinvalue label',
+                                    position: [0, -20],
+                                    type: 'text',
+                                    text: 'COIN VALUE',
+                                    styles: {
+                                        fontSize: '20px',
+                                        fontFamily: 'Oswald',
+                                        fill: [0x332610, 0x6c4b17, 0x332610],
+                                    }
+                                },
+                                {
+                                    name: 'coinvalue text',
+                                    position: [0, 12],
+                                    type: 'text',
+                                    text: '0.10',
+                                    styles: {
+                                        fontSize: '35px',
+                                        fontFamily: 'Oswald',
+                                        fontWeight: 'Bold',
+                                        fill: 0x5a1600,
+                                    }
+                                },
+                                {
+                                    name: 'coinvalue button glow'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'congratulation bar',
+                            position: [0, 400],
+                            visible: false,
+                            childs: [
+                                {
+                                    name: 'congratulationprefix bar text',
+                                    type: 'text',
+                                    text: 'WIN:',
+                                    styles: {
+                                        align: 'center',
+                                        fontSize: '40px',
+                                        fontFamily: 'Oswald-Bold',
+                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
+                                        dropShadow: true,
+                                        dropShadowAngle: 0.5,
+                                        dropShadowColor: 0x000000,
+                                        dropShadowDistance: 1,
+                                        dropShadowBlur: 5,
+                                        stroke: "#000000",
+                                        strokeThickness: 2,
+                                        lineJoin: "bevel",
+                                    },
+                                    position: [-100, 0]
+                                },
+                                {
+                                    name: 'congratulationcoins bar text',
+                                    type: 'text',
+                                    text: '200',
+                                    styles: {
+                                        align: 'center',
+                                        fontSize: '40px',
+                                        fontFamily: 'Oswald-Bold',
+                                        fill: [0xf6be19],
+                                        dropShadow: true,
+                                        dropShadowAngle: 0.5,
+                                        dropShadowColor: 0x000000,
+                                        dropShadowDistance: 1,
+                                        dropShadowBlur: 5,
+                                        stroke: "#361b06",
+                                        strokeThickness: 2,
+                                        lineJoin: "bevel",
+                                    },
+                                    position: [-10, 0]
+                                },
+                                {
+                                    name: 'congratulationsuffix bar text',
+                                    type: 'text',
+                                    text: 'COINS',
+                                    styles: {
+                                        align: 'center',
+                                        fontSize: '40px',
+                                        fontFamily: 'Oswald-Bold',
+                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
+                                        dropShadow: true,
+                                        dropShadowAngle: 0.5,
+                                        dropShadowColor: 0x000000,
+                                        dropShadowDistance: 1,
+                                        dropShadowBlur: 5,
+                                        stroke: "#000000",
+                                        strokeThickness: 2,
+                                        lineJoin: "bevel",
+                                    },
+                                    position: [90, 0]
+                                },
+                                {
+                                    name: 'congratulationcontent bar text',
+                                    type: 'text',
+                                    text: 'Congratulations!',
+                                    styles: {
+                                        align: 'center',
+                                        fontSize: '30px',
+                                        fontFamily: 'Oswald-Bold',
+                                        fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
+                                        dropShadow: true,
+                                        dropShadowAngle: 0.5,
+                                        dropShadowColor: 0x000000,
+                                        dropShadowDistance: 1,
+                                        dropShadowBlur: 5,
+                                        stroke: "#000000",
+                                        strokeThickness: 2,
+                                        lineJoin: "bevel",
+                                    },
+                                    position: [0, 40]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: 'ControlBottom',
+                    type: 'graphics',
+                    position: [0, 520],
+                    draw: [['beginFill', 0x131313], ['drawRect', [-1920 / 2, -40 / 2, 1920, 40]]],
+                    childs: [
+                        {
+                            name: 'bottomBet text',
+                            type: 'text',
+                            text: 'Bet: 1.00',
+                            styles: {
+                                fill: "#ffffff"
+                            }
+                        },
+                        {
+                            name: 'bottomWin text',
+                            type: 'text',
+                            text: 'Win: ',
+                            position: [300, 0],
+                            styles: {
+                                fill: "#ffffff"
+                            }
+                        },
+                        {
+                            name: 'bottomBalance text',
+                            type: 'text',
+                            text: 'Balance: 100000',
+                            position: [-300, 0],
+                            styles: {
+                                fill: "#ffffff"
+                            }
+                        },
+                        {
+                            name: 'setting button bar',
+                            position: [-920, 0],
+                            childs: [
+                                {
+                                    name: 'setting button',
+                                    type: 'sprite',
+                                    button: 'button',
+                                    image: 'bottomMenu',
+                                    childs: [
+                                        {
+                                            name: 'setting button glow'
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'sound button',
+                            position: [-880, 0],
+                            button: 'button',
+                            type: 'sprite',
+                            image: 'soundModeEnabled',
+                            childs: [
+                                {
+                                    name: 'sound button glow',
+                                },
+                                {
+                                    name: 'sound button disabled'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'speed button',
+                            position: [-840, 0],
+                            button: 'button',
+                            type: 'sprite',
+                            image: 'speedModeDisabled',
+                            childs: [
+                                {
+                                    name: 'speed button glow'
+                                }
+                            ]
+                        },
+                        {
+                            name: 'help button',
+                            position: [-800, 0],
+                            type: 'sprite',
+                            image: 'questionMark'
+                        },
+                        {
+                            name: 'clock sprite',
+                            type: 'sprite',
+                            image: 'bottomClock',
+                            position: [850, 0]
+                        },
+                        {
+                            name: 'timer',
+                            position: [900, 0],
+                            childs: [
+                                {
+                                    name: 'timer hour',
+                                    position: [-20, 0],
+                                    type: 'text',
+                                    text: '05',
+                                    styles: {
+                                        fontFamily: 'Arial',
+                                        fontSize: '20px',
+                                        fill: 0xffffff,
+                                    },
+                                },
+                                {
+                                    name: 'timer symbol',
+                                    position: [0, -2],
+                                    type: 'text',
+                                    text: ':',
+                                    visible: true,
+                                    styles: {
+                                        fontFamily: 'Arial',
+                                        fontSize: '20px',
+                                        fill: 0xffffff,
+                                    },
+                                },
+                                {
+                                    name: 'timer minute',
+                                    position: [20, 0],
+                                    type: 'text',
+                                    text: '05',
+                                    styles: {
+                                        fontFamily: 'Arial',
+                                        fontSize: '20px',
+                                        fill: 0xffffff,
+                                    },
+                                },
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'AutoPlayContainer',
             visible: false,
             scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
@@ -3788,23 +3945,6 @@ App.Gameplay = new Screen({
             ]
         },
         {
-            name: 'OverlayContainer',
-            scaleStrategyPortrait: ['fit-to-screen', 1500, 725],
-            scaleStrategyLandscape: ['fit-to-screen', 1500, 725],
-            childs: [
-                {
-                    name: 'overlay', visible: false, childs: [
-                        {
-                            name: 'overlay rect',
-                            event: 'overlay',
-                            type: 'graphics',
-                            draw: [['beginFill', 0x000000], ['drawRect', [-1500, -1500, 3000, 3000]]]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             name: 'DetailsContainer',
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
             scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
@@ -3815,6 +3955,39 @@ App.Gameplay = new Screen({
                     childs: [
                     ]
                 },
+                {
+                    visible: false,
+                    type: 'graphics',
+                    draw: [
+                        ['beginFill', 0x000000],
+                        ['drawRect', [-400, -400, 800, 800]]
+                    ],
+                    childs: [
+                        {
+                            type: 'sprite',
+                            image: 'small_S09BaseGame.png'
+                        },
+                        {
+                            visible: false,
+                            name: 'test movie',
+                            type: 'movie-clip',
+                            frames: [
+                                'bookBack1',
+                                'bookBack2',
+                                'bookBack3',
+                                'bookBack4',
+                                'bookBack5',
+                                'bookBack6',
+                                'bookBack7',
+                                'bookBack8',
+                                'bookBack9',
+                                'bookBack10',
+                            ],
+                            loop: true,
+                            speed: 0.2
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -4076,6 +4249,7 @@ App.Gameplay = new Screen({
         },
 
         'Gameplay build': function () {
+            this['test movie'].gotoAndPlay(0);
             this.is_local_mode = true;
             //getting init data from server
             if (!this.is_local_mode) {
@@ -4502,6 +4676,25 @@ App.Gameplay = new Screen({
                         position: [mostLeft + this.COLUMNS_OFFSET * i, -1 * (this.ROWS_COUNT - 1) / 2 * this.ROWS_OFFSET - (this.ROWS_COUNT + 1) * this.ROWS_OFFSET]
                     });
 
+                this.buildChild(this['game board border container'],{
+                    name: 'reel border ' + i,
+                    position: [mostLeft + this.COLUMNS_OFFSET * i, 0],
+                    type: 'movie-clip',
+                    frames: [
+                        'bottomRightBorder',
+                        'bottomLeftBorder',
+                        'leftCenterBBorder',
+                        'leftCenterTBorder',
+                        'rightTopBorder',
+                        'rightCenterTBorder',
+                        'rightCenterBBorder'
+                    ],
+                    visible: false,
+                    scale: [1.4, 1.55],
+                    loop: true,
+                    speed: 0.1
+                });
+
                 this.reels.push({
                     sprite: reelSprite,
                     spriteHighlight: reelSpriteHighlight,
@@ -4737,7 +4930,6 @@ App.Gameplay = new Screen({
                 });
             }
             /*------------generate total bet items end------------*/
-
             this.setValues();
             this.refreshPanel();
             this.playSound("background_music", {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
@@ -4750,20 +4942,20 @@ App.Gameplay = new Screen({
 
             this.refreshPanel();
 
-           /* if (App.IsLandscape) {
-                if (this.helpPageVisabilityFlag) {
-                    this['info container ' + this.helpPageIndex].visible = 1;
-                    this['info container controlls'].visible = 1;
+            /* if (App.IsLandscape) {
+                 if (this.helpPageVisabilityFlag) {
+                     this['info container ' + this.helpPageIndex].visible = 1;
+                     this['info container controlls'].visible = 1;
 
-                    this['MainContainer'].visible = 0;
-                    this['ControlPanelContainer'].visible = 0;
-                }
-            } else {
+                     this['MainContainer'].visible = 0;
+                     this['ControlPanelContainer'].visible = 0;
+                 }
+             } else {
 
-            }
+             }
 
-            if (this.menu_mode === true)
-                this['MenuContainer'].visible = true;*/
+             if (this.menu_mode === true)
+                 this['MenuContainer'].visible = true;*/
         },
 
         'Gameplay showed': function () {
@@ -5121,9 +5313,11 @@ App.Gameplay = new Screen({
             return;
         }
 
-        this.first_reel = false;
+        this.first_reel = 0;
         this.second_reel = false;
         this.third_reel = false;
+        this.bonusCount = 0;
+        this.bonusCardPositions = [];
 
         this['win bar'].visible = false;
         this['Won text'].visible = false;
@@ -5160,25 +5354,28 @@ App.Gameplay = new Screen({
         this.spinCombination = null;
 
         if (this.auto_mode === true) {
-            this.current_auto_amount--;
-            // this.setStatusControlBar(['autostop button'], this.const.STATUS_TYPE.NORMAL);
-            // this.setStatusControlBar(['autostart button'], this.const.STATUS_TYPE.INVISIBLE);
-            // this.setStatusCenterBar('forward button', this.const.STATUS_TYPE.NORMAL);
-            this['start button bar'].visible = false;
-            this['autostart button bar'].visible = true;
-            this['autoplay button text'].text = 'STOP';
-            if (this.current_auto_amount === 0) {
-                // this.setStatusCenterBar('start button', this.const.STATUS_TYPE.NORMAL);
-                // this.setStatusControlBar([], this.const.STATUS_TYPE.NORMAL);
-                // this.setStatusControlBar(['autostop button'], this.const.STATUS_TYPE.INVISIBLE);
-                // this.setStatusControlBar(['autostart button'], this.const.STATUS_TYPE.VISIBLE);
-                this['start button bar'].visible = true;
-                this['autostart button bar'].visible = false;
-                this['autoplay button text'].text = 'AUTO PLAY';
-                this.auto_mode = false;
+            if(!this.isfreespin){
+                this.current_auto_amount--;
+                this['start button bar'].visible = false;
+                this['autostart button bar'].visible = true;
+                this['autoplay button text'].text = 'STOP';
+                if (this.current_auto_amount === 0) {
+                    this['start button bar'].visible = true;
+                    this['autostart button bar'].visible = false;
+                    this['autoplay button text'].text = 'AUTO PLAY';
+                    this.auto_mode = false;
+                }
+                this.refreshAutoamount();
+                this.refreshPanelValues();
+            } else {
+
+                this.current_auto_amount--;
+                if (this.current_auto_amount === 0) {
+                    this.auto_mode = false;
+                }
+                this['freespin count text'].text = `Free spin ${10 - this.current_auto_amount} of 10`;
+                this.refreshPanelValues();
             }
-            this.refreshAutoamount();
-            this.refreshPanelValues();
         }
 
         /*getServerCardsInfo(this.bet.step)*/
@@ -5335,7 +5532,19 @@ App.Gameplay = new Screen({
                                     this.stopReel(i);
                                 }, 3000);
                             } else {*/
-                            this.stopReel(i);
+                            if(i > 1 && this.bonusCount === 2) {
+                                this[`reel border ${i}`].visible = true;
+                                this[`reel border ${i}`].gotoAndPlay(0);
+                                setTimeout(() => {
+                                    this.reels[i].speed = 8;
+                                }, 1500 * (this.first_reel + i - 5));
+                                setTimeout(() => {
+                                    this.stopReel(i)
+                                    this[`reel border ${i}`].visible = false;
+                                }, 1500 * (this.first_reel + i - 4));
+                            } else {
+                                this.stopReel(i);
+                            }
                             /*}*/
 
                             if (i == this.COLUMNS_COUNT - 1) {
@@ -5431,6 +5640,20 @@ App.Gameplay = new Screen({
             } else {
                 imageName = this.spinCombination.symbols[i][reel];
                 this.setSymbolTexture(this.reels[reel].sprite.children[i].name, App.SymbolsNames[imageName]);
+                if (imageName === "bonus") {
+                    this.bonusCount ++;
+                    this.bonusCardPositions.push([reel, i]);
+                    if(this.bonusCount === 2) {
+                        this.first_reel = reel;
+                    } else if(this.bonusCount === 3 && reel === 4) {
+                        this.isfreespin = true;
+                        this.freespin_count = 10;
+                        this.setStatusControlBar(['start button'], this.const.STATUS_TYPE.DISABLED);
+                        setTimeout(() => {
+                            this.startShowingFreespinAnimation();
+                        }, 2000);
+                    }
+                }
             }
         }
 
@@ -5494,12 +5717,16 @@ App.Gameplay = new Screen({
         this.refreshLineBar(this.lines.step);
 
         if (this.spinCombination) {
-            if(this.auto_mode) {
-                this.state = 'ready';
-                this.showWinAnimation();
+            if(this.isfreespin) {
+
             } else {
-                this.state = 'ready';
-                this.showCollectAnimation();
+                if(this.auto_mode) {
+                    this.state = 'ready';
+                    this.showWinAnimation();
+                } else {
+                    this.state = 'ready';
+                    this.showCollectAnimation();
+                }
             }
         } else {
             this.state = 'ready';
@@ -6105,7 +6332,7 @@ App.Gameplay = new Screen({
 
                     this.state = 'ready';
                     // this.winAnimationMode = false;
-                    if (this.auto_mode) {
+                    if (this.auto_mode || (this.isfreespin === true && this.freespin_count !== 0)) {
                         this.spin();
                     } else {
                         if (this.state === 'ready') this.winAnimation();
@@ -6339,17 +6566,17 @@ App.Gameplay = new Screen({
         this[nameGlow].tween = this.tween({
             to: ['alpha', 0, 150, 0, Power1.easeOut]
         }, nameGlow);
-/*
-        let nameGlow1 = container.name;
+        /*
+                let nameGlow1 = container.name;
 
-        if (this[nameGlow1].tween) this[nameGlow1].tween.stop();
+                if (this[nameGlow1].tween) this[nameGlow1].tween.stop();
 
-        if (this[nameGlow1].pressed === true) {
-            this[nameGlow1].tween = this.tween({
-                to: ['scale', [this[nameGlow1].scale._x + 0.1, this[nameGlow1].scale._y + 0.1], 150, 0, Power1.easeOut]
-            }, nameGlow1);
-            this[nameGlow1].pressed = false;
-        }*/
+                if (this[nameGlow1].pressed === true) {
+                    this[nameGlow1].tween = this.tween({
+                        to: ['scale', [this[nameGlow1].scale._x + 0.1, this[nameGlow1].scale._y + 0.1], 150, 0, Power1.easeOut]
+                    }, nameGlow1);
+                    this[nameGlow1].pressed = false;
+                }*/
     }
     ,
 
@@ -6384,10 +6611,10 @@ App.Gameplay = new Screen({
                 this.buttonHandleContinueButton(container);
                 break;
             case 'start button':
-                /*if (!this.isfreespin)*/
-                this.buttonHandleStartButton();
-                /*else
-                    this.buttonHandleFreeStartButton(container);*/
+                if (!this.isfreespin)
+                    this.buttonHandleStartButton();
+                else
+                    this.buttonHandleFreeStartButton();
                 break;
             case 'auto start button':
                 this.buttonHandleAutoStartButton(container);
@@ -6865,7 +7092,8 @@ App.Gameplay = new Screen({
 
                 this.server_win_amount.drawed = this.server_win_amount.value;
                 this.refreshPanelValues();
-
+                if (this.isfreespin === true && this.freespin_count !== 0)
+                    this['freespin count text'].text = `Free spin ${this.freespin_count} of 10`
             } else {
 
                 this.spinCombinations.push(0);
@@ -7420,6 +7648,59 @@ App.Gameplay = new Screen({
         ]
     },
 
+    startShowingFreespinAnimation: function() {
+        this.setStatusControlBar(['maxBet button', 'coinsUp button', 'coinsDown button', 'linesUp button', 'linesDown button'], this.const.STATUS_TYPE.DISABLED);
+        this['FreespinContainer'].visible = true;
+        this['OverlayContainer'].visible = true;
+        this['freespin Small Book anim'].visible = true;
+        this['freespin Small Book anim'].gotoAndPlay(0);
+        setTimeout(() => {
+            this.tween({
+                set: [
+                    ['visible', 1, 0],
+                    ['scale', [0.216, 0.283], 300, Power1.easeInOut],
+                ],
+                to: [
+                    ['scale', [0.65, 0.85], 800, Power1.easeInOut],
+                ]
+            }, 'freespin bigBookBack');
+            setTimeout(() => {
+                this.tween({
+                    set: ['alpha', 0, 0],
+                    to: [
+                        ['alpha', 1, 500],
+                        ['visible', 1, 500]
+                    ]
+                }, ['freespin bird container', 'freespin congrat text', 'freespin result text']);
+                setTimeout(() => {
+                    this.startShowingRandomSymbol();
+                }, 500);
+            }, 800);
+        }, 1400);
+    },
+
+    hideFreespinAnimation: function() {
+        this['OverlayContainer'].visible = false;
+        this['FreespinContainer'].visible = false;
+        this['freespin Small Book anim'].visible = false;
+        this['freespin bigBookBack'].visible = false;
+        this['freespin bird container'].visible = false;
+        this['freespin congrat text'].visible = false;
+        this['freespin result text'].visible = false;
+        this['freespin random symbol'].visible = false;
+    },
+
+    startShowingRandomSymbol: function() {
+        this['freespin random symbol'].visible = true;
+        this.freespinRandomInterval = setInterval(() => {
+            this['freespin random symbol'].texture = this.getTexture(this.symbolNames[Math.floor(Math.random() * this.symbolNames.length)]);
+        }, 300);
+        setTimeout(() => {
+            clearInterval(this.freespinRandomInterval);
+            this.setStatusControlBar('start button', this.const.STATUS_TYPE.NORMAL);
+        }, 300 * 15);
+    },
+
     /*------------------New method definition ended------------------*/
 
     completeFreespin: function () {
@@ -7453,6 +7734,16 @@ App.Gameplay = new Screen({
         this.spin();
 
         this.refreshPanelValues();
+    },
+
+    buttonHandleFreeStartButton: function() {
+        this.state = 'ready';
+        this.hideFreespinAnimation();
+        this.auto_mode = true;
+        this.current_auto_amount = this.freespin_count;
+        this.spin();
+        this['normal logo'].visible = false;
+        this['freespin logo'].visible = true;
     },
 
     buttonHandlerCloseDialog: function (container) {
@@ -7716,11 +8007,13 @@ App.Gameplay = new Screen({
         false,
 
     first_reel:
-        false,
+        0,
     second_reel:
         false,
     third_reel:
         false,
+    bonusCardPositions: [],
+    bonusCount: 0,
 
     freespin_animation:
         false,
@@ -7763,6 +8056,8 @@ App.Gameplay = new Screen({
 
     collectInterval: null,
     gambleInterval: null,
+
+    symbolNames: ['S01BaseGame.png', 'S02BaseGame.png', 'S03BaseGame.png', 'S04BaseGame.png', 'S05BaseGame.png', 'S06BaseGame.png', 'S07BaseGame.png', 'S08BaseGame.png', 'S09BaseGame.png'],
 
     cardSymbols: ['heart', 'diamond', 'club', 'spade'],
     selectedSymbol: '',
@@ -7961,59 +8256,27 @@ App.Gameplay = new Screen({
     ,
 
     getServerData: function () {
-
-
-        // WInLine
-        // var response = '{"error":"0","response":{"initCards":[[5,6,4,10],[8,3,4,7],[2,1,3,4],[2,3,5,7],[1,8,2,0]],"arrRetVal":[{"retType":0,"win":6,"linePosIdx":36,"cardCount":3}],"betAmount":50,"winAmount":6,"balance":10006}}';
-        // var response = '{"error":"0","response":{"initCards":[[2,3,0,7],[3,0,0,1],[2,3,5,3],[2,1,9,10],[2,3,0,0]],"arrRetVal":[{"retType":0,"win":5,"linePosIdx":10,"cardCount":3}],"betAmount":50,"winAmount":5,"balance":99613}}';
-        // var response = '{"error":"0","response":{"initCards":[[2,8,1,2],[7,3,2,6],[7,4,2,3],[9,1,4,9],[0,3,8,9]],"arrRetVal":[{"retType":0,"win":5,"linePosIdx":18,"cardCount":3},{"retType":0,"win":5,"linePosIdx":25,"cardCount":3}],"betAmount":50,"winAmount":10,"balance":99720}}';
-        // var response = '{"error":"0","response":{"initCards":[[10,2,7,3],[4,2,3,8],[5,1,1,2],[3,1,1,3],[4,0,1,3]],"arrRetVal":[{"retType":0,"win":5,"linePosIdx":37,"cardCount":3},{"retType":0,"win":5,"linePosIdx":5,"cardCount":3}],"betAmount":50,"winAmount":10,"balance":43228}}';
-        // Normal
-        // var response = '{"error":"0","response":{"initCards":[[3,2,10,6],[8,2,0,0],[5,6,3,0],[6,4,0,1],[2,7,4,6]],"arrRetVal":[],"betAmount":50,"winAmount":0,"balance":10000}}';
-
-        // var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[3,5,2],[1,3,4],[2,4,0],[5,3,0],[2,4,0]],\"arrRetVal\":[{\"retType\":0,\"win\":25,\"linePosIdx\":1,\"cardCount\":3,\"direction\":0}],\"betAmount\":1,\"winAmount\":25,\"balance\":60582}}";
-        // var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[1,3,1],[0,1,3],[3,0,1],[5,1,5],[2,1,1]],\"arrRetVal\":[{\"retType\":0,\"win\":1,\"linePosIdx\":4,\"cardCount\":4,\"direction\":1}],\"betAmount\":0.1,\"winAmount\":1,\"balance\":605825}}";
-
-        //jackpot
-        // var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[1,3,0],[3,2,1],[5,4,2],[0,1,4],[2,3,1]],\n" +
-        //     "                \"arrRetVal\":[{\"retType\":0,\"win\":125,\"linePosIdx\":2,\"cardCount\":3}],\"betAmount\":9,\"winAmount\":1250,\"balance\":11250}}";
-        // var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[7,5,7,3,7],[7,2,7,5,7],[7,4,7,6,7]],\"arrRetVal\":[{\"retType\":1}],\"betAmount\":9,\"winAmount\":0,\"balance\":11250}}";
-        /*
-        //big money
-                var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[7,2,7,4,7],[7,0,7,4,7],[7,0,7,4,7]],\"arrRetVal\":[{\"retType\":0,\"win\":10,\"linePosIdx\":1,\"cardCount\":3},{\"retType\":0,\"win\":100,\"linePosIdx\":2,\"cardCount\":3},{\"retType\":6}],\"betAmount\":9,\"winAmount\":110,\"balance\":10110}}";
-
-
-                //normal
-                var response = "{\"error\":\"0\",\"response\":{\"initCards\":[[7,1,7,2,7],[7,2,7,5,7],[7,6,7,6,7]],\"arrRetVal\":[],\"betAmount\":9,\"winAmount\":0,\"balance\":10000}}";
-
-        */
         var response = [{
             error: '0',
             response: {
                 initCards: [
-                    [0, 2, 7],
+                    [0, 8, 9],
                     [4, 6, 3],
-                    [5, 0, 1],
+                    [9, 0, 1],
                     [3, 1, 8],
                     [4, 0, 9]
                 ],
                 arrRetVal: [
-                    // { retType: 0, win: 3, linePosIdx: 0, cardCount: 5 },
-                    { retType: 0, win: 5, linePosIdx: 1, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 2, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 3, cardCount: 5 },
-                    { retType: 0, win: 5, linePosIdx: 4, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 5, cardCount: 5 },
-                    { retType: 0, win: 5, linePosIdx: 6, cardCount: 5 },
+                    { retType: 2, count: 10 },
                     // { retType: 0, win: 5, linePosIdx: 1, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 8, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 9, cardCount: 5 },
+                    // { retType: 0, win: 5, linePosIdx: 4, cardCount: 5 },
+                    // { retType: 0, win: 5, linePosIdx: 6, cardCount: 5 },
                 ],
                 betAmount: 50,
                 winAmount: 10,
                 balance: 49990
             }
-        },{
+        }/*,{
             error: '0',
             response: {
                 initCards: [
@@ -8047,8 +8310,8 @@ App.Gameplay = new Screen({
                 winAmount: 0,
                 balance: 49990
             }
-        }];
-        var serverData = response[Math.floor(Math.random() * 3)];
+        }*/];
+        var serverData = response[Math.floor(Math.random() * 1)];
         return serverData;
     }
     ,
