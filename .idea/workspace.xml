@@ -86,7 +86,7 @@
       <workItem from="1584272654462" duration="3125000" />
       <workItem from="1584286717012" duration="12567000" />
       <workItem from="1584307826609" duration="8721000" />
-      <workItem from="1584349646478" duration="4164000" />
+      <workItem from="1584349646478" duration="4631000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -144,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584318960639</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sound and some part of freespin animation added">
+      <created>1584354838271</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584354838272</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,21 +167,22 @@
     <MESSAGE value="Details showing" />
     <MESSAGE value="free spin feature updated" />
     <MESSAGE value="sound added" />
-    <option name="LAST_COMMIT_MESSAGE" value="sound added" />
+    <MESSAGE value="sound and some part of freespin animation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="sound and some part of freespin animation added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584318958992">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584354834334">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584318958992" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584319007768">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584354834334" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584354840643">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584319007768" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584354840643" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584318343200">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

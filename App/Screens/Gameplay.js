@@ -5344,6 +5344,7 @@ App.Gameplay = new Screen({
 
     spin: function () {
 
+        this.fake_index ++;
         this.winAnimationMode = false;
         this.is_bonus = false;
         // this.hideLinecontainer();
@@ -8180,6 +8181,7 @@ App.Gameplay = new Screen({
     selectedSymbol: '',
     selectedColor: '',
     previousCards: [],
+    fake_index: 0,
 
     removeCellMatrix: function (matrix, card_count, direction) {
         for (var i = 0; i < 3; i++) {
@@ -8377,26 +8379,6 @@ App.Gameplay = new Screen({
             error: '0',
             response: {
                 initCards: [
-                    [0, 8, 9],
-                    [4, 6, 3],
-                    [9, 0, 1],
-                    [3, 1, 8],
-                    [4, 0, 9]
-                ],
-                arrRetVal: [
-                    { retType: 2, count: 10 },
-                    // { retType: 0, win: 5, linePosIdx: 1, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 4, cardCount: 5 },
-                    // { retType: 0, win: 5, linePosIdx: 6, cardCount: 5 },
-                ],
-                betAmount: 50,
-                winAmount: 10,
-                balance: 49990
-            }
-        }/*,{
-            error: '0',
-            response: {
-                initCards: [
                     [4, 0, 9],
                     [5, 0, 1],
                     [3, 1, 8],
@@ -8427,8 +8409,28 @@ App.Gameplay = new Screen({
                 winAmount: 0,
                 balance: 49990
             }
-        }*/];
-        var serverData = response[Math.floor(Math.random() * 1)];
+        },{
+            error: '0',
+            response: {
+                initCards: [
+                    [0, 8, 9],
+                    [4, 6, 3],
+                    [9, 0, 1],
+                    [3, 1, 8],
+                    [4, 0, 9]
+                ],
+                arrRetVal: [
+                    { retType: 2, count: 10 },
+                    // { retType: 0, win: 5, linePosIdx: 1, cardCount: 5 },
+                    // { retType: 0, win: 5, linePosIdx: 4, cardCount: 5 },
+                    // { retType: 0, win: 5, linePosIdx: 6, cardCount: 5 },
+                ],
+                betAmount: 50,
+                winAmount: 10,
+                balance: 49990
+            }
+        },];
+        var serverData = response[this.fake_index % response.length];
         return serverData;
     }
     ,
