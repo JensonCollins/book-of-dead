@@ -4249,7 +4249,58 @@ App.Gameplay = new Screen({
         },
 
         'Gameplay build': function () {
-            this['test movie'].gotoAndPlay(0);
+
+            let sound_sprites = {
+                "scatterLand1": {
+                    "start": 17.35845,
+                    "end": 18.70515,
+                    "unique": false,
+                    "priority": 0
+                },
+                "scatterLand2": {
+                    "start": 19.14615,
+                    "end": 20.79211,
+                    "unique": false,
+                    "priority": 0
+                },
+                "bookFlip": {
+                    "start": 29.14236,
+                    "end": 32.94441,
+                    "unique": false,
+                    "priority": 0
+                },
+                "freespinIntro": {
+                    "start": 25.94476,
+                    "end": 28.70136,
+                    "unique": false,
+                    "priority": 0
+                },
+                "freespinAmbience": {
+                    "start": 33.38541,
+                    "end": 40.87851,
+                    "unique": false,
+                    "priority": 0
+                },
+                "freespinSummary": {
+                    "start": 43.31951,
+                    "end": 44.11669,
+                    "unique": false,
+                    "priority": 0
+                },
+            };
+
+            PIXI.sound.add('main', {
+                url: 'assets/sounds/sounds_desktop.mp3',
+                preload: true,
+                sprites: sound_sprites,
+                loaded: (err, sound) => {
+                    this.sounds = sound;
+                    // sound.play('freespinSummary')
+                    // this.playSound('freespinSummary', {}, {}, sound => {})
+                    this.is_sound_loaded = true;
+                }
+            });
+
             this.is_local_mode = true;
             //getting init data from server
             if (!this.is_local_mode) {
@@ -5644,6 +5695,8 @@ App.Gameplay = new Screen({
                     this.bonusCount ++;
                     this.bonusCardPositions.push([reel, i]);
                     if(this.bonusCount === 2) {
+                        this.sounds.volume = this.sound_mode ? 0.5 : 0;
+                        this.sounds.play('bookFlip')
                         this.first_reel = reel;
                     } else if(this.bonusCount === 3 && reel === 4) {
                         this.isfreespin = true;
@@ -5652,6 +5705,9 @@ App.Gameplay = new Screen({
                         setTimeout(() => {
                             this.startShowingFreespinAnimation();
                         }, 2000);
+                    } else {
+                        this.sounds.volume = this.sound_mode ? 0.5 : 0;
+                        this.sounds.play('freespinSummary')
                     }
                 }
             }

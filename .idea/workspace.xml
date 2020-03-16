@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture0.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture0_level1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/sounds_desktop.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/new/skin_texture1.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/new/skin_texture2.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/new/skin_texture2.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,15 +24,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sprites/new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sounds" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sounds" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\new" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown\theme" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites" />
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\backgrounds" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -89,7 +85,8 @@
       <workItem from="1584082342431" duration="9188000" />
       <workItem from="1584112273680" duration="14143000" />
       <workItem from="1584272654462" duration="3125000" />
-      <workItem from="1584286717012" duration="11946000" />
+      <workItem from="1584286717012" duration="12567000" />
+      <workItem from="1584307826609" duration="7923000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -133,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584047842911</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="free spin feature updated">
+      <created>1584299826889</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584299826889</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,33 +151,34 @@
     <MESSAGE value="gamble container hide" />
     <MESSAGE value="static gamble completed" />
     <MESSAGE value="Details showing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Details showing" />
+    <MESSAGE value="free spin feature updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="free spin feature updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584047841197">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584299823582">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584047841197" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584047845317">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584299823582" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584299829307">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584047845317" />
-    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1583956446922">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584299829307" />
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584318343200">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583956446922" />
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584318343200" />
     <state x="2097" y="0" width="812" height="1035" maximized="true" key="dock-window-1" timestamp="1584292712384">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2097" y="0" width="812" height="1035" maximized="true" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584292712384" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1584130501770">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1584315172235">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584130501770" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584315172235" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1584296725286">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
