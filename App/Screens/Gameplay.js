@@ -4295,7 +4295,7 @@ App.Gameplay = new Screen({
                 sprites: sound_sprites,
                 loaded: (err, sound) => {
                     this.sounds = sound;
-                    // sound.play('freespinSummary')
+                    // sound.play('freespinAmbience')
                     // this.playSound('freespinSummary', {}, {}, sound => {})
                     this.is_sound_loaded = true;
                 }
@@ -4573,16 +4573,24 @@ App.Gameplay = new Screen({
                 show: () => {
                     this.flashTweens.showTweens.forEach((tween, index) => {
                         tween.targets.forEach((container) => {
-                            if ((container.children.length > 0) && container.children[0].type === "movie-clip") {
-                                for (var i = 0; i < container.children.length; i++)
+                            for (var i = 0; i < container.children.length; i++)
+                                if (container.children[i].type === "movie-clip") {
                                     container.children[i].gotoAndPlay(0);
-                            }
+                                }
                         });
                         tween.play();
                     });
                 },
                 hide: () => {
                     this.flashTweens.showTweens.forEach((tween) => {
+                        tween.targets.forEach((container) => {
+                            if(container.children !== undefined){
+                                for (var i = 0; i < container.children.length; i++)
+                                    if (container.children[i].type === "movie-clip") {
+                                        container.children[i].gotoAndStop(0);
+                                    }
+                            }
+                        });
                         tween.stop();
                     });
                     this.flashTweens.showTweens = [];
@@ -4594,8 +4602,11 @@ App.Gameplay = new Screen({
                 hideQuick: () => {
                     this.flashTweens.showTweens.forEach((tween) => {
                         tween.targets.forEach((container) => {
-                            if ((container.children.length > 0) && container.children[0].type === "movie-clip") {
-                                container.children[0].stop();
+                            if(container.children !== undefined){
+                                for (var i = 0; i < container.children.length; i++)
+                                    if (container.children[i].type === "movie-clip") {
+                                        container.children[i].stop();
+                                    }
                             }
                         });
                         tween.stop();
@@ -5694,17 +5705,66 @@ App.Gameplay = new Screen({
                 if (imageName === "bonus") {
                     this.bonusCount ++;
                     this.bonusCardPositions.push([reel, i]);
+                    let bonusSprite = this.reels[reel].sprite.children[i].children[0].params.name.replace('crisp', 'highlight');
+                    this.bonusCardSprites.push(bonusSprite);
                     if(this.bonusCount === 2) {
                         this.sounds.volume = this.sound_mode ? 0.5 : 0;
-                        this.sounds.play('bookFlip')
+                        this.sounds.play('bookFlip');
                         this.first_reel = reel;
+                        this.flashTweens.showTweens = [];
+                        this.flashTweens.hideTweens = [];
+                        this.flashTweens.hideQuickTweens = [];
+                        this.flashTweens.showTweens.push(this.tween({
+                            name: 'win-animation',
+                            to: [
+                                ['visible', true],
+                                ['alpha', 1],
+                                ['scale', [2.1, 2.2]]
+                            ]
+                        }, this.bonusCardSprites));
+
+                        this.flashTweens.showTweens[this.flashTweens.showTweens.length - 1].stop();
+                        this.flashTweens.hideTweens.push(this.tween({
+                            name: 'win-animation',
+                            to: [
+                                ['visible', false, 200],
+                                ['alpha', 0, 200]
+                            ],
+                        }, this.bonusCardSprites));
+
+                        this.flashTweens.hideTweens[this.flashTweens.hideTweens.length - 1].stop();
+
+                        this.flashTweens.hideQuickTweens.push(this.tween({
+                            name: 'win-animation',
+                            to: [
+                                ['visible', false, 200],
+                                ['alpha', 0, 200]
+                            ]
+                        }, this.bonusCardSprites));
+
+                        this.flashTweens.hideQuickTweens[this.flashTweens.hideQuickTweens.length - 1].stop();
+                        this.flashTweens.show();/*
+                    this.tween({
+                        set: [
+                            ['visible', true],
+                        ],
+                    }, bonusSprite);
+                    this[bonusSprite].gotoAndPlay(0);*/
+                        // this.bonusCardSprites[this.bonusCardSprites.length - 1].gotoAndPlay(0);
+                        setTimeout(() => {
+                            this.flashTweens.hide();
+                            this.flashTweens.hideQuick();
+                        }, 5000);
                     } else if(this.bonusCount === 3 && reel === 4) {
+                        this.flashTweens.hide();
+                        this.flashTweens.hideQuick();
                         this.isfreespin = true;
                         this.freespin_count = 10;
                         this.setStatusControlBar(['start button'], this.const.STATUS_TYPE.DISABLED);
+                        this.sounds.play('freespinAmbience')
                         setTimeout(() => {
                             this.startShowingFreespinAnimation();
-                        }, 2000);
+                        }, 1200);
                     } else {
                         this.sounds.volume = this.sound_mode ? 0.5 : 0;
                         this.sounds.play('freespinSummary')
@@ -8069,6 +8129,7 @@ App.Gameplay = new Screen({
     third_reel:
         false,
     bonusCardPositions: [],
+    bonusCardSprites: [],
     bonusCount: 0,
 
     freespin_animation:

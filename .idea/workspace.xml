@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sounds/sounds_desktop.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
     </list>
@@ -86,7 +85,8 @@
       <workItem from="1584112273680" duration="14143000" />
       <workItem from="1584272654462" duration="3125000" />
       <workItem from="1584286717012" duration="12567000" />
-      <workItem from="1584307826609" duration="7923000" />
+      <workItem from="1584307826609" duration="8721000" />
+      <workItem from="1584349646478" duration="4164000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -137,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584299826889</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sound added">
+      <created>1584318960639</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584318960639</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,21 +159,22 @@
     <MESSAGE value="static gamble completed" />
     <MESSAGE value="Details showing" />
     <MESSAGE value="free spin feature updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="free spin feature updated" />
+    <MESSAGE value="sound added" />
+    <option name="LAST_COMMIT_MESSAGE" value="sound added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584299823582">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584318958992">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584299823582" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584299829307">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584318958992" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584319007768">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584299829307" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584319007768" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584318343200">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -179,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584315172235" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1584296725286">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1584352348835">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584296725286" />
+    <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584352348835" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584296335568">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
