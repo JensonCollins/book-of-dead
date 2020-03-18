@@ -3965,7 +3965,7 @@ App.Gameplay = new Screen({
                     childs: [
                         {
                             type: 'sprite',
-                            image: 'small_S09BaseGame.png'
+                            image: 'reelBright'
                         },
                         {
                             visible: false,
@@ -4277,13 +4277,62 @@ App.Gameplay = new Screen({
                 },
                 "freespinAmbience": {
                     "start": 33.38541,
-                    "end": 40.87851,
+                    "end": 38.87851,
                     "unique": false,
                     "priority": 0
                 },
                 "freespinSummary": {
                     "start": 43.31951,
                     "end": 44.11669,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleWait": {
+                    "start": 44.55769,
+                    "end": 46.78122,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleLoop": {
+                    "start": 47.22222,
+                    "end": 49.52309,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleLose": {
+                    "start": 49.96409,
+                    "end": 52.78667,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleWin": {
+                    "start": 53.22767,
+                    "end": 55.36076,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleCollect": {
+                    "start": 55.80176,
+                    "end": 57.95608,
+                    "unique": false,
+                    "priority": 0
+                },
+                "gambleClick": {
+                    "start": 171.46246,
+                    "end": 172.67055,
+                    "unique": false,
+                    "priority": 0
+                },
+                "expandingLine2": {
+                    "start": 100.70746,
+                    "end": 106.61356,
+                    "unique": false,
+                    "priority": 0,
+                    "loop": true
+                },
+                "expandingLine3": {
+                    "start": 102.27163,
+                    "end": 103.43115,
                     "unique": false,
                     "priority": 0
                 },
@@ -4295,7 +4344,6 @@ App.Gameplay = new Screen({
                 sprites: sound_sprites,
                 loaded: (err, sound) => {
                     this.sounds = sound;
-                    // sound.play('freespinAmbience')
                     // this.playSound('freespinSummary', {}, {}, sound => {})
                     this.is_sound_loaded = true;
                 }
@@ -4755,6 +4803,15 @@ App.Gameplay = new Screen({
                     scale: [1.4, 1.55],
                     loop: true,
                     speed: 0.1
+                });
+
+                this.buildChild(this['game board border container'],{
+                    name: 'reel bright ' + i,
+                    position: [mostLeft + this.COLUMNS_OFFSET * i, 0],
+                    type: 'sprite',
+                    image: 'reelBright',
+                    alpha: 0.5,
+                    visible: false,
                 });
 
                 this.reels.push({
@@ -5506,7 +5563,7 @@ App.Gameplay = new Screen({
                         self.total_freespin_amount += serverData.response.winAmount;
                         self.animFieldPoints('bonus_win bar', self.total_freespin_amount);
                         self.freespin_index++;
-                        self['freegames text'].text = self.freespin_index + " / " + self.freespin_count;
+                        // self['freegames text'].text = self.freespin_index + " / " + self.freespin_count;
 
                     } else {
                     }
@@ -5598,11 +5655,19 @@ App.Gameplay = new Screen({
                             if(i > 1 && this.bonusCount === 2) {
                                 this[`reel border ${i}`].visible = true;
                                 this[`reel border ${i}`].gotoAndPlay(0);
+                                this[`reel bright ${i}`].visible = true;
+                                this[`reel bright ${i}`].y = 0;
                                 setTimeout(() => {
                                     this.reels[i].speed = 8;
                                 }, 1500 * (this.first_reel + i - 5));
                                 setTimeout(() => {
-                                    this.stopReel(i)
+                                    this.tween({
+                                        to: ['y', -1500, 300],
+                                        next: {
+                                            set: ['visible', 0]
+                                        }
+                                    }, `reel bright ${i}`);
+                                    this.stopReel(i);
                                     this[`reel border ${i}`].visible = false;
                                 }, 1500 * (this.first_reel + i - 4));
                             } else {
@@ -5709,6 +5774,7 @@ App.Gameplay = new Screen({
                     let bonusSprite = this.reels[reel].sprite.children[i].children[0].params.name.replace('crisp', 'highlight');
                     this.bonusCardSprites.push(bonusSprite);
                     if(this.bonusCount === 2) {
+                        let tempSprites = this.bonusCardSprites;
                         this.sounds.volume = this.sound_mode ? 0.5 : 0;
                         this.sounds.play('bookFlip');
                         this.first_reel = reel;
@@ -5722,7 +5788,7 @@ App.Gameplay = new Screen({
                                 ['alpha', 1],
                                 ['scale', [2.1, 2.2]]
                             ]
-                        }, this.bonusCardSprites));
+                        }, tempSprites));
 
                         this.flashTweens.showTweens[this.flashTweens.showTweens.length - 1].stop();
                         this.flashTweens.hideTweens.push(this.tween({
@@ -5731,7 +5797,7 @@ App.Gameplay = new Screen({
                                 ['visible', false, 200],
                                 ['alpha', 0, 200]
                             ],
-                        }, this.bonusCardSprites));
+                        }, tempSprites));
 
                         this.flashTweens.hideTweens[this.flashTweens.hideTweens.length - 1].stop();
 
@@ -5741,7 +5807,7 @@ App.Gameplay = new Screen({
                                 ['visible', false, 200],
                                 ['alpha', 0, 200]
                             ]
-                        }, this.bonusCardSprites));
+                        }, tempSprites));
 
                         this.flashTweens.hideQuickTweens[this.flashTweens.hideQuickTweens.length - 1].stop();
                         this.flashTweens.show();/*
@@ -5762,7 +5828,7 @@ App.Gameplay = new Screen({
                         this.isfreespin = true;
                         this.freespin_count = 10;
                         this.setStatusControlBar(['start button'], this.const.STATUS_TYPE.DISABLED);
-                        this.sounds.play('freespinAmbience')
+                        // this.sounds.play('freespinAmbience')
                         setTimeout(() => {
                             this.startShowingFreespinAnimation();
                         }, 1200);
@@ -7069,6 +7135,21 @@ App.Gameplay = new Screen({
     },
 
     showCollectAnimation: function () {
+        this.sounds.volume = this.sound_mode ? 0.5 : 0;
+        this.sounds.loop = true;
+        this.sounds.play('expandingLine2').on('progress', (progress) => {
+            if(progress === 1) {
+                this.sounds.play('expandingLine2').on('progress', (progress) => {
+                    if(progress === 1) {
+                        this.sounds.play('expandingLine2').on('progress', (progress) => {
+                            if(progress === 1) {
+                                this.sounds.play('expandingLine2')
+                            }
+                        });
+                    }
+                });
+            }
+        });
         this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.VISIBLE);
         this.setStatusControlBar(['gamble button'], this.const.STATUS_TYPE.DISABLED);
         this.setStatusControlBar(['collect button'], this.const.STATUS_TYPE.NORMAL);
@@ -7083,6 +7164,10 @@ App.Gameplay = new Screen({
     },
 
     hideCollectAnimation: function () {
+        if(this.sounds) {
+            this.sounds.volume = this.sound_mode ? 0.5 : 0;
+            this.sounds.stop('expandingLine2');
+        }
         clearInterval(this.collectInterval);
         // this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.NORMAL);
         // this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.INVISIBLE);
