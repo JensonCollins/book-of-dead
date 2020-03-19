@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta charset="UTF-8">
+        <title>Book-of-dead</title>
+        <style>
+            body {
+                padding: 0px;
+            }
+
+            @media screen and (orientation: landscape) {
+                .loading_text {
+                    font-weight: bold;
+                    font-size: 40px
+                }
+            }
+
+            @media screen and (orientation: portrait) {
+                .loading_text {
+                    font-weight: normal;
+                    font-size: 20px
+                }
+            }
+
+            .fullscreen {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            .fixed {
+                position: fixed;
+                display: none;
+            }
+
+            button#home {
+                bottom: 50px;
+                left: 50px;
+                width: 80px;
+                height: 80px;
+                background-image: url(assets/sprites/ui/home.png);
+                background-size: cover;
+                border-radius: 50%;
+                border: none;
+            }
+
+            button#menu {
+                bottom: 50px;
+                right: 50px;
+                width: 80px;
+                height: 80px;
+                background-image: url(assets/sprites/ui/menu.png);
+                background-size: cover;
+                border-radius: 50%;
+                border: none;
+            }
+
+            button#sound {
+                bottom: 50px;
+                right: 50px;
+                width: 80px;
+                height: 80px;
+                background-image: url(assets/sprites/ui/sound_on.png);
+                background-size: cover;
+                border-radius: 50%;
+                border: none;
+            }
+
+            button#home:focus, button#menu:focus, button#sound:focus {
+                outline: none;
+            }
+
+            .footer {
+                position: fixed;
+                bottom: 0%;
+                width: 100%;
+                height: 30px;
+                background-color: #222;
+                color: #fff;
+                font-size: 25px;
+                padding: 5px 0px;
+            }
+
+            .col-3, .col-6 {
+                display: inline-block;
+                margin: 0px;
+            }
+
+            .col-3 {
+                width: 24%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+        </style>
+        <script type="text/javascript" src="assets/js/jquery-1.12.2.min.js"></script>
+        <script>
+            /*var settings_showed = false;
+            var pixi_area;
+            var coins, coin_value, lines, auto_play, sound = true;
+            var settings_sound_button;
+
+            var hide_game_settings_dialog = function() {
+                settings_showed = false;
+                $("iframe#game_settings").css("zIndex", "-1");
+                $("button#menu").css("background-image", "url(assets/sprites/ui/menu.png)");
+            };
+            var show_game_settings_dialog = function() {
+                settings_showed = true;
+                $("iframe#game_settings").css("zIndex", "1");
+                $("button#menu").css("background-image", "url(assets/sprites/ui/back.png)");
+            };
+            var show_balance = function(balance) {
+                $("#balance_value").text(balance);
+            };
+            var show_bet = function(bet) {
+                $("#bet_value").text(bet);
+            };
+            var show_win = function(win) {
+                if (win) {
+                    $("#win_value").text(win);
+                } else {
+                    $("#win_value").text('');
+                }
+            };
+
+            $(function() {
+                $("button#menu").on('click', function() {
+                    if (App.Gameplay.state !== 'ready' || App.Gameplay.auto_mode) return;
+                    if (settings_showed) {
+                        hide_game_settings_dialog();
+                    } else {
+                        show_game_settings_dialog();
+                    }
+                });
+                $("button#sound").on('click', function() {
+                    if (sound === true) {
+                        $("button#sound").css("background-image", "url(assets/sprites/ui/sound_off.png)");
+                    } else {
+                        $("button#sound").css("background-image", "url(assets/sprites/ui/sound_on.png)");
+                    }
+                    sound = !sound;
+                    if (sound) {
+                        settings_sound_button.css("background-image", "url(sprites/ui/on.png)");
+                    } else {
+                        settings_sound_button.css("background-image", "url(sprites/ui/off.png)");
+                    }
+                    App.Gameplay.buttonHandlerAudioSet();
+                });
+                $("button#home").on('mousedown', function() {
+                    $(this).width($(this).width() + 10);
+                    $(this).height($(this).height() + 10);
+                    $(this).css({"left": "45px", "bottom": "45px"});
+                });
+                $("button#home").on('mouseup', function() {
+                    $(this).width($(this).width() - 10);
+                    $(this).height($(this).height() - 10);
+                    $(this).css({"left": "50px", "bottom": "50px"});
+                });
+                $("button#menu").on('mousedown', function() {
+                    $(this).width($(this).width() + 10);
+                    $(this).height($(this).height() + 10);
+                    $(this).css({"right": "45px", "bottom": "45px"});
+                });
+                $("button#menu").on('mouseup', function() {
+                    $(this).width($(this).width() - 10);
+                    $(this).height($(this).height() - 10);
+                    $(this).css({"right": "50px", "bottom": "50px"});
+                });
+                $("button#sound").on('mousedown', function() {
+                    $(this).width($(this).width() + 10);
+                    $(this).height($(this).height() + 10);
+                    $(this).css({"right": "45px", "bottom": "45px"});
+                });
+                $("button#sound").on('mouseup', function() {
+                    $(this).width($(this).width() - 10);
+                    $(this).height($(this).height() - 10);
+                    $(this).css({"right": "50px", "bottom": "50px"});
+                });
+            });*/
+        </script>
+
+        <script src="App/settings.js"></script>
+        <script>Settings["game-code-url"] = false;</script>
+
+        <script src="App/jquery-3.4.1.js"></script>
+
+        <script src="App/Libs/Broadcast/Broadcast.js"></script>
+
+        <script src="App/Libs/Dust/dust.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Mraid.js"></script>
+
+        <script src="App/Libs/Platform/platform.js"></script>
+
+        <script src="App/Libs/WebFont/webfont.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Loader.js"></script>
+
+        <!--script src="App/Loader.js"></script-->
+
+        <script src="App/Libs/Pixi/4.7.1-ga-ready/pixi.js"></script>
+
+        <script src="App/Libs/Pixi/pixi-sound.js"></script>
+
+        <script src="App/Libs/Pixi/pixi-filters.js"></script>
+
+        <script src="App/Libs/Underscore/underscore-min.js"></script>
+
+        <script src="App/Libs/GreenSock/1.20.4/TweenLite.js"></script>
+
+        <script src="App/Libs/GreenSock/1.20.4/easing/EasePack.js"></script>
+
+        <script src="App/Libs/gown/gown.js"></script>
+        <script>
+            var aeonTheme = new GOWN.ThemeParser("App/Libs/gown/theme/aeon_desktop.json");
+            aeonTheme.once(GOWN.Theme.COMPLETE, () => {}, this);
+            var menuTheme = new GOWN.ThemeParser("App/Libs/gown/theme/menuStyle.json");
+            menuTheme.once(GOWN.Theme.COMPLETE, () => {}, this);
+            GOWN.loader.load();
+        </script>
+
+        <script src="App/Libs/Pixi.Classes/Class.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Game.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Game.Pixi.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.Pixi.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.Tween.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.Emitter.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.Text.js"></script>
+
+        <script src="App/Libs/Pixi.Classes/Screen.Underscore.js"></script>
+
+        <!--<script src="App/Libs/Progressbar/progressbar.js"></script>-->
+
+        <script src="Math/Slots/Escalibur.js"></script>
+
+        <script src="App/App.js"></script>
+
+        <script src="App/Screens/CallToAction.js"></script>
+
+        <script src="App/Screens/Gameplay.js"></script>
+
+        <script src="App/Screens/Tutorial.js"></script>
+    </head>
+    <body>
+        <!-- <button id="home" class="fixed"></button> -->
+        <button id="menu" class="fixed"></button>
+        <button id="sound" class="fixed"></button>
+
+        <div id="footer" class="footer text-center" style="display: none;">
+            <div class="col-3"></div>
+            <div class="col-6" style="text-align: center;">
+                <span>Balance:&nbsp;</span>
+                <span id="balance_value" style="text-align: left;">10000</span>
+                &nbsp;&nbsp;&nbsp;
+                <span>Bet:&nbsp;</span>
+                <span id="bet_value" style="text-align: left;">20</span>
+            </div>
+            <div class="col-3" style="text-align: left;">
+                <span>Win:&nbsp;</span>
+                <span id="win_value" style="text-align: left;"></span>
+            </div>
+        </div>
+
+    </body>
+</html>
