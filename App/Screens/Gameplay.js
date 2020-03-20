@@ -5074,20 +5074,27 @@ App.Gameplay = new Screen({
 
             this.refreshPanel();
 
-            /* if (App.IsLandscape) {
+             if (App.IsLandscape) {
                  if (this.helpPageVisabilityFlag) {
-                     this['info container ' + this.helpPageIndex].visible = 1;
-                     this['info container controlls'].visible = 1;
-
-                     this['MainContainer'].visible = 0;
-                     this['ControlPanelContainer'].visible = 0;
+                     this['PaytableContainer'].visible = true;
+                     // this['MainContainer'].visible = 0;
+                     // this['ControlPanelContainer'].visible = 0;
                  }
-             } else {
-
+                 if (this.showingFreespinFlag) {
+                     this['FreespinContainer'].visible = true;
+                     this['OverlayContainer'].visible = true;
+                     this['freespin showing container'].visible = true;
+                     this['freespin bigBookBack'].visible = true;
+                     this['freespin bird container'].visible = true;
+                     this['freespin random symbol'].visible = true;
+                     this['freespin congrat text'].visible = true;
+                     this['freespin result text'].visible = true;
+                 }
+                 if(this.freespinlogovisible) {
+                     this['freespin logo'].visible = true;
+                     this['normal logo'].visible = false;
+                 }
              }
-
-             if (this.menu_mode === true)
-                 this['MenuContainer'].visible = true;*/
         },
 
         'Gameplay showed': function () {
@@ -5566,9 +5573,6 @@ App.Gameplay = new Screen({
                 }
                 if (self.isfreespin && self.freespin_first_animation === false) {
                     if ((self.freespin_count) !== self.freespin_index) {
-                        console.log(self.freespin_count - 1);
-                        console.log(self.freespin_index);
-
                         if ((self.freespin_count - 1) === self.freespin_index) {
                             console.log("ended");
                             self.freespin_end = true;
@@ -7869,6 +7873,7 @@ App.Gameplay = new Screen({
     },
 
     startShowingFreespinAnimation: function() {
+        this.showingFreespinFlag = true;
         this.setStatusControlBar(['maxBet button', 'coinsUp button', 'coinsDown button', 'linesUp button', 'linesDown button'], this.const.STATUS_TYPE.DISABLED);
         this['FreespinContainer'].visible = true;
         this['OverlayContainer'].visible = true;
@@ -7900,6 +7905,7 @@ App.Gameplay = new Screen({
     },
 
     hideFreespinAnimation: function() {
+        this.showingFreespinFlag = false;
         this['OverlayContainer'].visible = false;
         this['FreespinContainer'].visible = false;
         this['freespin Small Book anim'].visible = false;
@@ -7931,6 +7937,7 @@ App.Gameplay = new Screen({
         this['start button'].texture = this.getTexture(this.startbuttonNormalbg);
         this['start button glow'].texture = this.getTexture(this.startbuttonGlowbg);
         this['statusvalue text'].visible = false;
+        this.freespinlogovisible = false;
     },
 
     buttonHandleContinueButton: function (container) {
@@ -7964,6 +7971,7 @@ App.Gameplay = new Screen({
         this.spin();
         this['normal logo'].visible = false;
         this['freespin logo'].visible = true;
+        this.freespinlogovisible = true;
     },
 
     buttonHandlerCloseDialog: function (container) {
@@ -8120,8 +8128,10 @@ App.Gameplay = new Screen({
     paytableContainer: function(show = true) {
         if(show) {
             this['PaytableContainer'].visible = true;
+            this.helpPageVisabilityFlag = true;
         } else {
             this['PaytableContainer'].visible = false;
+            this.helpPageVisabilityFlag = false;
         }
     },
 

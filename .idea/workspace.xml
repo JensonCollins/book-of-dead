@@ -107,7 +107,8 @@
       <workItem from="1584617121133" duration="644000" />
       <workItem from="1584630786053" duration="51000" />
       <workItem from="1584686956148" duration="599000" />
-      <workItem from="1584700452089" duration="3353000" />
+      <workItem from="1584700452089" duration="4266000" />
+      <workItem from="1584721738364" duration="3351000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -200,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584617150332</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Image broking and sound issues are fixed">
+      <created>1584706519617</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1584706519617</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,21 +228,22 @@
     <MESSAGE value="2 fake data added" />
     <MESSAGE value="3 things fixed" />
     <MESSAGE value="updating for skype" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating for skype" />
+    <MESSAGE value="Image broking and sound issues are fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image broking and sound issues are fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584617146732">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584725111253">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584617146732" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584617158109">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584725111253" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584706522192">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584617158109" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584706522192" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -243,10 +252,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2097" y="0" width="812" height="1035" maximized="true" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584292712384" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1584547478425">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1584721997829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584547478425" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584721997829" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1584352348835">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
