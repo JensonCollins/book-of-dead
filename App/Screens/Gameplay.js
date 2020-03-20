@@ -4336,6 +4336,18 @@ App.Gameplay = new Screen({
                     "unique": false,
                     "priority": 0
                 },
+                "booksound1": {
+                    "start": 39.27163,
+                    "end": 41.43115,
+                    "unique": false,
+                    "priority": 0
+                },
+                "booksound2": {
+                    "start": 43.27163,
+                    "end": 46.43115,
+                    "unique": false,
+                    "priority": 0
+                }
             };
 
             PIXI.sound.add('main', {
@@ -4344,6 +4356,7 @@ App.Gameplay = new Screen({
                 sprites: sound_sprites,
                 loaded: (err, sound) => {
                     this.sounds = sound;
+                    // sound.play("booksound2")
                     // this.playSound('freespinSummary', {}, {}, sound => {})
                     this.is_sound_loaded = true;
                 }
@@ -5438,6 +5451,7 @@ App.Gameplay = new Screen({
         this.third_reel = false;
         this.bonusCount = 0;
         this.bonusCardPositions = [];
+        this.bonusCardSprites = [];
 
         this['win bar'].visible = false;
         this['Won text'].visible = false;
@@ -5776,6 +5790,7 @@ App.Gameplay = new Screen({
                     if(this.bonusCount === 2) {
                         let tempSprites = this.bonusCardSprites;
                         this.sounds.volume = this.sound_mode ? 0.5 : 0;
+                        this.sounds.play('booksound2')
                         this.sounds.play('bookFlip');
                         this.first_reel = reel;
                         this.flashTweens.showTweens = [];
@@ -5823,8 +5838,8 @@ App.Gameplay = new Screen({
                             this.flashTweens.hideQuick();
                         }, 5000);
                     } else if(this.bonusCount === 3 && reel === 4) {
-                        this.flashTweens.hide();
-                        this.flashTweens.hideQuick();
+                        // this.flashTweens.hide();
+                        // this.flashTweens.hideQuick();
                         this.isfreespin = true;
                         this.freespin_count = 10;
                         this.setStatusControlBar(['start button'], this.const.STATUS_TYPE.DISABLED);
@@ -5833,8 +5848,11 @@ App.Gameplay = new Screen({
                             this.startShowingFreespinAnimation();
                         }, 1200);
                     } else {
-                        this.sounds.volume = this.sound_mode ? 0.5 : 0;
-                        this.sounds.play('freespinSummary')
+                        if(reel < 3) {
+                            this.sounds.volume = this.sound_mode ? 0.5 : 0;
+                            this.sounds.play('booksound1')
+                            // this.sounds.play('freespinSummary')
+                        }
                     }
                 }
             }
