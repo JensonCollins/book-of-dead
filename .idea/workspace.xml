@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Math/Slots/Escalibur.js" beforeDir="false" afterPath="$PROJECT_DIR$/Math/Slots/Escalibur.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1586380270412" duration="5120000" />
       <workItem from="1586415933346" duration="10894000" />
       <workItem from="1586445985898" duration="25809000" />
-      <workItem from="1586503897451" duration="5602000" />
+      <workItem from="1586503897451" duration="5778000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -222,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584725219242</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="freespin completed and api integration">
+      <created>1586520702637</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1586520702638</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,21 +249,22 @@
     <MESSAGE value="updating for skype" />
     <MESSAGE value="Image broking and sound issues are fixed" />
     <MESSAGE value="updating sprites in resizing browser" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating sprites in resizing browser" />
+    <MESSAGE value="freespin completed and api integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="freespin completed and api integration" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586520667064">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586520700830">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520667064" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584725223167">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520700830" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586520705450">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584725223167" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520705450" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
