@@ -8394,7 +8394,7 @@ App.Gameplay = new Screen({
     base_amount:
         [100, 25, 7, 20, 10, 5, 10, 5, 3, 10, 5, 3, 500, 50, 10, 50, 25, 5, 8, 4, 2, 8, 4, 2, 8, 4, 2, 5, 2, 1],
     // api_url: "https://ace.777berserk.org/api/",
-    api_url: "http://localhost:88/game/",
+    api_url: "http://45.77.23.191:88/game/",
     server_win_amount:
         {
             value: 0,
