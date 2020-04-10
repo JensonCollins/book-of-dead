@@ -115,7 +115,8 @@
       <workItem from="1586415933346" duration="10894000" />
       <workItem from="1586445985898" duration="25809000" />
       <workItem from="1586503897451" duration="7094000" />
-      <workItem from="1586536456060" duration="625000" />
+      <workItem from="1586536456060" duration="1749000" />
+      <workItem from="1586541797564" duration="6274000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -236,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586520914190</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="api url changed">
+      <created>1586537618055</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1586537618055</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,21 +268,22 @@
     <MESSAGE value="updating sprites in resizing browser" />
     <MESSAGE value="freespin completed and api integration" />
     <MESSAGE value="button_popupclose.mp3 file renamed" />
-    <option name="LAST_COMMIT_MESSAGE" value="button_popupclose.mp3 file renamed" />
+    <MESSAGE value="api url changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586520912517">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586537615793">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520912517" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586520916197">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586537615793" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586537621170">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520916197" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586537621170" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -287,6 +296,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586505226363" />
+    <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="720" y="358" key="git4idea.ui.GitUnstashDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586550056702" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1586450943837">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
