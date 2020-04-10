@@ -4,7 +4,6 @@
 
         this.Name = 'Escalibur';
 
-        // this.UniqueSymbols = ["card9","card10","cardJ", "cardQ", "cardK",  "cardA", "dinosaur5",  "dinosaur4",  "dinosaur3","dinosaur2",  "dinosaur1", 'wild',"bonus"];
         this.UniqueSymbols = ["card10", "cardJ", "cardQ", "cardK",  "cardA", "bird",  "dog",  "tutankamen", "man", "bonus"];
 
         this.ReelSymbols = [

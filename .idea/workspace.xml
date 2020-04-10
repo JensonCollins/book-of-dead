@@ -4,6 +4,7 @@
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Math/Slots/Escalibur.js" beforeDir="false" afterPath="$PROJECT_DIR$/Math/Slots/Escalibur.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,13 @@
       <workItem from="1584630786053" duration="51000" />
       <workItem from="1584686956148" duration="599000" />
       <workItem from="1584700452089" duration="4266000" />
-      <workItem from="1584721738364" duration="3351000" />
+      <workItem from="1584721738364" duration="3973000" />
+      <workItem from="1586295442656" duration="3124000" />
+      <workItem from="1586333791361" duration="1632000" />
+      <workItem from="1586380270412" duration="5120000" />
+      <workItem from="1586415933346" duration="10894000" />
+      <workItem from="1586445985898" duration="25809000" />
+      <workItem from="1586503897451" duration="5602000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -208,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584706519617</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updating sprites in resizing browser">
+      <created>1584725219242</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1584725219242</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,41 +243,42 @@
     <MESSAGE value="3 things fixed" />
     <MESSAGE value="updating for skype" />
     <MESSAGE value="Image broking and sound issues are fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image broking and sound issues are fixed" />
+    <MESSAGE value="updating sprites in resizing browser" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating sprites in resizing browser" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1584725111253">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586520667064">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584725111253" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584706522192">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586520667064" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1584725223167">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584706522192" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584725223167" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584548049813" />
-    <state x="2097" y="0" width="812" height="1035" maximized="true" key="dock-window-1" timestamp="1584292712384">
+    <state x="1910" y="0" width="825" height="1035" key="dock-window-1" timestamp="1586504121156">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2097" y="0" width="812" height="1035" maximized="true" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584292712384" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1584721997829">
+    <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1586505226363">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584721997829" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1584352348835">
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586505226363" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1586450943837">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584352348835" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1584296335568">
+    <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586450943837" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1586504116911">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584296335568" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504116911" />
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1583517524276" />
   </component>
 </project>
