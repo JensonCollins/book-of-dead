@@ -2,8 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambience.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem1.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem3.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/bookFlip.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinAmbience.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinIntro.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinRetrigger.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinSummary.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleClick.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleCollect.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLoop.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLose.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWait.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWin.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelStart.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelStop.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelWait.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand1.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand3.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand4.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win10snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win11snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win1snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win2snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win3snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win4snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win5snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win6snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win7snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win8snd.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win9snd.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,18 +65,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sounds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sounds/main" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\assets\sounds\main" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sounds" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\new" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown\theme" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown" />
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -116,7 +150,15 @@
       <workItem from="1586445985898" duration="25809000" />
       <workItem from="1586503897451" duration="7094000" />
       <workItem from="1586536456060" duration="1749000" />
-      <workItem from="1586541797564" duration="6274000" />
+      <workItem from="1586541797564" duration="7531000" />
+      <workItem from="1586562369244" duration="11000" />
+      <workItem from="1586586223829" duration="407000" />
+      <workItem from="1586681520489" duration="1893000" />
+      <workItem from="1586705059024" duration="1223000" />
+      <workItem from="1586763168165" duration="1215000" />
+      <workItem from="1586791782900" duration="4713000" />
+      <workItem from="1586854276254" duration="6370000" />
+      <workItem from="1586876980772" duration="5546000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -244,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586537618055</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="api url changed">
+      <created>1586550071839</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1586550071839</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,14 +325,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586537615793">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586550067395">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586537615793" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586537621170">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586550067395" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586550074190">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586537621170" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586550074190" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -292,10 +341,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1586505226363">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1586885108938">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586505226363" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586885108938" />
     <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

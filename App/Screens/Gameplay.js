@@ -8724,16 +8724,7 @@ App.Gameplay = new Screen({
         },];
         var serverData = response[this.fake_index % response.length];
         return serverData;
-    }
-    ,
-
-    getTestServerData: function () {
-        var options = {
-            endpoint: 'zt_test'
-        };
-        return this.apiRequest(options);
-    }
-    ,
+    },
 
     getGambleResult: function(action_type) {
         var options = {
