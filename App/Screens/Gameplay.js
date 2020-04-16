@@ -6308,6 +6308,7 @@ App.Gameplay = new Screen({
 
         let matched_symbol_cnt = line[3] === 1 ? 3 : line[3];
 
+        this['wonSmall text'].text = `Won ${line[5]} coins on line ${line[4]}`;
         for (let i = 0; i < this.COLUMNS_COUNT; i++) {
 
             if (this.state !== 'ready' || this.winAnimationMode === false)
@@ -7200,13 +7201,6 @@ App.Gameplay = new Screen({
 
                 this.winAnimationMode = true;
 
-                if (this.win_anim_mode && this.const.RESULT_TYPE.BIGMONEY) {
-                    // this.startBigMoneyAnimation();
-                }
-                if (this.win_anim_mode && this.const.RESULT_TYPE.JACKPOT) {
-                    // this.startJackpotAnimation();
-                }
-
                 this.winAnimation();
                 this.playSound("winline", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
 
@@ -7215,6 +7209,7 @@ App.Gameplay = new Screen({
                     });
                 }
 
+                this['wonBig text'].text = `WIN: ${this.server_win_amount.value.toFixed(2).toString()} COINS`;
                 this['win bar'].visible = true;
                 this['congratulation bar'].visible = false;
                 this['wincoins bar text'].text = '0';
@@ -7250,7 +7245,7 @@ App.Gameplay = new Screen({
                 if (this.spinCombination.winData.winLines.length > 1) {
                     setTimeout(() => {
                         let frames = [];
-                        for (let k = 1; k <= 10; k++) {
+                        for (let k = 1; k <= 50; k++) {
                             frames.push('coins_' + k.toString() + '.png');
                         }
                         this.buildChild(this['ParticleContainer'], {
@@ -8109,12 +8104,14 @@ App.Gameplay = new Screen({
         }
         this.gamble_count ++;
         this.gambleCardIdx = this.gambleCards.indexOf(button);
+        this['gamble colorPays value'].text = this.server_win_amount.value * 2 * this.gamble_count;
+        this['gamble suitPays value'].text = this.server_win_amount.value * 4 * this.gamble_count;
         this.playSound("gambleClick", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
         $.when(this.getGambleResult(1)).done((response) => {
             if(response.error === '0') {
                 let serverCardIdx = response.response.card;
                 this.gamble_count = parseInt(response.response.count) + 1;
-                this.server_win_amount.value = parseFloat(response.response.winAmount);
+                // this.server_win_amount.value = parseFloat(response.response.winAmount);
                 this.credits.value = parseFloat(response.response.balance);
                 this.credits.drawed = this.credits.value;
                 this.refreshPanelValues();
@@ -8162,6 +8159,7 @@ App.Gameplay = new Screen({
     },
 
     finishGamble: function() {
+        this['gamble title'].text = 'GAME OVER!';
         setTimeout(() => {
             this.addPreviousCard();
             this.playSound("gambleLose", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
@@ -8192,6 +8190,9 @@ App.Gameplay = new Screen({
     showGambleContainer: function(show = true) {
         this['GambleContainer'].visible = show;
         if(show === true) {
+            this['gamble title'].text = 'Choose Color (pays x2) or Suit (pays x4)';
+            this['gamble colorPays value'].text = this.server_win_amount.value;
+            this['gamble suitPays value'].text = this.server_win_amount.value;
             if(this.backSound !== undefined) {
                 this.backSound.stop();
             }
