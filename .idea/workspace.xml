@@ -2,42 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambience.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/bookFlip.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinAmbience.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinIntro.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinRetrigger.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/freespinSummary.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleClick.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleCollect.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLoop.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLose.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWait.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWin.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelStart.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelStop.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/reelWait.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand4.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win10snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win11snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win1snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win2snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win3snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win4snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win5snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win6snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win7snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win8snd.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/win9snd.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/ambience.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/ambience.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/ambienceStem1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/ambienceStem2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/ambienceStem3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/ambienceStem3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleClick.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleClick.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleCollect.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleCollect.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleLoop.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLoop.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleLose.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleLose.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleWait.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWait.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/gambleWin.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/gambleWin.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/reelStart.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/reelStart.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/reelStop.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/reelStop.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/reelWait.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/reelWait.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/scatterLand1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/main/scatterLand2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +50,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sounds/main" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\assets\sounds\main" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sounds" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\new" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown\theme" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -158,7 +140,10 @@
       <workItem from="1586763168165" duration="1215000" />
       <workItem from="1586791782900" duration="4713000" />
       <workItem from="1586854276254" duration="6370000" />
-      <workItem from="1586876980772" duration="5546000" />
+      <workItem from="1586876980772" duration="9734000" />
+      <workItem from="1587020975224" duration="4196000" />
+      <workItem from="1587029838597" duration="3325000" />
+      <workItem from="1587050089792" duration="10535000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -293,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586550071839</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="sound files added">
+      <created>1586895588200</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1586895588201</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,33 +310,34 @@
     <MESSAGE value="freespin completed and api integration" />
     <MESSAGE value="button_popupclose.mp3 file renamed" />
     <MESSAGE value="api url changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
+    <MESSAGE value="sound files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="sound files added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586550067395">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1586895585661">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586550067395" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586550074190">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586895585661" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1586895591248">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586550074190" />
-    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584548049813">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586895591248" />
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1584548049813" />
+    <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587055521900" />
     <state x="1910" y="0" width="825" height="1035" key="dock-window-1" timestamp="1586504121156">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1586885108938">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1586895823847">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586885108938" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586895823847" />
     <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

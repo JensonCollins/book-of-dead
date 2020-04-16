@@ -4310,119 +4310,6 @@ App.Gameplay = new Screen({
         },
 
         'Gameplay build': function () {
-
-            let sound_sprites = {
-                "scatterLand1": {
-                    "start": 17.35845,
-                    "end": 18.70515,
-                    "unique": false,
-                    "priority": 0
-                },
-                "scatterLand2": {
-                    "start": 19.14615,
-                    "end": 20.79211,
-                    "unique": false,
-                    "priority": 0
-                },
-                "bookFlip": {
-                    "start": 29.14236,
-                    "end": 32.94441,
-                    "unique": false,
-                    "priority": 0
-                },
-                "freespinIntro": {
-                    "start": 25.94476,
-                    "end": 28.70136,
-                    "unique": false,
-                    "priority": 0
-                },
-                "freespinAmbience": {
-                    "start": 33.38541,
-                    "end": 38.87851,
-                    "unique": false,
-                    "priority": 0
-                },
-                "freespinSummary": {
-                    "start": 43.31951,
-                    "end": 44.11669,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleWait": {
-                    "start": 44.55769,
-                    "end": 46.78122,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleLoop": {
-                    "start": 47.22222,
-                    "end": 49.52309,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleLose": {
-                    "start": 49.96409,
-                    "end": 52.78667,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleWin": {
-                    "start": 53.22767,
-                    "end": 55.36076,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleCollect": {
-                    "start": 55.80176,
-                    "end": 57.95608,
-                    "unique": false,
-                    "priority": 0
-                },
-                "gambleClick": {
-                    "start": 171.46246,
-                    "end": 172.67055,
-                    "unique": false,
-                    "priority": 0
-                },
-                "expandingLine2": {
-                    "start": 100.70746,
-                    "end": 106.61356,
-                    "unique": false,
-                    "priority": 0,
-                    "loop": true
-                },
-                "expandingLine3": {
-                    "start": 102.27163,
-                    "end": 103.43115,
-                    "unique": false,
-                    "priority": 0
-                },
-                "booksound1": {
-                    "start": 39.27163,
-                    "end": 41.43115,
-                    "unique": false,
-                    "priority": 0
-                },
-                "booksound2": {
-                    "start": 43.27163,
-                    "end": 46.43115,
-                    "unique": false,
-                    "priority": 0
-                }
-            };
-
-            PIXI.sound.add('main', {
-                url: 'assets/sounds/sounds_desktop.mp3',
-                preload: true,
-                sprites: sound_sprites,
-                loaded: (err, sound) => {
-                    this.sounds = sound;
-                    // sound.play("booksound2")
-                    // this.playSound('freespinSummary', {}, {}, sound => {})
-                    this.is_sound_loaded = true;
-                }
-            });
-
             this.is_local_mode = false;
             //getting init data from server
             if (!this.is_local_mode) {
@@ -5133,7 +5020,7 @@ App.Gameplay = new Screen({
             /*------------generate total bet items end------------*/
             this.setValues();
             this.refreshPanel();
-            this.playSound("background_music", {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
+            this.playSound("ambience", {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
                 this.backSound = sound;
             });
 
@@ -5872,11 +5759,20 @@ App.Gameplay = new Screen({
                     this.bonusCardPositions.push([reel, i]);
                     let bonusSprite = this.reels[reel].sprite.children[i].children[0].params.name.replace('crisp', 'highlight');
                     this.bonusCardSprites.push(bonusSprite);
+
+                    if(this.bonusCount === 1 && reel < 3) {
+                        this.playSound('scatterLand1', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+                    }
+
                     if(this.bonusCount === 2) {
+                        this.playSound('scatterLand2', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+                        if(reel < 4) {
+                            this.playSound('reelWait', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+                        }
                         let tempSprites = this.bonusCardSprites;
-                        this.sounds.volume = this.sound_mode ? 0.5 : 0;
-                        this.sounds.play('booksound2')
-                        this.sounds.play('bookFlip');
+                        // this.sounds.play('booksound2')
+                        // this.sounds.play('bookFlip');
+                        // this.playSound('bookFlip', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
                         this.first_reel = reel;
                         this.flashTweens.showTweens = [];
                         this.flashTweens.hideTweens = [];
@@ -5932,8 +5828,9 @@ App.Gameplay = new Screen({
                         }, 1200);*/
                     } else {
                         if(reel < 3) {
-                            this.sounds.volume = this.sound_mode ? 0.5 : 0;
-                            this.sounds.play('booksound1')
+                            this.playSound('gambleLoop', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+                            // this.sounds.volume = this.sound_mode ? 0.5 : 0;
+                            // this.sounds.play('booksound1')
                             // this.sounds.play('freespinSummary')
                         }
                     }
@@ -5977,7 +5874,7 @@ App.Gameplay = new Screen({
 
         }
 
-        this.playSound('reelstop', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+        this.playSound('reelStop', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
 
         this.state = 'spinStop';
 
@@ -6012,7 +5909,7 @@ App.Gameplay = new Screen({
             }, 5000);
         }
 
-        if(this.isfreespin) {
+        if(this.isfreespin || this.auto_mode) {
             this.state = 'ready';
             this.winAnimationMode = true;
             this.showWinAnimation();
@@ -6758,12 +6655,10 @@ App.Gameplay = new Screen({
                 this.backSound = sound;
             });
         }
-    }
-    ,
+    },
 
     handleTotalBetButtonOver: function (container, e) {
-    }
-    ,
+    },
 
     handleTotalBetButtonOut: function (container, e) {
         let nameGlow1 = container.name;
@@ -7263,20 +7158,8 @@ App.Gameplay = new Screen({
     },
 
     showCollectAnimation: function () {
-        this.sounds.volume = this.sound_mode ? 0.5 : 0;
-        this.sounds.loop = true;
-        this.sounds.play('expandingLine2').on('progress', (progress) => {
-            if(progress === 1) {
-                this.sounds.play('expandingLine2').on('progress', (progress) => {
-                    if(progress === 1) {
-                        this.sounds.play('expandingLine2').on('progress', (progress) => {
-                            if(progress === 1) {
-                                this.sounds.play('expandingLine2')
-                            }
-                        });
-                    }
-                });
-            }
+        this.playSound('gambleWait', {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
+            this.gambleWaitSound = sound;
         });
         this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.VISIBLE);
         this.setStatusControlBar(['gamble button'], this.const.STATUS_TYPE.DISABLED);
@@ -7292,9 +7175,8 @@ App.Gameplay = new Screen({
     },
 
     hideCollectAnimation: function () {
-        if(this.sounds) {
-            this.sounds.volume = this.sound_mode ? 0.5 : 0;
-            this.sounds.stop('expandingLine2');
+        if(this.gambleWaitSound !== undefined) {
+            this.gambleWaitSound.stop();
         }
         clearInterval(this.collectInterval);
         // this.setStatusControlBar(['collect button', 'gamble button'], this.const.STATUS_TYPE.NORMAL);
@@ -8177,9 +8059,11 @@ App.Gameplay = new Screen({
 
     buttonHandleCollect: function() {
         this.isCollected = 1;
+        // if(this.gambleResultClicked === false) return;
         $.when(this.getGambleResult(2)).done((response) => {
-            this.server_win_amount.value = response.response.winAmount;
-            this.credits.value = response.response.balance;
+            // this.gambleResultClicked = true;
+            this.server_win_amount.value = parseFloat(response.response.winAmount);
+            this.credits.value = parseFloat(response.response.balance);
             this.refreshPanelValues();
             this.hideCollectAnimation();
             this.showWinAnimation();
@@ -8220,14 +8104,18 @@ App.Gameplay = new Screen({
     },
 
     buttonhandlerGamble: function(button) {
+        if(this.backSound !== undefined) {
+            this.backSound.stop();
+        }
         this.gamble_count ++;
         this.gambleCardIdx = this.gambleCards.indexOf(button);
+        this.playSound("gambleClick", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
         $.when(this.getGambleResult(1)).done((response) => {
             if(response.error === '0') {
                 let serverCardIdx = response.response.card;
-                this.gamble_count = response.response.count + 1;
-                this.server_win_amount.value = response.response.winAmount;
-                this.credits.value = response.response.balance;
+                this.gamble_count = parseInt(response.response.count) + 1;
+                this.server_win_amount.value = parseFloat(response.response.winAmount);
+                this.credits.value = parseFloat(response.response.balance);
                 this.credits.drawed = this.credits.value;
                 this.refreshPanelValues();
 
@@ -8236,7 +8124,7 @@ App.Gameplay = new Screen({
                 switch (button) {
                     case 'red':
                     case 'black':
-                        if(button === this.selectedColor) {
+                        if(button === this.selectedColor && this.gamble_count < 6) {
                             setTimeout(() => {
                                 this.rollbackGamble();
                             }, 2000);
@@ -8248,7 +8136,7 @@ App.Gameplay = new Screen({
                     case 'diamond':
                     case 'club':
                     case 'spade':
-                        if(button === this.selectedSymbol) {
+                        if(button === this.selectedSymbol && this.gamble_count < 6) {
                             setTimeout(() => {
                                 this.rollbackGamble();
                             }, 2000);
@@ -8262,6 +8150,10 @@ App.Gameplay = new Screen({
     },
 
     rollbackGamble: function() {
+        this.playSound("gambleLoop", {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
+            this.backSound = sound;
+        });
+        this.playSound("gambleWin", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
         this['gamble result card'].visible = false;
         this['gamble card animSprite'].gotoAndStop(0);
         this.addPreviousCard();
@@ -8271,9 +8163,17 @@ App.Gameplay = new Screen({
 
     finishGamble: function() {
         setTimeout(() => {
+            this.addPreviousCard();
+            this.playSound("gambleLose", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
             this['gamble result card'].visible = false;
             this['gamble card animSprite'].gotoAndStop(0);
             this.showGambleContainer(false);
+            if(this.backSound !== undefined) {
+                this.backSound.stop();
+            }
+            this.playSound("ambienceStem" + (Math.floor(Math.random() * 2) + 1), {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
+                this.backSound = sound;
+            });
         }, 2000);
     },
 
@@ -8291,6 +8191,16 @@ App.Gameplay = new Screen({
 
     showGambleContainer: function(show = true) {
         this['GambleContainer'].visible = show;
+        if(show === true) {
+            if(this.backSound !== undefined) {
+                this.backSound.stop();
+            }
+            this.playSound("gambleLoop", {}, {volume: this.sound_mode ? 0.5 : 0, loop: true}, sound => {
+                this.backSound = sound;
+            });
+        } else {
+
+        }
     },
 
     showSettingsContainer: function(show = true) {
@@ -8360,9 +8270,9 @@ App.Gameplay = new Screen({
 
     refreshPanelValues: function () {
         if(typeof this.credits.drawed === 'number') {
-            this.animFieldPoints('credits bar', this.credits.value);
-            this['bottomBalance text'].text = `Balance: ${this.credits.value.toFixed(2).toString()}`;
         }
+        this.animFieldPoints('credits bar', this.credits.value);
+        this['bottomBalance text'].text = `Balance: ${this.credits.value.toFixed(2).toString()}`;
         this['coinsvalue text'].text = this.coins.value;
         this['linesvalue text'].text = this.lines.value;
         this['betvalue text'].text = `BET: ${this.bet.amount}`;
