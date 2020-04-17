@@ -4337,12 +4337,12 @@ App.Gameplay = new Screen({
             });
             this.is_bonus = false;
 
-            this.spaceKey = this.keyboard(32);
+            /*this.spaceKey = this.keyboard(32);
 
             this.spaceKey.press = () => {
                 if(this.space_mode)
                     this.buttonHandleStartButton()
-            };
+            };*/
 
 
             this.const = {
@@ -8304,8 +8304,8 @@ App.Gameplay = new Screen({
         [],
     base_amount:
         [100, 25, 7, 20, 10, 5, 10, 5, 3, 10, 5, 3, 500, 50, 10, 50, 25, 5, 8, 4, 2, 8, 4, 2, 8, 4, 2, 5, 2, 1],
-    // api_url: "https://ace.777berserk.org/api/",
-    api_url: "http://localhost:90/game/",
+    api_url: "http://198.13.47.67:90/game/",
+    // api_url: "http://localhost:90/game/",
     server_win_amount:
         {
             value: 0,
@@ -8734,7 +8734,7 @@ App.Gameplay = new Screen({
         return this.apiRequest(options);
     },
 
-    keyboard: function(keyCode) {
+    /*keyboard: function(keyCode) {
         var key = {};
         key.code = keyCode;
         key.isDown = false;
@@ -8769,6 +8769,6 @@ App.Gameplay = new Screen({
             "keyup", key.upHandler.bind(key), false
         );
         return key;
-    }
+    }*/
 })
 ;

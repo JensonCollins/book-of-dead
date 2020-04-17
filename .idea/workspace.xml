@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sounds/main/scatterLand1.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/preload/NextgenLogo@2x.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,9 @@
       <workItem from="1586876980772" duration="9734000" />
       <workItem from="1587020975224" duration="4196000" />
       <workItem from="1587029838597" duration="3325000" />
-      <workItem from="1587050089792" duration="15539000" />
+      <workItem from="1587050089792" duration="18517000" />
+      <workItem from="1587105120944" duration="1395000" />
+      <workItem from="1587109909599" duration="1397000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -278,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587062308151</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Only for client updating">
+      <created>1587068610960</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1587068610961</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,21 +312,22 @@
     <MESSAGE value="api url changed" />
     <MESSAGE value="sound files added" />
     <MESSAGE value="Sound noisy removed by &#10;https://mp3cut.net" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sound noisy removed by &#10;https://mp3cut.net" />
+    <MESSAGE value="Only for client updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Only for client updating" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1583279713613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587068589646">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587068607748">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587068589646" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587062309963">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587068607748" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587068612755">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587062309963" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587068612755" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
