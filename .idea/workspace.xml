@@ -132,7 +132,7 @@
       <workItem from="1587109909599" duration="2660000" />
       <workItem from="1587136228886" duration="8105000" />
       <workItem from="1587191002508" duration="2392000" />
-      <workItem from="1587222829539" duration="16226000" />
+      <workItem from="1587222829539" duration="20630000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -295,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587114975031</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="minor 5 issues fixed">
+      <created>1587243020931</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1587243020931</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,21 +330,22 @@
     <MESSAGE value="Sound noisy removed by &#10;https://mp3cut.net" />
     <MESSAGE value="Only for client updating" />
     <MESSAGE value="api url changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
+    <MESSAGE value="minor 5 issues fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor 5 issues fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1587152175050">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587152175050" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587114972890">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587243017805">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587114972890" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587114990575">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587243017805" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587243025148">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587114990575" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587243025148" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -346,10 +354,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587239124035">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587244186284">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587239124035" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587244186284" />
     <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -358,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586450943837" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1586504116911">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1587244499257">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504116911" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587244499257" />
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1583517524276" />
   </component>
 </project>

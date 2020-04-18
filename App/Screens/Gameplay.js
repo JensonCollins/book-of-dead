@@ -685,12 +685,6 @@ App.Gameplay = new Screen({
             ]
         },
         {
-            name: 'ParticleContainer',
-            visible: true,
-            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
-            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
-        },
-        {
             name: 'MenuContainer',
             visible: false,
             scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
@@ -3114,6 +3108,12 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'ParticleContainer',
+            visible: true,
+            scaleStrategyPortrait: ['fit-to-screen', 1920, 1080],
+            scaleStrategyLandscape: ['fit-to-screen', 1920, 1080],
+        },
+        {
             name: 'SettingsContainer',
             visible: false,
             scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
@@ -5337,8 +5337,6 @@ App.Gameplay = new Screen({
 
             App.escalibur.Jackpot.value = parseFloat(data.amount);
 
-            this.drawJackpot();
-
         },
     },
 
@@ -5950,10 +5948,7 @@ App.Gameplay = new Screen({
         if (this.currentSound) {
             this.currentSound.stop();
             this.currentSound = false;
-        }},
-
-    drawJackpot: function () {
-
+        }
     },
 
     updateTimerpanel: function () {
@@ -6096,7 +6091,7 @@ App.Gameplay = new Screen({
         // win amount label animation
         if (this.state === 'ready') {
             // tween
-            this.currentTweens.showTweens.push(this.tween({
+            this.staticTweens.showTweens.push(this.tween({
                 name: 'win-animation',
                 set: [
                     ['position', [(winAmountLabelPos[1] - 2) * 240, 60 + (winAmountLabelPos[0] - 1) * 260]],
@@ -6108,8 +6103,8 @@ App.Gameplay = new Screen({
                 ]
             }, 'line win amount wrapper'));
 
-            this.currentTweens.showTweens[this.currentTweens.showTweens.length - 1].stop();
-            this.currentTweens.hideTweens.push(this.tween({
+            this.staticTweens.showTweens[this.staticTweens.showTweens.length - 1].stop();
+            this.staticTweens.hideTweens.push(this.tween({
                 name: 'win-animation',
                 to: [
                     ['scale', [0.1, 0.1], 100, Power1.easeInOut]
@@ -6119,16 +6114,16 @@ App.Gameplay = new Screen({
                 ]
             }, 'line win amount wrapper'));
 
-            this.currentTweens.hideTweens[this.currentTweens.hideTweens.length - 1].stop();
+            this.staticTweens.hideTweens[this.staticTweens.hideTweens.length - 1].stop();
 
-            this.currentTweens.hideQuickTweens.push(this.tween({
+            this.staticTweens.hideQuickTweens.push(this.tween({
                 name: 'win-animation',
                 to: [
                     ['visible', false, 100],
                 ]
             }, 'line win amount wrapper'));
 
-            this.currentTweens.hideQuickTweens[this.currentTweens.hideQuickTweens.length - 1].stop();
+            this.staticTweens.hideQuickTweens[this.staticTweens.hideQuickTweens.length - 1].stop();
         }
 
         // line animation
@@ -6337,7 +6332,8 @@ App.Gameplay = new Screen({
         let matched_symbol_cnt = line[3] === 1 ? 3 : line[3];
 
         this['Won text'].visible = true;
-        this['wonSmall text'].text = `Won ${line[5] / this.weight.value} coins on line ${line[4]}`;
+        this['wonSmall text'].text = `Won ${Math.round(line[5] / this.weight.value)} coins on line ${line[4]}`;
+        this['line win amount text'].text = Math.round(line[5] / this.weight.value);
         for (let i = 0; i < this.COLUMNS_COUNT; i++) {
 
             if (this.state !== 'ready' || this.winAnimationMode === false)
@@ -7258,23 +7254,7 @@ App.Gameplay = new Screen({
 
                 if (this.spinCombination.winData.winLines.length > 1) {
                     setTimeout(() => {
-                        let frames = [];
-                        for (let k = 1; k <= 50; k++) {
-                            frames.push('coins_' + k.toString() + '.png');
-                        }
-                        this.buildChild(this['ParticleContainer'], {
-                            name: 'coins particle',
-                            type: 'movie-clip',
-                            frames: frames,
-                            scale: [3, 3],
-                            position: [0, 350],
-                            speed: 0.2,
-                            loop: false
-                        });
-                        this['coins particle'].gotoAndPlay(0);
-                        setTimeout(() => {
-                            this['ParticleContainer'].removeChildren();
-                        }, 1000);
+                        this.showParticleContainer();
                     }, 500);
                 }
 
@@ -8274,6 +8254,26 @@ App.Gameplay = new Screen({
         this.bottombet.amount = weight_value * betAmount;
 
         this.refreshPanelValues();
+    },
+
+    showParticleContainer: function() {
+        let frames = [];
+        for (let k = 1; k <= 10; k++) {
+            frames.push('coins_' + k.toString() + '.png');
+        }
+        this.buildChild(this['ParticleContainer'], {
+            name: 'coins particle',
+            type: 'movie-clip',
+            frames: frames,
+            scale: [3, 3],
+            position: [0, 350],
+            speed: 0.2,
+            loop: false
+        });
+        this['coins particle'].gotoAndPlay(0);
+        setTimeout(() => {
+            this['ParticleContainer'].removeChildren();
+        }, 1000);
     },
 
     refreshPanelValues: function () {
