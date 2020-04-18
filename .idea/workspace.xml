@@ -129,7 +129,10 @@
       <workItem from="1587029838597" duration="3325000" />
       <workItem from="1587050089792" duration="18517000" />
       <workItem from="1587105120944" duration="1395000" />
-      <workItem from="1587109909599" duration="1397000" />
+      <workItem from="1587109909599" duration="2660000" />
+      <workItem from="1587136228886" duration="8105000" />
+      <workItem from="1587191002508" duration="2392000" />
+      <workItem from="1587222829539" duration="16226000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -285,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587068610961</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="api url changed">
+      <created>1587114975031</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1587114975031</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,25 +319,25 @@
     <MESSAGE value="updating sprites in resizing browser" />
     <MESSAGE value="freespin completed and api integration" />
     <MESSAGE value="button_popupclose.mp3 file renamed" />
-    <MESSAGE value="api url changed" />
     <MESSAGE value="sound files added" />
     <MESSAGE value="Sound noisy removed by &#10;https://mp3cut.net" />
     <MESSAGE value="Only for client updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="Only for client updating" />
+    <MESSAGE value="api url changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="184" key="#Images" timestamp="1583279713613">
+    <state x="552" y="184" key="#Images" timestamp="1587152175050">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1583279713613" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587068607748">
+    <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587152175050" />
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587114972890">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587068607748" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587068612755">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587114972890" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587114990575">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587068612755" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587114990575" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -336,10 +346,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587066555154">
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587239124035">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587066555154" />
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587239124035" />
     <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

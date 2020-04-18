@@ -1987,548 +1987,6 @@ App.Gameplay = new Screen({
             ]
         },
         {
-            name: 'SettingsContainer',
-            visible: false,
-            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
-            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
-            childs: [
-                {
-                    type: 'graphics',
-                    alpha: 0.5,
-                    draw: [
-                        ['beginFill', 0x000000],
-                        ['drawRect', [-1200 / 2, -900 / 2, 1200, 900]]
-                    ]
-                },
-                {
-                    type: 'sprite',
-                    image: 'modal2.png',
-                    position: [0, -10],
-                    scale: [1.15, 1.6],
-                },
-                {
-                    scale: [0.8, 1],
-                    childs: [
-                        {
-                            name: 'Settings title',
-                            type: 'text',
-                            position: [0, -210],
-                            text: 'Settings',
-                            styles: {
-                                fontSize: '30px',
-                                align: 'center',
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                fontWeight: 600,
-                                fill: 0xebb122
-                            }
-                        },
-                        {
-                            position: [-160, -90],
-                            childs: [
-                                {
-                                    name: 'settings coinValueUp button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, -65],
-                                    childs: [
-                                        {
-                                            name: 'settings coinValueUp button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_plus_button.png'
-                                        },
-                                        {
-                                            name: 'settings coinValueUp button glow',
-                                            type: 'sprite',
-                                            image: 'tri_plus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings coinValueUp button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: false,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                                {
-                                    childs: [
-                                        {
-                                            name: 'settings coinValueDown back',
-                                            type: 'graphics',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
-                                            ]
-                                        },
-                                        {
-                                            type: 'text',
-                                            text: 'COIN VALUE',
-                                            position: [0, -20],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '18px',
-                                                fill: 0xffffff,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        },
-                                        {
-                                            name: 'settings coinValue text',
-                                            type: 'text',
-                                            text: '0.10',
-                                            position: [0, 13],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '40px',
-                                                fill: 0xebb122,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'settings coinValueDown button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, 65],
-                                    childs: [
-                                        {
-                                            name: 'settings coinValueDown button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_minus_button.png'
-                                        },
-                                        {
-                                            name: 'settings coinValueDown button glow',
-                                            type: 'sprite',
-                                            image: 'tri_minus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings coinValueDown button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: false,
-                                            rotation: Math.PI,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            name: 'settings coins container',
-                            position: [0, -90],
-                            childs: [
-                                {
-                                    name: 'settings coinsUp button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, -65],
-                                    childs: [
-                                        {
-                                            name: 'settings coinsUp button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_plus_button.png'
-                                        },
-                                        {
-                                            name: 'settings coinsUp button glow',
-                                            type: 'sprite',
-                                            image: 'tri_plus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings coinsUp button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: true,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                                {
-                                    childs: [
-                                        {
-                                            name: 'settings coins back',
-                                            type: 'graphics',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
-                                            ]
-                                        },
-                                        {
-                                            type: 'text',
-                                            text: 'COINS',
-                                            position: [0, -20],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '18px',
-                                                fill: 0xffffff,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        },
-                                        {
-                                            name: 'settings coins text',
-                                            type: 'text',
-                                            text: '5',
-                                            position: [0, 13],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '40px',
-                                                fill: 0xebb122,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'settings coinsDown button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, 65],
-                                    childs: [
-                                        {
-                                            name: 'settings coinsDown button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_minus_button.png'
-                                        },
-                                        {
-                                            name: 'settings coinsDown button glow',
-                                            type: 'sprite',
-                                            image: 'tri_minus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings coinsDown button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: false,
-                                            rotation: Math.PI,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            name: 'settings lines container',
-                            position: [160, -90],
-                            childs: [
-                                {
-                                    name: 'settings linesUp button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, -65],
-                                    childs: [
-                                        {
-                                            name: 'settings linesUp button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_plus_button.png'
-                                        },
-                                        {
-                                            name: 'settings linesUp button glow',
-                                            type: 'sprite',
-                                            image: 'tri_plus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings linesUp button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: true,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                                {
-                                    childs: [
-                                        {
-                                            name: 'settings lines back',
-                                            type: 'graphics',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
-                                            ]
-                                        },
-                                        {
-                                            type: 'text',
-                                            text: 'LINES',
-                                            position: [0, -20],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '18px',
-                                                fill: 0xffffff,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        },
-                                        {
-                                            name: 'settings lines text',
-                                            type: 'text',
-                                            text: '10',
-                                            position: [0, 13],
-                                            scale: [0.7, 1],
-                                            styles: {
-                                                fontSize: '40px',
-                                                fill: 0xebb122,
-                                                align: 'center',
-                                                fontWeight: 600,
-                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    name: 'settings linesDown button bar',
-                                    type: 'button',
-                                    scale: 1.5,
-                                    position: [0, 65],
-                                    childs: [
-                                        {
-                                            name: 'settings linesDown button',
-                                            type: 'sprite',
-                                            button: 'button',
-                                            image: 'tri_minus_button.png'
-                                        },
-                                        {
-                                            name: 'settings linesDown button glow',
-                                            type: 'sprite',
-                                            image: 'tri_minus_button.png',
-                                            alpha: 0,
-                                            blendMode: 3
-                                        },
-                                        {
-                                            name: 'settings linesDown button disabled',
-                                            type: 'graphics',
-                                            position: [0.1, 0],
-                                            alpha: 0.5,
-                                            visible: false,
-                                            rotation: Math.PI,
-                                            button: 'disabled button',
-                                            draw: [
-                                                ['beginFill', 0x000000],
-                                                ['lineStyle', [0, 0xFF0000, 1]],
-                                                ['moveTo', [0, -12]],
-                                                ['lineTo', [15, 12]],
-                                                ['lineTo', [-15, 12]],
-                                                ['lineTo', [0, -12]],
-                                                ['endFill'],
-                                            ],
-                                        }
-                                    ]
-                                },
-                            ]
-                        },
-                    ]
-                },
-                {
-                    childs: [
-                        {
-                            name: 'settings sound switch',
-                            type: 'gown_check',
-                            selected: true,
-                            skinName: 'switch',
-                            position: [-180, 20],
-                            width: 40,
-                            height: 25
-                        },
-                        {
-                            type: 'text',
-                            text: 'Sound',
-                            scale: [0.7, 1],
-                            position: [-110, 33],
-                            styles: {
-                                fontSize: '25px',
-                                fill: 0xffffff,
-                                align: 'center',
-                                fontWeight: 600,
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                            }
-                        },
-                        {
-                            name: 'settings adjustBet switch',
-                            type: 'gown_check',
-                            selected: false,
-                            skinName: 'switch',
-                            position: [20, 20],
-                            width: 40,
-                            height: 25
-                        },
-                        {
-                            type: 'text',
-                            text: 'Auto adjust bet',
-                            scale: [0.7, 1],
-                            position: [125, 33],
-                            styles: {
-                                fontSize: '25px',
-                                fill: 0xffffff,
-                                align: 'center',
-                                fontWeight: 600,
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                            }
-                        }
-                    ]
-                },
-                {
-                    position: [0, 60],
-                    childs: [
-                        {
-                            name: 'settings fastPlay switch',
-                            type: 'gown_check',
-                            selected: false,
-                            skinName: 'switch',
-                            position: [-180, 20],
-                            width: 40,
-                            height: 25
-                        },
-                        {
-                            type: 'text',
-                            text: 'Fast play',
-                            scale: [0.7, 1],
-                            position: [-100, 33],
-                            styles: {
-                                fontSize: '25px',
-                                fill: 0xffffff,
-                                align: 'center',
-                                fontWeight: 600,
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                            }
-                        },
-                        {
-                            name: 'settings spacebar switch',
-                            type: 'sprite',
-                            image: 'combo_disable.png',
-                            button: 'button',
-                            selected: false,
-                            skinName: 'switch',
-                            position: [40, 32],
-                            width: 40,
-                            height: 25,
-                            childs: [
-                                {
-                                    name: 'settings spacebar switch glow'
-                                }
-                            ]
-                        },
-                        {
-                            type: 'text',
-                            text: 'Spacebar to spin',
-                            scale: [0.7, 1],
-                            position: [125, 33],
-                            styles: {
-                                fontSize: '25px',
-                                fill: 0xffffff,
-                                align: 'center',
-                                fontWeight: 600,
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                            }
-                        }
-                    ]
-                },
-                {
-                    name: 'settings okBtn bar',
-                    position: [0, 200],
-                    scale: 1.5,
-                    childs: [
-                        {
-                            name: 'settings okBtn',
-                            type: 'sprite',
-                            button: 'button',
-                            image: 'okButton.png'
-                        },
-                        {
-                            name: 'settings okBtn glow',
-                            type: 'sprite',
-                            image: 'okButton.png',
-                            alpha: 0,
-                            blendMode: 3
-                        },
-                        {
-                            name: 'settings okBtn text',
-                            type: 'text',
-                            text: 'OK',
-                            scale: [0.4, 0.5],
-                            styles: {
-                                fontSize: '35px',
-                                fill: 0xffffff,
-                                align: 'center',
-                                fontWeight: 600,
-                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
-                            }
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             name: 'FreespinContainer',
             visible: true,
             scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
@@ -3656,10 +3114,554 @@ App.Gameplay = new Screen({
             ]
         },
         {
+            name: 'SettingsContainer',
+            visible: false,
+            scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
+            scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            event: 'disabled button',
+            childs: [
+                {
+                    type: 'graphics',
+                    alpha: 0.5,
+                    draw: [
+                        ['beginFill', 0x000000],
+                        ['drawRect', [-1200 / 2, -900 / 2, 1200, 900]]
+                    ]
+                },
+                {
+                    type: 'sprite',
+                    image: 'modal2.png',
+                    position: [0, -10],
+                    scale: [1.15, 1.6],
+                },
+                {
+                    scale: [0.8, 1],
+                    childs: [
+                        {
+                            name: 'Settings title',
+                            type: 'text',
+                            position: [0, -210],
+                            text: 'Settings',
+                            styles: {
+                                fontSize: '30px',
+                                align: 'center',
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                fontWeight: 600,
+                                fill: 0xebb122
+                            }
+                        },
+                        {
+                            position: [-160, -90],
+                            childs: [
+                                {
+                                    name: 'settings coinValueUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinValueUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinValueUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueDown back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'COIN VALUE',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings coinValue text',
+                                            type: 'text',
+                                            text: '0.10',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings coinValueDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinValueDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinValueDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinValueDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'settings coins container',
+                            position: [0, -90],
+                            childs: [
+                                {
+                                    name: 'settings coinsUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinsUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinsUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinsUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: true,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings coins back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'COINS',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings coins text',
+                                            type: 'text',
+                                            text: '5',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings coinsDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings coinsDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings coinsDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings coinsDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            name: 'settings lines container',
+                            position: [160, -90],
+                            childs: [
+                                {
+                                    name: 'settings linesUp button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, -65],
+                                    childs: [
+                                        {
+                                            name: 'settings linesUp button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_plus_button.png'
+                                        },
+                                        {
+                                            name: 'settings linesUp button glow',
+                                            type: 'sprite',
+                                            image: 'tri_plus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings linesUp button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: true,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                                {
+                                    childs: [
+                                        {
+                                            name: 'settings lines back',
+                                            type: 'graphics',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['drawRoundedRect', [-100 / 2, -70 / 2 ,100, 70, 5]]
+                                            ]
+                                        },
+                                        {
+                                            type: 'text',
+                                            text: 'LINES',
+                                            position: [0, -20],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '18px',
+                                                fill: 0xffffff,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        },
+                                        {
+                                            name: 'settings lines text',
+                                            type: 'text',
+                                            text: '10',
+                                            position: [0, 13],
+                                            scale: [0.7, 1],
+                                            styles: {
+                                                fontSize: '40px',
+                                                fill: 0xebb122,
+                                                align: 'center',
+                                                fontWeight: 600,
+                                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    name: 'settings linesDown button bar',
+                                    type: 'button',
+                                    scale: 1.5,
+                                    position: [0, 65],
+                                    childs: [
+                                        {
+                                            name: 'settings linesDown button',
+                                            type: 'sprite',
+                                            button: 'button',
+                                            image: 'tri_minus_button.png'
+                                        },
+                                        {
+                                            name: 'settings linesDown button glow',
+                                            type: 'sprite',
+                                            image: 'tri_minus_button.png',
+                                            alpha: 0,
+                                            blendMode: 3
+                                        },
+                                        {
+                                            name: 'settings linesDown button disabled',
+                                            type: 'graphics',
+                                            position: [0.1, 0],
+                                            alpha: 0.5,
+                                            visible: false,
+                                            rotation: Math.PI,
+                                            button: 'disabled button',
+                                            draw: [
+                                                ['beginFill', 0x000000],
+                                                ['lineStyle', [0, 0xFF0000, 1]],
+                                                ['moveTo', [0, -12]],
+                                                ['lineTo', [15, 12]],
+                                                ['lineTo', [-15, 12]],
+                                                ['lineTo', [0, -12]],
+                                                ['endFill'],
+                                            ],
+                                        }
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    childs: [
+                        {
+                            name: 'settings sound switch',
+                            type: 'gown_check',
+                            selected: true,
+                            skinName: 'switch',
+                            position: [-180, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Sound',
+                            scale: [0.7, 1],
+                            position: [-110, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        },
+                        {
+                            name: 'settings adjustBet switch',
+                            type: 'gown_check',
+                            selected: false,
+                            skinName: 'switch',
+                            position: [20, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Auto adjust bet',
+                            scale: [0.7, 1],
+                            position: [125, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                },
+                {
+                    position: [0, 60],
+                    childs: [
+                        {
+                            name: 'settings fastPlay switch',
+                            type: 'gown_check',
+                            selected: false,
+                            skinName: 'switch',
+                            position: [-180, 20],
+                            width: 40,
+                            height: 25
+                        },
+                        {
+                            type: 'text',
+                            text: 'Fast play',
+                            scale: [0.7, 1],
+                            position: [-100, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        },
+                        {
+                            name: 'settings spacebar switch',
+                            type: 'sprite',
+                            image: 'combo_disable.png',
+                            button: 'button',
+                            selected: false,
+                            skinName: 'switch',
+                            position: [40, 32],
+                            width: 40,
+                            height: 25,
+                            childs: [
+                                {
+                                    name: 'settings spacebar switch glow'
+                                }
+                            ]
+                        },
+                        {
+                            type: 'text',
+                            text: 'Spacebar to spin',
+                            scale: [0.7, 1],
+                            position: [125, 33],
+                            styles: {
+                                fontSize: '25px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                },
+                {
+                    name: 'settings okBtn bar',
+                    position: [0, 200],
+                    scale: 1.5,
+                    childs: [
+                        {
+                            name: 'settings okBtn',
+                            type: 'sprite',
+                            button: 'button',
+                            image: 'okButton.png'
+                        },
+                        {
+                            name: 'settings okBtn glow',
+                            type: 'sprite',
+                            image: 'okButton.png',
+                            alpha: 0,
+                            blendMode: 3
+                        },
+                        {
+                            name: 'settings okBtn text',
+                            type: 'text',
+                            text: 'OK',
+                            scale: [0.4, 0.5],
+                            styles: {
+                                fontSize: '35px',
+                                fill: 0xffffff,
+                                align: 'center',
+                                fontWeight: 600,
+                                fontFamily: 'ROBOTO_CONDENSED_REGULAR',
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             name: 'AutoPlayContainer',
             visible: false,
             scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
             scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            event: 'disabled button',
             childs: [
                 {
                     name: 'AutoPlayOverlay',
@@ -4360,7 +4362,6 @@ App.Gameplay = new Screen({
                     VISIBLE: 3
                 }
             };
-            this.win_anim_mode = 0x0;
 
             this.menu_mode = false;
 
@@ -5283,6 +5284,7 @@ App.Gameplay = new Screen({
         },
 
         'Gameplay symbol down': function(container, e) {
+            if(this.state !== 'ready') return;
             let spriteName = this[container.name].children[0].texture.textureCacheIds[0];
             let xPositions = [-300, -70, 150, 50, 300];
             let x = container.name.split(' ')[1];
@@ -5392,9 +5394,13 @@ App.Gameplay = new Screen({
         }
 
         this['statusvalue text'].visible = true;
-
+        this['bottomWin text'].text = 'Win:';
         // show_win();
-
+        if(this.isCollected === 0) {
+            this.credits.value += this.server_win_amount.value;
+            this.refreshPanelValues();
+            this.playSound("gambleCollect", {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+        }
         if (this.credits.value - this.bottombet.amount >= 0 && !this.isfreespin) {
             this.credits.value -= this.bottombet.amount;
             this.credits.drawed = this.credits.value;
@@ -5416,7 +5422,7 @@ App.Gameplay = new Screen({
         this.bonusCount = 0;
         this.bonusCardPositions = [];
         this.bonusCardSprites = [];
-        this.isCollected = 0;
+        this.isCollected = undefined;
         this.gamble_count = 0;
         this.gambleCardIdx = -1;
 
@@ -5506,14 +5512,11 @@ App.Gameplay = new Screen({
                     drawed: parseInt(serverData.response.balance)
                 };
                 var newArrRetval = [];
-                this.win_anim_mode = 0;
+                let expandArrRetval = [];
                 this.server_win_amount.value = serverData.response.winAmount;
-                this.nomean_multiplier = _.random(2, 7);
+                this.coin_win_amount = Math.round(this.server_win_amount.value / this.weight.value);
                 for (let i = 0; i < arrRetval.length; i++) {
                     if (arrRetval[i].retType === 0) {
-                        if (this.isfreespin && this.freespin_count !== this.freespin_index) {
-                            this.nomean_multiplier = arrRetval[i].spitfire;
-                        }
                         newArrRetval.push(arrRetval[i]);
                     }
 
@@ -5530,6 +5533,11 @@ App.Gameplay = new Screen({
                             this.expandCardIdx = scatters.expand;
                         }
                     }
+
+                    //Expand Line
+                    if (arrRetval[i].retType === 2) {
+                        expandArrRetval.push(arrRetval[i]);
+                    }
                 }
                 if(this.isfreespin && this.isfreespinStart === false) {
                     if(this.freespin_count !== this.freespin_index) {
@@ -5537,7 +5545,7 @@ App.Gameplay = new Screen({
                         this['freespin count text'].text = `Free spin ${this.freespin_index + 1} of 10`;
                         this.freespin_index ++;
                     }
-                    if((this.freespin_count - 1) === this.freespin_index) {
+                    if(this.freespin_count === this.freespin_index) {
                         this.freespinEnd = true;
                     }
                 }/*
@@ -5555,6 +5563,7 @@ App.Gameplay = new Screen({
                 }*/
 
                 this.server_arrRetVal = newArrRetval;
+                this.expandArrRetVal = expandArrRetval;
 
                 if (arrRetval.length !== 0) {
                     if (arrRetval[0].retType === 3) {
@@ -5660,10 +5669,6 @@ App.Gameplay = new Screen({
                                 this.stopReel(i);
                             }
                             /*}*/
-
-                            if (i == this.COLUMNS_COUNT - 1) {
-                                this['statusvalue text'].visible = false;
-                            }
 
                         }, this.REELS_STOP_TIMEOUT + i * this.REELS_STOP_DELAY);
 
@@ -5884,15 +5889,14 @@ App.Gameplay = new Screen({
 
         if (!this.auto_mode) {
             this['start button'].visible = true;
-            this['statusvalue text'].visible = false;
             this.setStatusCenterBar('start button', this.const.STATUS_TYPE.NORMAL);
         } else {
             if (this.current_auto_amount === 0) {
                 this.setStatusCenterBar('start button', this.const.STATUS_TYPE.NORMAL);
                 this['autostop button bar'].visible = false;
-                this['statusvalue text'].visible = false;
             }
         }
+        this['statusvalue text'].visible = false;
         this.setStatusControlBar(['maxBet button'], this.const.STATUS_TYPE.NORMAL)
         this.refreshCoinBar(this.coins.step);
         this.refreshLineBar(this.lines.step);
@@ -5933,8 +5937,10 @@ App.Gameplay = new Screen({
                 } else {
                     this.state = 'ready';
                     this.winAnimationMode = true;
-                    this.animateEachLine(this.spinCombination.winData.winLines);
+                    this.isCollected = 0;
+                    this.winAnimation();
                     this.showCollectAnimation();
+                    this['bottomWin text'].text = `Win: ${this.server_win_amount.value}`;
                 }
             }
         } else {
@@ -5944,9 +5950,7 @@ App.Gameplay = new Screen({
         if (this.currentSound) {
             this.currentSound.stop();
             this.currentSound = false;
-        }
-    }
-    ,
+        }},
 
     drawJackpot: function () {
 
@@ -6029,8 +6033,7 @@ App.Gameplay = new Screen({
                 loop: true
             }, name + ' light animation');
         }
-    }
-    ,
+},
 
     setSymbolsBlur: function (container, state) {
 
@@ -6041,9 +6044,7 @@ App.Gameplay = new Screen({
 
         if (state) this[name + ' blur'].visible = true;
         else this[name + ' crisp'].visible = true;
-
-    }
-    ,
+    },
 
     tweensBySprites: function (activeSprites, passiveSprites, highlightSprites, textSprites, lineSprites, textValue, lineNum, callback, winAmountLabelPos) {
 
@@ -6054,6 +6055,10 @@ App.Gameplay = new Screen({
         this.staticTweens.showTweens = [];
         this.staticTweens.hideTweens = [];
         this.staticTweens.hideQuickTweens = [];
+
+        this.passiveTweens.showTweens = [];
+        this.passiveTweens.hideTweens = [];
+        this.passiveTweens.hideQuickTweens = [];
         if (this.state !== 'ready' || this.winAnimationMode === false) {
             callback = null;
             return;
@@ -6186,6 +6191,29 @@ App.Gameplay = new Screen({
         }
 
         if (this.state === 'ready') {
+            this.passiveTweens.showTweens.push(this.tween({
+                name: 'win-animation',
+                to: ['alpha', 0.35, 300]
+            }, passiveSprites));
+
+            this.passiveTweens.showTweens[this.passiveTweens.showTweens.length - 1].stop();
+
+            this.passiveTweens.hideTweens.push(this.tween({
+                name: 'win-animation',
+                to: ['alpha', 1, 300, 500]
+            }, passiveSprites));
+
+            this.passiveTweens.hideTweens[this.passiveTweens.hideTweens.length - 1].stop();
+
+            this.passiveTweens.hideQuickTweens.push(this.tween({
+                name: 'win-animation',
+                to: ['alpha', 1, 50, 0]
+            }, passiveSprites));
+
+            this.passiveTweens.hideQuickTweens[this.passiveTweens.hideQuickTweens.length - 1].stop();
+        }
+
+        if (this.state === 'ready') {
             this.currentTweens.show();
             this.staticTweens.show();
             this.tween({
@@ -6206,8 +6234,13 @@ App.Gameplay = new Screen({
             }
 
             if (this.state === 'ready') {
-                this.staticTweens.hide();
-                this.currentTweens.hide();
+                this.passiveTweens.show();
+                if(this.spinCombination.winData.winLines.length > 1){
+                    this.staticTweens.hide();
+                    this.currentTweens.hide();
+                } else if(this.spinCombination.winData.winLines.length === 1) {
+                    this.currentTweens.hide();
+                }
             }
 
             if (callback && (this.state === 'ready')) {
@@ -6223,9 +6256,9 @@ App.Gameplay = new Screen({
                     }
 
                     if (this.state === 'ready') {
-                        this.currentTweens.hide();
-                        // this.hideLinecontainer();
-                        // caapllback.call(this);
+                        if(this.spinCombination.winData.winLines.length > 1) {
+                            this.currentTweens.hide();
+                        }
                     }
                 }, 10);
                 if (this.state === 'ready') tempTimeout3 = setTimeout(() => {
@@ -6239,9 +6272,7 @@ App.Gameplay = new Screen({
             }
 
         }, 2500);
-
-    }
-    ,
+},
 
 
     allanimatepassive: function (activeSprites, passiveSprites) {
@@ -6284,10 +6315,7 @@ App.Gameplay = new Screen({
             if (this.passiveTweens.showTweens.length > 0)
                 this.passiveTweens.show();
         }
-
-
-    }
-    ,
+},
 
     animateLine: function (line, callback) {
 
@@ -6308,7 +6336,8 @@ App.Gameplay = new Screen({
 
         let matched_symbol_cnt = line[3] === 1 ? 3 : line[3];
 
-        this['wonSmall text'].text = `Won ${line[5]} coins on line ${line[4]}`;
+        this['Won text'].visible = true;
+        this['wonSmall text'].text = `Won ${line[5] / this.weight.value} coins on line ${line[4]}`;
         for (let i = 0; i < this.COLUMNS_COUNT; i++) {
 
             if (this.state !== 'ready' || this.winAnimationMode === false)
@@ -6369,8 +6398,7 @@ App.Gameplay = new Screen({
             return;
         }
         this.tweensBySprites(activeSprites, passiveSprites, highlightSprites, textSprites, lineSprites, line[5], linesNum, callback, winAmountLabelPos);
-    }
-    ,
+    },
 
     animatePassiveLines: function (winData) {
 
@@ -6418,8 +6446,7 @@ App.Gameplay = new Screen({
         }
 
         if (this.state === 'ready') this.allanimatepassive(activeSprites, passiveSprites);
-    }
-    ,
+    },
 
     animateEachLine: function (winLines, callback) {
 
@@ -6463,11 +6490,17 @@ App.Gameplay = new Screen({
                 this.animateLine(lineData, () => {
                     if (this.spinCombination) {
                         if (this.spinCombination.winData.winLines.length - 1 === lineNum) {
-                            if (this.state !== 'ready' || this.winAnimationMode === false) {
-                                callback = null;
+                            if(this.auto_mode === true) {
+                                if ((callback) && (this.state === 'ready')) callback.call(this);
                                 return;
                             }
-                            if ((callback) && (this.state === 'ready')) callback.call(this);
+                            if(this.spinCombination.winData.winLines.length > 1) {
+                                if (this.state !== 'ready' || this.winAnimationMode === false) {
+                                    callback = null;
+                                    return;
+                                }
+                                if ((callback) && (this.state === 'ready')) callback.call(this);
+                            }
                         }
                     }
                     // show_win(win);
@@ -6478,9 +6511,7 @@ App.Gameplay = new Screen({
             this.timeouts.push(tempTimeout);
 
         }
-
-    }
-    ,
+    },
 
     wildCardAnimation: function () {
         if (this.wildSprites.length === 0)
@@ -6529,7 +6560,7 @@ App.Gameplay = new Screen({
                 this.refreshPanelValues();
                 return;
             }
-
+            this['wonBig text'].text = `WIN: ${this.coin_win_amount} COINS`;
             this.animateEachLine(this.spinCombination.winData.winLines, () => {
                 if (this.state !== 'ready') return;
                 let tempTimeout = null;
@@ -6559,9 +6590,7 @@ App.Gameplay = new Screen({
 
             this.refreshPanelValues();
         }
-
-    }
-    ,
+    },
 
     animFieldPoints: function (fieldName, points, bAnim = false, speed = 0) {
         // if (bAnim === false) {
@@ -6587,8 +6616,7 @@ App.Gameplay = new Screen({
         //         }
         //     }, fieldName);
         // }
-    }
-    ,
+    },
 
     tutorialTimeout: function (timeout) {
 
@@ -6602,22 +6630,17 @@ App.Gameplay = new Screen({
             }, typeof timeout === "number" ? timeout : Settings["tutorial-timeout"]);
 
         }
-
-    }
-    ,
+    },
 
     hideTutorial: function () {
 
         clearTimeout(this.TutorialTimeout);
 
         if (App.Tutorial.showed) App.Tutorial.hide();
-
-    }
-    ,
+    },
 
     handleAutoButtonOver: function (container, e) {
-    }
-    ,
+    },
 
     handleAutoButtonOut: function (container, e) {
         let nameGlow1 = container.name;
@@ -6637,8 +6660,7 @@ App.Gameplay = new Screen({
                 }
                 break;
         }
-    }
-    ,
+    },
 
     handleAutoButtonDown: function (container, e) {
         let nameGlow1 = container.name;
@@ -6672,8 +6694,7 @@ App.Gameplay = new Screen({
             }, nameGlow1);
             this[nameGlow1].pressed = false;
         }
-    }
-    ,
+    },
 
     handleTotalBetButtonUp: function (container, e) {
         let name = container.name;
@@ -6694,8 +6715,7 @@ App.Gameplay = new Screen({
                     break;
             }
         }
-    }
-    ,
+    },
 
     handleTotalBetButtonDown: function (container, e) {
         let nameGlow1 = container.name;
@@ -6704,8 +6724,7 @@ App.Gameplay = new Screen({
         this[nameGlow1].tween = this.tween({
             to: ['scale', [this[nameGlow1].scale._x - 0.1, this[nameGlow1].scale._y - 0.1], 150, 0, Power1.easeOut]
         }, nameGlow1);
-    }
-    ,
+    },
 
     handleMenuButtonOver: function (container, e) {
         let nameGlow1 = container.name + ' glow';
@@ -6713,8 +6732,7 @@ App.Gameplay = new Screen({
         this[nameGlow1].tween = this.tween({
             to: ['alpha', 1, 150, 0, Power1.easeOut]
         }, nameGlow1);
-    }
-    ,
+    },
 
     handleMenuButtonOut: function (container, e) {
         let nameGlow1 = container.name + ' glow';
@@ -6733,8 +6751,7 @@ App.Gameplay = new Screen({
             }, name);
             this[name].pressed = false;
         }
-    }
-    ,
+    },
 
     handleMenuButtonUp: function (container, e) {
         let name = container.name;
@@ -6751,8 +6768,7 @@ App.Gameplay = new Screen({
                 this.buttonHandleMenuHeaderItem(container, 'menu_header item');
             }
         }
-    }
-    ,
+    },
 
     handleMenuButtonDown: function (container, e) {
         let nameGlow1 = container.name;
@@ -6761,8 +6777,7 @@ App.Gameplay = new Screen({
         this[nameGlow1].tween = this.tween({
             to: ['scale', [this[nameGlow1].scale._x - 0.1, this[nameGlow1].scale._y - 0.1], 150, 0, Power1.easeOut]
         }, nameGlow1);
-    }
-    ,
+    },
 
     handleButtonOut: function (container, e) {
         if (this.freeze_status)
@@ -6785,8 +6800,7 @@ App.Gameplay = new Screen({
                     }, nameGlow1);
                     this[nameGlow1].pressed = false;
                 }*/
-    }
-    ,
+    },
 
     handleButtonOver: function (container, e) {
         if (this.freeze_status || this.state !== 'ready')
@@ -6796,8 +6810,7 @@ App.Gameplay = new Screen({
         this[nameGlow1].tween = this.tween({
             to: ['alpha', 1, 150, 0, Power1.easeOut]
         }, nameGlow1);
-    }
-    ,
+    },
 
     handleButtonUp: function (container, e) {
 
@@ -6994,8 +7007,7 @@ App.Gameplay = new Screen({
                 }
                 break;
         }
-    }
-    ,
+    },
 
     /*------------------New method definition started------------------*/
 
@@ -7112,6 +7124,10 @@ App.Gameplay = new Screen({
 
     showAutoplayContainer: function(show = true) {
         this['AutoPlayContainer'].visible = show;
+        if(show === true) {
+            this.current_auto_amount = 20;
+            this.refreshAutoItemBack(20);
+        }
     },
 
     showMenuContainer: function (header_index) {
@@ -7209,7 +7225,6 @@ App.Gameplay = new Screen({
                     });
                 }
 
-                this['wonBig text'].text = `WIN: ${this.server_win_amount.value.toFixed(2).toString()} COINS`;
                 this['win bar'].visible = true;
                 this['congratulation bar'].visible = false;
                 this['wincoins bar text'].text = '0';
@@ -7224,7 +7239,6 @@ App.Gameplay = new Screen({
                 setTimeout(() => {
                     clearInterval(countCoinsInterval);
                     this['win bar'].visible = false;
-                    this['Won text'].visible = true;
                     if (this.spinCombination.winData.winLines.length == 1) {
                         this['congratulation bar'].visible = true;
                         this['congratulationcoins bar text'].text = this.server_win_amount.value;
@@ -7374,8 +7388,7 @@ App.Gameplay = new Screen({
             }
         }
         this.helpPageIndex = index;
-    }
-    ,
+    },
 
     handleButtonDown: function (container, e) {
         if (this.freeze_status || this.state !== 'ready')
@@ -7428,8 +7441,7 @@ App.Gameplay = new Screen({
             this.refreshAutoamount();
             this.setStatusCenterBar('auto start button', this.const.STATUS_TYPE.NORMAL);
         }
-    }
-    ,
+    },
 
     refreshAutoamount: function () {
         this['autoValue text'].text = this.current_auto_amount;
@@ -7452,8 +7464,7 @@ App.Gameplay = new Screen({
         //         this[bar_names[i]].visible = false;
         //     }
         // }
-    }
-    ,
+    },
 
     setStatusControlBar: function (names, status) {
         let bar_names = [
@@ -7499,8 +7510,7 @@ App.Gameplay = new Screen({
         // this.bet.amount = this.totalbet_value_list[container.step] * this.line_value_list[0];
         this.refreshPanel();
         this.refreshTotalbet(this.bet.step);
-    }
-    ,
+    },
 
     refreshTotalbetItemBack: function (number) {
         for (let i = 0; i < this.totalbet_value_list.length; i++) {
@@ -7518,15 +7528,13 @@ App.Gameplay = new Screen({
                 this["menu_body totalbet " + number + " selected"].alpha = 1;
             }
         }
-    }
-    ,
+    },
 
     buttonHandleMenuHeaderItem: function (container, name) {
         if (this.state !== 'ready') return;
 
         this.refreshMenuHeaderItemBack(container.step);
-    }
-    ,
+    },
 
     refreshMenuHeaderItemBack: function (number) {
         switch (number) {
@@ -7568,15 +7576,13 @@ App.Gameplay = new Screen({
                 }, containername);
             }
         }
-    }
-    ,
+    },
 
     refreshPanel: function () {
         // this['control totalbet amount text'].text = this.bet.amount.toString();
         // this['bottom win text'].text = ''; // this.bet.amount.toString();
         this['menu_body totalbet title'].text = this.bet.amount.toString();
-    }
-    ,
+    },
 
     buttonHandleAutoStartButton: function () {
         if (this.state !== 'ready') return;
@@ -8061,7 +8067,8 @@ App.Gameplay = new Screen({
             this.credits.value = parseFloat(response.response.balance);
             this.refreshPanelValues();
             this.hideCollectAnimation();
-            this.showWinAnimation();
+            this.winAnimationMode = false;
+            // this.showWinAnimation();
         });
     },
 
@@ -8304,15 +8311,14 @@ App.Gameplay = new Screen({
         [],
     base_amount:
         [100, 25, 7, 20, 10, 5, 10, 5, 3, 10, 5, 3, 500, 50, 10, 50, 25, 5, 8, 4, 2, 8, 4, 2, 8, 4, 2, 5, 2, 1],
-    api_url: "http://198.13.47.67:90/game/",
-    // api_url: "http://localhost:90/game/",
+    // api_url: "http://198.13.47.67:90/game/",
+    api_url: "http://localhost:90/game/",
     server_win_amount:
         {
             value: 0,
             drawed:
                 0
-        }
-    ,
+    },
     gamesession_id: "",
     session_id:
         0,
@@ -8399,8 +8405,7 @@ App.Gameplay = new Screen({
             }
         }
         return return_matrix;
-    }
-    ,
+    },
 
     exchangeagain: function (matrix) {
         var return_matrix = [[], [], [], [], []];
@@ -8409,8 +8414,7 @@ App.Gameplay = new Screen({
                 return_matrix[4 - i][j] = matrix[i][j];
             }
         return return_matrix;
-    }
-    ,
+    },
 
     generateWinData: function () {
         var serverData = this.server_arrRetVal;
@@ -8445,8 +8449,7 @@ App.Gameplay = new Screen({
             return_var[k] = windata;
         }
         return return_var;
-    }
-    ,
+    },
 
     bonusclose: function () {
         this.tween({
@@ -8460,8 +8463,7 @@ App.Gameplay = new Screen({
         }, 'bonus container', () => {
             this['bonus container'].visible = false;
         });
-    }
-    ,
+    },
 
     apiRequest: function (options) {
         var params = '';
@@ -8489,8 +8491,7 @@ App.Gameplay = new Screen({
         });
 
         return xhr;
-    }
-    ,
+    },
 
     getInitData: function () {
         var options = {
@@ -8531,8 +8532,7 @@ App.Gameplay = new Screen({
         });
         var response = xhr.responseText;
         return JSON.parse(response.toString());
-    }
-    ,
+    },
 
     getCashInfo: function () {
         var options = {
@@ -8574,8 +8574,7 @@ App.Gameplay = new Screen({
         });
         var response = xhr.responseText;
         return JSON.parse(response.toString());
-    }
-    ,
+    },
 
     getServerData: function () {
         var response = [{
