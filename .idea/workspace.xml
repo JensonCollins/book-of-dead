@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/sprites/features_texture1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/sprites/features_texture1_level1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +139,7 @@
       <workItem from="1587395516738" duration="8438000" />
       <workItem from="1587411906258" duration="6680000" />
       <workItem from="1587450640056" duration="9331000" />
-      <workItem from="1587482511416" duration="18159000" />
+      <workItem from="1587482511416" duration="18512000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -326,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587249484396</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="current status updating on the server">
+      <created>1587501837808</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1587501837809</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,21 +359,22 @@
     <MESSAGE value="Only for client updating" />
     <MESSAGE value="minor 5 issues fixed" />
     <MESSAGE value="api url changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
+    <MESSAGE value="current status updating on the server" />
+    <option name="LAST_COMMIT_MESSAGE" value="current status updating on the server" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1587152175050">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587152175050" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587249480713">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587501835185">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587249480713" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587249487967">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587501835185" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587501840126">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587249487967" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587501840126" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
