@@ -668,6 +668,7 @@ Settings = {
         // atlas loading
         "logo_texture0": {"type": "atlas", "url": "assets/sprites/logo_texture0.json"},
         "feature_preview": {"type": "atlas", "url": "assets/sprites/feature_preview_texture0.json"},
+        "feature_texture1": {"type": "atlas", "url": "assets/sprites/features_texture1.json"},
         "menu_texture0": {"type": "atlas", "url": "assets/sprites/new/menu_texture0.json"},
         "menu_texture1": {"type": "atlas", "url": "assets/sprites/new/menu_texture1.json"},
         "statusbar_texture": {"type": "atlas", "url": "assets/sprites/new/statusbar_texture0.json"},

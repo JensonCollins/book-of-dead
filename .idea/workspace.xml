@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6328c743-faf6-4ffd-ab98-847fb7934da8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/sprites/features_texture1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sprites/features_texture1_level1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Screens/Gameplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/Screens/Gameplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/App/settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +34,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sounds/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/sprites" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\assets\sprites" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\assets\sounds\main" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sounds" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\assets\sprites\new" />
       <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown\theme" />
-      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead\App\Libs\gown" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\pkm\xampp7\htdocs\slot\book-of-dead\book-of-dead" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -131,7 +135,14 @@
       <workItem from="1587109909599" duration="2660000" />
       <workItem from="1587136228886" duration="8105000" />
       <workItem from="1587191002508" duration="2392000" />
-      <workItem from="1587222829539" duration="21569000" />
+      <workItem from="1587222829539" duration="23041000" />
+      <workItem from="1587277514562" duration="4344000" />
+      <workItem from="1587310020406" duration="6081000" />
+      <workItem from="1587364068499" duration="3159000" />
+      <workItem from="1587395516738" duration="8438000" />
+      <workItem from="1587411906258" duration="6680000" />
+      <workItem from="1587450640056" duration="9331000" />
+      <workItem from="1587482511416" duration="18159000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -308,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587248337068</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="api url changed">
+      <created>1587249484396</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1587249484396</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,35 +353,39 @@
     <MESSAGE value="sound files added" />
     <MESSAGE value="Sound noisy removed by &#10;https://mp3cut.net" />
     <MESSAGE value="Only for client updating" />
-    <MESSAGE value="api url changed" />
     <MESSAGE value="minor 5 issues fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor 5 issues fixed" />
+    <MESSAGE value="api url changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="api url changed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1587152175050">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="184" key="#Images/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587152175050" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587248335351">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587249480713">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587248335351" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587248339326">
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587249480713" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587249487967">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587248339326" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587249487967" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587055521900" />
-    <state x="1910" y="0" width="825" height="1035" key="dock-window-1" timestamp="1586504121156">
-      <screen x="1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="1910" y="0" width="825" height="1035" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586504121156" />
-    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587244186284">
+    <state x="769" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587495453230">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587244186284" />
+    <state x="769" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587495453230" />
+    <state x="1913" y="0" width="974" height="1057" key="dock-window-1" timestamp="1587491287611">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1913" y="0" width="974" height="1057" key="dock-window-1/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587491287611" />
+    <state x="656" y="257" width="737" height="606" key="find.popup" timestamp="1587489577094">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="257" width="737" height="606" key="find.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587489577094" />
     <state x="720" y="358" key="git4idea.ui.GitUnstashDialog" timestamp="1586550056702">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -372,10 +394,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1586450943837" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1587244499257">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1587487235577">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587244499257" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587487235577" />
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1050/0.0.1920.1050@1920.0.1920.1050" timestamp="1583517524276" />
   </component>
 </project>

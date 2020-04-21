@@ -56,6 +56,10 @@ App.Gameplay = new Screen({
                                 {
                                     name: 'game board border container',
                                     childs: []
+                                },
+                                {
+                                    name: 'game board light container',
+                                    childs: []
                                 }
                             ]
                         },
@@ -1977,7 +1981,13 @@ App.Gameplay = new Screen({
                             }
                         }
                     ]
-                }
+                },
+                /*{
+                    name: 'test',
+                    type: 'sprite',
+                    image: 'light',
+                    scale: 4
+                }*/
             ]
         },
         {
@@ -1985,6 +1995,7 @@ App.Gameplay = new Screen({
             visible: true,
             scaleStrategyPortrait: ['fit-to-screen', 1200, 900],
             scaleStrategyLandscape: ['fit-to-screen', 1200, 900],
+            event: 'disabled button',
             childs: [
                 {
                     name: 'freespin showing container',
@@ -2190,15 +2201,7 @@ App.Gameplay = new Screen({
                                                 align: 'center',
                                                 fontSize: '35px',
                                                 fontFamily: 'Oswald-Bold',
-                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#000000",
-                                                strokeThickness: 2,
-                                                lineJoin: "bevel",
+                                                fill: 0xfff59f,
                                             },
                                             position: [-120, 0]
                                         },
@@ -2208,15 +2211,10 @@ App.Gameplay = new Screen({
                                             text: '200',
                                             styles: {
                                                 align: 'center',
-                                                fontSize: '40px',
+                                                fontSize: '60px',
                                                 fontFamily: 'Oswald-Bold',
-                                                fill: [0xf6be19, 0xffffff, 0xf6be19],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#361b06",
+                                                fill: [0xf1b200, 0xefea89, 0xf1b200],
+                                                stroke: "#eacf47",
                                                 strokeThickness: 2,
                                                 lineJoin: "bevel",
                                             }
@@ -2229,15 +2227,7 @@ App.Gameplay = new Screen({
                                                 align: 'center',
                                                 fontSize: '35px',
                                                 fontFamily: 'Oswald-Bold',
-                                                fill: [0xffffff, 0xffffff, 0xffffff, 0xffffff],
-                                                dropShadow: true,
-                                                dropShadowAngle: 0.5,
-                                                dropShadowColor: 0x000000,
-                                                dropShadowDistance: 1,
-                                                dropShadowBlur: 5,
-                                                stroke: "#000000",
-                                                strokeThickness: 2,
-                                                lineJoin: "bevel",
+                                                fill: 0xfff59f
                                             },
                                             position: [150, 0]
                                         }
@@ -4469,7 +4459,6 @@ App.Gameplay = new Screen({
                 }
             }
 
-            this.spinCombinations = [];
             this.helpPageVisabilityFlag = false;
 
             this.helpPageIndex = 1;
@@ -4756,6 +4745,12 @@ App.Gameplay = new Screen({
                         position: [mostLeft + this.COLUMNS_OFFSET * i, -1 * (this.ROWS_COUNT - 1) / 2 * this.ROWS_OFFSET - (this.ROWS_COUNT + 1) * this.ROWS_OFFSET]
                     });
 
+                let reelLight = this.buildChild(this['game board light container'], {
+                    name: 'reel light ' + i,
+                    mask: 'reel mask ' + i,
+                    position: [mostLeft + this.COLUMNS_OFFSET * i, -1 * (this.ROWS_COUNT - 1) / 2 * this.ROWS_OFFSET - (this.ROWS_COUNT + 1) * this.ROWS_OFFSET]
+                });
+
                 this.buildChild(this['game board border container'],{
                     name: 'reel border ' + i,
                     position: [mostLeft + this.COLUMNS_OFFSET * i, 0],
@@ -4787,6 +4782,7 @@ App.Gameplay = new Screen({
                 this.reels.push({
                     sprite: reelSprite,
                     spriteHighlight: reelSpriteHighlight,
+                    spriteLight: reelLight,
                     speed: null,
                     completeSymbol: null,
                     completed: null,
@@ -4799,6 +4795,12 @@ App.Gameplay = new Screen({
                         name: 'reel ' + i + ' symbol container ' + j,
                         event: 'symbol',
                         scale: this.SYMBOLS_SCALE,
+                        position: [0, this.ROWS_OFFSET * j]
+                    });
+
+                    this.buildChild(this['reel light ' + i], {
+                        name: 'reel ' + i + ' symbol light container ' + j,
+                        scale: 4,
                         position: [0, this.ROWS_OFFSET * j]
                     });
 
@@ -4823,6 +4825,13 @@ App.Gameplay = new Screen({
                     this.buildChild(this['reel ' + i + ' symbol container ' + j], {
                         name: 'reel ' + i + ' symbol ' + j + ' blur',
                         type: 'sprite',
+                        visible: false
+                    });
+
+                    this.buildChild(this['reel ' + i + ' symbol light container ' + j], {
+                        name: 'reel ' + i + ' symbol ' + j + ' light',
+                        type: 'sprite',
+                        image: 'light',
                         visible: false
                     });
 
@@ -5379,6 +5388,12 @@ App.Gameplay = new Screen({
     },
 
     spin: function () {
+        /*this.expandReelArray = [0, 1];
+        this.expandCardIdx = 0;
+        this.expandReelAnimation(() => {
+            console.log("ended");
+        });
+        return;*/
         this.winAnimationMode = false;
         this.is_bonus = false;
         // this.hideLinecontainer();
@@ -5391,7 +5406,6 @@ App.Gameplay = new Screen({
             });
         }
 
-        this['statusvalue text'].visible = true;
         this['bottomWin text'].text = 'Win:';
         // show_win();
         if(this.isCollected === 0) {
@@ -5409,32 +5423,27 @@ App.Gameplay = new Screen({
             this.refreshPanelValues();
 
             this.creditsNotInc = true;
-        }/* else {
-            this.handleButtonAutoStop();
-            return;
-        }*/
+        }
 
         this.first_reel = 0;
-        this.second_reel = false;
-        this.third_reel = false;
         this.bonusCount = 0;
         this.bonusCardPositions = [];
         this.bonusCardSprites = [];
+        this.expandReelArray = [];
+        this.expandArrRetVal = [];
         this.isCollected = undefined;
         this.gamble_count = 0;
         this.gambleCardIdx = -1;
 
-        this['win bar'].visible = false;
-        this['Won text'].visible = false;
+        if(!(this.isfreespin === true && this.freespin_index > 0)) {
+            this['win bar'].visible = false;
+            this['statusvalue text'].visible = true;
+        }
         this['congratulation bar'].visible = false;
         this.hideCollectAnimation();
+        this.paytableContainer(false);
         this.setStatusControlBar(['maxBet button', 'coinsUp button', 'coinsDown button', 'linesUp button', 'linesDown button'], this.const.STATUS_TYPE.DISABLED);
-        // this['start button bar'].visible = false;
-        // this['autostop button bar'].visible = false;
-        // this.setStatusControlBar(['home button', 'autostart button', 'betplus button', 'betminus button'], this.const.STATUS_TYPE.DISABLED);
-        // this['start button'].texture = this.getTexture(this.startbuttonDisablebg);
-        // this['button auto'].texture = this.getTexture(this.autobuttonNormalbg);
-
+        
         if (this.winSound) {
             this.winSound.stop();
             this.winSound = false;
@@ -5444,15 +5453,7 @@ App.Gameplay = new Screen({
 
         this.state = 'spin';
 
-        this.currentTweens.hide();
-        this.currentTweens.hideQuick();
-        this.staticTweens.hide();
-        this.staticTweens.hideQuick();
-        this.passiveTweens.hide();
-        this.passiveTweens.hideQuick();
-        this.flashTweens.hide();
-        this.flashTweens.hideQuick();
-        this.wildSprites = [];
+        this.hideWinanimation();
 
         this.spinCombination = null;
 
@@ -5528,7 +5529,7 @@ App.Gameplay = new Screen({
                             this.isfreespin = this.freespin_count > 0;
                             this.freespin_index = 0;
                             this.isfreespinStart = true;
-                            this.expandCardIdx = scatters.expand;
+                            this.expandCardIdx = parseInt(scatters.expand);
                         }
                     }
 
@@ -5562,6 +5563,7 @@ App.Gameplay = new Screen({
 
                 this.server_arrRetVal = newArrRetval;
                 this.expandArrRetVal = expandArrRetval;
+                console.log(this.expandArrRetVal)
 
                 if (arrRetval.length !== 0) {
                     if (arrRetval[0].retType === 3) {
@@ -5770,7 +5772,9 @@ App.Gameplay = new Screen({
                     if(this.bonusCount === 2) {
                         this.playSound('scatterLand2', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
                         if(reel < 4) {
-                            this.playSound('reelWait', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false});
+                            this.playSound('reelWait', {}, {volume: this.sound_mode ? 0.5 : 0, loop: false}, sound => {
+                                this.reelWaitSound = sound;
+                            });
                         }
                         let tempSprites = this.bonusCardSprites;
                         // this.sounds.play('booksound2')
@@ -5838,6 +5842,14 @@ App.Gameplay = new Screen({
                         }
                     }
                 }
+
+                if (this.isfreespin === true && this.freespin_index > 0) {
+                    if(App.SymbolsNames[imageName] === this.symbolNames[this.expandCardIdx]) {
+                        if(this.expandReelArray.indexOf(reel) === -1) {
+                            this.expandReelArray.push(reel);
+                        }
+                    }
+                }
             }
         }
 
@@ -5894,6 +5906,13 @@ App.Gameplay = new Screen({
                 this['autostop button bar'].visible = false;
             }
         }
+        if(this.bonusCount > 0 && this.bonusCount < 3) {
+            if(this.reelWaitSound !== undefined) {
+                this.reelWaitSound.stop();
+            }
+            this.flashTweens.hide();
+            this.flashTweens.hideQuick();
+        }
         this['statusvalue text'].visible = false;
         this.setStatusControlBar(['maxBet button'], this.const.STATUS_TYPE.NORMAL)
         this.refreshCoinBar(this.coins.step);
@@ -5921,28 +5940,32 @@ App.Gameplay = new Screen({
             this.isfreespin = false;
             this.freespinEnd = false;
             this.expandCardIdx = -1;
+            this['win bar'].visible = false;
+            this.hideWinanimation();
             setTimeout(() => {
                 this.endFreespinAnimation();
             }, 3000);
         }
-        if (this.spinCombination.winData.winLines.length > 0) {
-            if(this.isfreespin) {
+        if(this.spinCombination) {
+            if (this.spinCombination.winData.winLines.length > 0) {
+                this['bottomWin text'].text = `Win: ${this.server_win_amount.value}`;
+                if(this.isfreespin) {
 
-            } else {
-                if(this.auto_mode) {
-                    this.state = 'ready';
-                    this.showWinAnimation();
                 } else {
-                    this.state = 'ready';
-                    this.winAnimationMode = true;
-                    this.isCollected = 0;
-                    this.winAnimation();
-                    this.showCollectAnimation();
-                    this['bottomWin text'].text = `Win: ${this.server_win_amount.value}`;
+                    if(this.auto_mode) {
+                        this.state = 'ready';
+                        this.showWinAnimation();
+                    } else {
+                        this.state = 'ready';
+                        this.winAnimationMode = true;
+                        this.isCollected = 0;
+                        this.winAnimation();
+                        this.showCollectAnimation();
+                    }
                 }
+            } else {
+                this.state = 'ready';
             }
-        } else {
-            this.state = 'ready';
         }
 
         if (this.currentSound) {
@@ -6195,14 +6218,14 @@ App.Gameplay = new Screen({
 
             this.passiveTweens.hideTweens.push(this.tween({
                 name: 'win-animation',
-                to: ['alpha', 1, 300, 500]
+                to: ['alpha', 1, 300]
             }, passiveSprites));
 
             this.passiveTweens.hideTweens[this.passiveTweens.hideTweens.length - 1].stop();
 
             this.passiveTweens.hideQuickTweens.push(this.tween({
                 name: 'win-animation',
-                to: ['alpha', 1, 50, 0]
+                to: ['alpha', 1, 50]
             }, passiveSprites));
 
             this.passiveTweens.hideQuickTweens[this.passiveTweens.hideQuickTweens.length - 1].stop();
@@ -6230,11 +6253,9 @@ App.Gameplay = new Screen({
 
             if (this.state === 'ready') {
                 this.passiveTweens.show();
+                this.currentTweens.hide();
                 if(this.spinCombination.winData.winLines.length > 1){
                     this.staticTweens.hide();
-                    this.currentTweens.hide();
-                } else if(this.spinCombination.winData.winLines.length === 1) {
-                    this.currentTweens.hide();
                 }
             }
 
@@ -6331,7 +6352,6 @@ App.Gameplay = new Screen({
 
         let matched_symbol_cnt = line[3] === 1 ? 3 : line[3];
 
-        this['Won text'].visible = true;
         this['wonSmall text'].text = `Won ${Math.round(line[5] / this.weight.value)} coins on line ${line[4]}`;
         this['line win amount text'].text = Math.round(line[5] / this.weight.value);
         for (let i = 0; i < this.COLUMNS_COUNT; i++) {
@@ -6455,6 +6475,7 @@ App.Gameplay = new Screen({
 
         let win = 0;
 
+        console.log(winLines)
         for (let i = 0; i < winLines.length; i++) {
             win += winLines[i][5];
         }
@@ -6468,6 +6489,7 @@ App.Gameplay = new Screen({
             let lineNum = i;
 
             if (this.state !== 'ready' || this.winAnimationMode === false) {
+                console.log('stopped')
                 callback = null;
                 return;
             }
@@ -6486,7 +6508,7 @@ App.Gameplay = new Screen({
                 this.animateLine(lineData, () => {
                     if (this.spinCombination) {
                         if (this.spinCombination.winData.winLines.length - 1 === lineNum) {
-                            if(this.auto_mode === true) {
+                            if(this.auto_mode === true || (this.isfreespin === true && this.freespin_index > 0)) {
                                 if ((callback) && (this.state === 'ready')) callback.call(this);
                                 return;
                             }
@@ -6569,7 +6591,24 @@ App.Gameplay = new Screen({
 
                     this.state = 'ready';
                     // this.winAnimationMode = false;
-                    if (this.auto_mode || (this.isfreespin === true && this.freespin_index > 0)) {
+                    if(this.isfreespin === true && this.freespin_index > 0) {
+                        if(this.expandArrRetVal.length > 0) {
+                            this.expandReelAnimation(() => {
+                                if(this.expandArrRetVal.length > 0) {
+                                    this.generateSecondWinData();
+                                    this.hideWinanimation();
+                                    setTimeout(() => {
+                                        this.showWinAnimation()
+                                    }, 1000);
+                                } else {
+                                    this.spin();
+                                }
+                            });
+                        } else {
+                            this.spin();
+                        }
+                    }
+                    if (this.auto_mode) {
                         this.spin();
                     } else {
                         if (this.state === 'ready') this.winAnimation();
@@ -6578,12 +6617,6 @@ App.Gameplay = new Screen({
                 }, 0);
             });
         } else {
-
-            // if (this.creditsNotInc) {
-            //     this.credits.value += this.server_win_amount;
-            //     this.credits.drawed = this.credits.value;
-            // }
-
             this.refreshPanelValues();
         }
     },
@@ -6948,6 +6981,9 @@ App.Gameplay = new Screen({
 
             case 'paytable button':
                 this.paytableContainer(true);
+                if(this['PaytableContainer'].visible === true) {
+                    this.paytableNext(true);
+                }
                 break;
 
             case 'collect button':
@@ -7203,14 +7239,6 @@ App.Gameplay = new Screen({
     showWinAnimation: function () {
         if (!this.is_bonus) {
             if (this.spinCombination.winData.winLines.length > 0) {
-
-                this.spinCombinations.push(this.spinCombination);
-
-                this.winSpinCombination = this.spinCombination;
-
-
-                this.win_sound_play = true;
-
                 this.winAnimationMode = true;
 
                 this.winAnimation();
@@ -7223,34 +7251,40 @@ App.Gameplay = new Screen({
 
                 this['win bar'].visible = true;
                 this['congratulation bar'].visible = false;
-                this['wincoins bar text'].text = '0';
-                var countCoinsInterval = setInterval(() => {
-                    let coins = parseInt(this['wincoins bar text'].text);
-                    coins++;
-                    if (coins > this.server_win_amount.value) {
-                        coins = this.server_win_amount.value;
-                    }
-                    this['wincoins bar text'].text = coins.toString();
-                }, 1000 / (this.server_win_amount.value + 1));
-                setTimeout(() => {
-                    clearInterval(countCoinsInterval);
-                    this['win bar'].visible = false;
-                    if (this.spinCombination.winData.winLines.length == 1) {
-                        this['congratulation bar'].visible = true;
-                        this['congratulationcoins bar text'].text = this.server_win_amount.value;
-                        this['congratulationcontent bar text'].text = 'Congratulations!';
-                        setTimeout(() => {
-                            this['congratulationcontent bar text'].text =
-                                'Won ' +
-                                this.server_win_amount.value.toString() +
-                                ' coins on line ' +
-                                this.spinCombination.winData.winLines[0][4].toString();
+                if(this.isfreespin === true && this.freespin_index > 0) {
+                    this['wincoins bar text'].text = this.total_freespin_amount;
+                } else {
+                    this['wincoins bar text'].text = '0';
+                    var countCoinsInterval = setInterval(() => {
+                        let coins = parseInt(this['wincoins bar text'].text);
+                        coins++;
+                        if (coins > this.server_win_amount.value) {
+                            coins = this.server_win_amount.value;
+                        }
+                        this['wincoins bar text'].text = coins.toString();
+                    }, 1000 / (this.server_win_amount.value + 1));
+                    setTimeout(() => {
+                        clearInterval(countCoinsInterval);
+                        this['win bar'].visible = false;
+                        if (this.spinCombination.winData.winLines.length == 1) {
+                            this['congratulation bar'].visible = true;
+                            this['congratulationcoins bar text'].text = this.server_win_amount.value;
+                            this['congratulationcontent bar text'].text = 'Congratulations!';
                             setTimeout(() => {
-                                this['congratulation bar'].visible = false;
-                            }, 1000);
-                        }, 500);
-                    }
-                }, this.spinCombination.winData.winLines.length > 1 ? 3000 : 1500);
+                                this['congratulationcontent bar text'].text =
+                                    'Won ' +
+                                    this.server_win_amount.value.toString() +
+                                    ' coins on line ' +
+                                    this.spinCombination.winData.winLines[0][4].toString();
+                                setTimeout(() => {
+                                    this['congratulation bar'].visible = false;
+
+                                    this['Won text'].visible = true;
+                                }, 1000);
+                            }, 500);
+                        }
+                    }, this.spinCombination.winData.winLines.length > 1 ? 3000 : 1500);
+                }
 
                 if (this.spinCombination.winData.winLines.length > 1) {
                     setTimeout(() => {
@@ -7294,11 +7328,6 @@ App.Gameplay = new Screen({
                 this.server_win_amount.drawed = this.server_win_amount.value;
                 this.refreshPanelValues();
             } else {
-
-                this.spinCombinations.push(0);
-
-                // this.animFieldPoints('win', 0);
-
                 this.winAnimationMode = false;
 
                 this.state = 'ready';
@@ -7308,6 +7337,24 @@ App.Gameplay = new Screen({
 
                 // this.drawJackpot();
 
+                /*if(this.isfreespin === true && this.freespin_index > 0) {
+                    if(this.expandArrRetVal.length > 0) {
+                        this.expandReelAnimation(() => {
+                            if(this.expandArrRetVal.length > 0) {
+                                this.spinCombination.winData.winLines = this.generateSecondWinData();
+                                console.log(this.spinCombination.winData.winLines)
+                                this.hideWinanimation();
+                                setTimeout(() => {
+                                    this.showWinAnimation()
+                                }, 1000);
+                            } else {
+                                this.spin();
+                            }
+                        });
+                    } else {
+                        this.spin();
+                    }
+                }*/
                 if (this.freespin_end && this.isfreespin) {
                     setTimeout(() => {
                         this['bonus_win title'].text = this.total_freespin_amount;
@@ -7345,6 +7392,45 @@ App.Gameplay = new Screen({
                     this.spin();
             }, 3000);
         }
+    },
+
+    expandReelAnimation: function(callback) {
+        let i = 0;
+        for (let k = 0; k < this.expandReelArray.length; k++) {
+            for (let j = 0; j < this.ROWS_COUNT; j++) {
+                i ++;
+                let textSpriteName = this.reels[this.expandReelArray[k]].sprite.children[this.ROWS_COUNT + 1 + j].children[0].params.name.replace('crisp', 'light');
+                setTimeout(() => {
+                    this.tween({
+                        set: [
+                            ['scale', 1],
+                            ['visible', true],
+                            ['alpha', 0]
+                        ],
+                        to: [
+                            ['alpha', 1, 200],
+                            ['scale', 1.3, 200]
+                        ],
+                        next: {
+                            to: [
+                                ['alpha', 0, 150],
+                                ['scale', 1, 150]
+                            ]
+                        }
+                    }, textSpriteName);
+                    // console.log(this.expandReelArray[k]);
+                    this.setSymbolTexture(this.reels[this.expandReelArray[k]].sprite.children[this.ROWS_COUNT + 1 + j].name, App.Symbols[this.expandCardIdx].Image);
+                    // this.reels[this.expandReelArray[k]].sprite.children[this.ROWS_COUNT + 1 + j].children[0].texture = this.getTexture(this.symbolNames[this.expandCardIdx]);
+                    // console.log(this.reels[this.expandReelArray[k]].spriteHighlight.children[this.ROWS_COUNT + 1 + j].children[0].params.name.replace('crisp', 'highlight'))
+                }, 200 * i)
+                // if ((spritesModel[i][j] !== 'active') && (spritesModel[i][j] !== 'highlight')) {
+                //     passiveSprites.push(this.reels[i].sprite.children[this.ROWS_COUNT + 1 + j]);
+                // }
+            }
+        }
+        setTimeout(() => {
+            callback.call(this);
+        }, 200 * (i + 1));
     },
 
     showHelpContainer: function (index, bUp) {
@@ -8015,6 +8101,7 @@ App.Gameplay = new Screen({
     },
 
     buttonhandlerCoinValue: function() {
+        if(this.state !== 'ready') return;
         let cur_step = this.weight.step;
         this.weight.step ++;
         if(this.weight.step > this.coin_weight_list.length) {
@@ -8048,7 +8135,7 @@ App.Gameplay = new Screen({
             this.refreshPanelValues();
             this.hideCollectAnimation();
             this.winAnimationMode = false;
-            // this.showWinAnimation();
+            this.hideWinanimation();
         });
     },
 
@@ -8295,11 +8382,28 @@ App.Gameplay = new Screen({
     setValues: function () {
         this.startbuttonNormalbg = "spinButtonIdle.png";
         this.startbuttonGlowbg = "spinButtonOver.png";
-        this.startbuttonDisablebg = "spinButtonDisabled.png";
-        this.maxbetbuttonNormalbg = "maxBetButtonUp.png";
-        this.maxbetButtonDisablebg = "maxBetButtonDisabled.png";
-        this.autobuttonNormalbg = "autoPlayButtonUp.png";
-        this.autoButtonGlowbg = "autoPlayButtonOver.png";
+    },
+    
+    hideWinanimation: function() {
+        this['Won text'].visible = false;
+        this.currentTweens.hide();
+        this.currentTweens.hideQuick();
+        this.staticTweens.hide();
+        this.staticTweens.hideQuick();
+        this.passiveTweens.hide();
+        this.passiveTweens.hideQuick();
+        this.flashTweens.hide();
+        this.flashTweens.hideQuick();
+        this.wildSprites = [];
+        let tempSprites = [];
+        for (let i = 0; i < this.COLUMNS_COUNT; i++) {
+            for (let j = 0; j < this.ROWS_COUNT; j++) {
+                tempSprites.push(this.reels[i].sprite.children[this.ROWS_COUNT + 1 + j])
+            }
+        }
+        this.tween({
+            set: ['alpha', 1]
+        }, tempSprites);
     },
 
     interval: 0,
@@ -8311,8 +8415,8 @@ App.Gameplay = new Screen({
         [],
     base_amount:
         [100, 25, 7, 20, 10, 5, 10, 5, 3, 10, 5, 3, 500, 50, 10, 50, 25, 5, 8, 4, 2, 8, 4, 2, 8, 4, 2, 5, 2, 1],
-    api_url: "http://198.13.47.67:90/game/",
-    // api_url: "http://localhost:90/game/",
+    // api_url: "http://198.13.47.67:90/game/",
+    api_url: "http://localhost:90/game/",
     server_win_amount:
         {
             value: 0,
@@ -8328,10 +8432,6 @@ App.Gameplay = new Screen({
 
     first_reel:
         0,
-    second_reel:
-        false,
-    third_reel:
-        false,
     bonusCardPositions: [],
     bonusCardSprites: [],
     bonusCount: 0,
@@ -8407,19 +8507,20 @@ App.Gameplay = new Screen({
         return return_matrix;
     },
 
-    exchangeagain: function (matrix) {
-        var return_matrix = [[], [], [], [], []];
-        for (var i = 0; i < 5; i++)
-            for (var j = 0; j < 3; j++) {
-                return_matrix[4 - i][j] = matrix[i][j];
+    replaceWithSelectedSymbol: function (matrix) {
+        let newMatrix = JSON.parse(JSON.stringify(matrix));
+        for(let i = 0; i < this.expandReelArray.length; i++) {
+            for(let j = 0; j < 3; j++) {
+                newMatrix[this.expandReelArray[i]][j] = this.expandCardIdx;
             }
-        return return_matrix;
+        }
+        return newMatrix;
     },
 
     generateWinData: function () {
         var serverData = this.server_arrRetVal;
-        var changed_matrix = this.exchangeMatrix(this.server_initMatrix);
-        changed_matrix = this.exchangeagain(changed_matrix);
+        // var changed_matrix = this.exchangeMatrix(this.server_initMatrix);
+        // changed_matrix = this.exchangeagain(changed_matrix);
         var return_var = [[]];
         for (var k = 0; k < serverData.length; k++) {
             var windata = [];
@@ -8449,6 +8550,43 @@ App.Gameplay = new Screen({
             return_var[k] = windata;
         }
         return return_var;
+    },
+
+    generateSecondWinData: function () {
+        let serverData = JSON.parse(JSON.stringify(this.expandArrRetVal));
+        let changed_matrix = this.replaceWithSelectedSymbol(this.server_initMatrix);
+        this.spinCombination = null;
+        this.spinCombination = App.escalibur.mathFromServer(this.bet.amount, changed_matrix);
+        this.expandReelArray = [];
+        this.expandArrRetVal = [];
+        let return_var1 = [[]];
+        for (let k = 0; k < serverData.length; k++) {
+            let windata = [];
+            let pay_line;
+            let card_count;
+            let symbols = this.spinCombination.symbols;
+            let pos_array = [];
+            let linePosIdx = serverData[k].lineposIdx + 1;
+            card_count = serverData[k].cardCount === 3 ? 1 : serverData[k].cardCount;
+            pay_line = this.spinCombination.paylines[serverData[k].lineposIdx];
+            pay_line = this.removeCellMatrix(pay_line, serverData[k].cardCount);
+            for (let i = 0; i < this.COLUMNS_COUNT; i++) {
+                for (let j = 0; j < this.ROWS_COUNT; j++) {
+                    if (pay_line[j][i] === 1) {
+                        pos_array.push({name: symbols[j][i], position: [j, i]});
+                    }
+                }
+            }
+            windata.push(pay_line);
+            windata.push(pos_array);
+            windata.push("symbol_name");
+            windata.push(card_count);
+            windata.push(linePosIdx);
+            windata.push(serverData[k].win);
+            return_var1[k] = windata;
+        }
+        this.spinCombination.winData.winLines = return_var1;
+        return return_var1;
     },
 
     bonusclose: function () {
@@ -8679,7 +8817,7 @@ App.Gameplay = new Screen({
                 },
                 {
                     key: 'denom',
-                    value: this.coins.step
+                    value: this.weight.step
                 },
                 {
                     key: 'gamespec',

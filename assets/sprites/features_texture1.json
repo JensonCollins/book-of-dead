@@ -1,0 +1,130 @@
+{
+  "frames": {
+    "HB.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 190,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 5,
+        "w": 190,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 200,
+        "h": 200
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "MB.png": {
+      "frame": {
+        "x": 0,
+        "y": 200,
+        "w": 50,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 50,
+        "h": 50
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "NB.png": {
+      "frame": {
+        "x": 100,
+        "y": 200,
+        "w": 25,
+        "h": 25
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 25,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "OB.png": {
+      "frame": {
+        "x": 55,
+        "y": 200,
+        "w": 40,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 40,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.0",
+    "image": "features_texture1_level1.jpg",
+    "format": "RGB888",
+    "size": {
+      "w": 190,
+      "h": 250
+    },
+    "scale": "1",
+    "smartupdate": "$TexturePacker:SmartUpdate:111a97c0c5bd9222f86678d16d44ab09:7e594140a52fcd33bc92187bad2a4c77:c1a94d9ba464abc816aa50d7e5cbe0b2$",
+    "files": {
+      "level0": {
+        "url": "features_texture1_level0.jpg",
+        "size": 12980
+      },
+      "level1": {
+        "url": "features_texture1_level1.jpg",
+        "size": 12980
+      },
+      "level2": {
+        "url": "features_texture1_level2.jpg",
+        "size": 6990
+      },
+      "level3": {
+        "url": "features_texture1_level3.jpg",
+        "size": 6990
+      }
+    }
+  }
+}
