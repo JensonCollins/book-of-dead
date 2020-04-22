@@ -171,7 +171,7 @@
       <workItem from="1587536973438" duration="6683000" />
       <workItem from="1587552123487" duration="435000" />
       <workItem from="1587553213931" duration="2376000" />
-      <workItem from="1587568850724" duration="13024000" />
+      <workItem from="1587568850724" duration="14768000" />
     </task>
     <task id="LOCAL-00001" summary=" - gown library added&#10; - settings, autoplay container added">
       <created>1583780145869</created>
@@ -383,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587584008508</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="win bar text fixed">
+      <created>1587588962719</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1587588962719</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +434,8 @@
     <MESSAGE value="api url updated" />
     <MESSAGE value="tweensbysprites bug fixed" />
     <MESSAGE value="console log removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="console log removed" />
+    <MESSAGE value="win bar text fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="win bar text fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="184" key="#Images" timestamp="1587152175050">
@@ -442,10 +450,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="728" y="304" key="#com.intellij.tools.ToolEditorDialog/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587545145557" />
-    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587584006024">
+    <state x="580" y="119" key="CommitChangelistDialog2" timestamp="1587588960477">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587584006024" />
+    <state x="580" y="119" key="CommitChangelistDialog2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587588960477" />
     <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1587545116510">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -518,10 +526,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587545231962" />
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587584011049">
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1587589329414">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587584011049" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1587589329414" />
     <state x="517" y="128" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587055521900">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

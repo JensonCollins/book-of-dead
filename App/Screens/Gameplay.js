@@ -5417,6 +5417,7 @@ App.Gameplay = new Screen({
             this.creditsNotInc = true;
         }
 
+        clearTimeout(this.wonBarTimeout);
         this.first_reel = 0;
         this.bonusCount = 0;
         this.bonusCardPositions = [];
@@ -6885,9 +6886,6 @@ App.Gameplay = new Screen({
             case 'settings linesDown button':
                 this.lineBarClicked(false);
                 break;
-            case 'home button':
-                this.showMenuContainer(3);
-                break;
             case 'autoplay button':
                 if (!this.auto_mode) {
                     this.showAutoplayContainer(true);
@@ -6912,7 +6910,7 @@ App.Gameplay = new Screen({
                 break;
             case 'autostart button':
                 this.refreshAutoItemBack(this.current_auto_amount);
-                this.showMenuContainer(2);
+                // this.showMenuContainer(2);
                 break;
             case 'autostop button':
                 this.handleButtonAutoStop(container);
@@ -6923,17 +6921,6 @@ App.Gameplay = new Screen({
             case 'menu_body info up button':
                 this.showHelpContainer(this.helpPageIndex, true);
                 break;
-            case 'menu button':
-                this.showMenuContainer(2);
-                if (this['menu button'].texture_name === 'menu') {
-                    this['menu button'].texture_name = 'back';
-                    this['menu button'].texture = this.getTexture('back.png');
-                } else if (this['menu button'].texture_name === 'back') {
-                    this['menu button'].texture_name = 'menu';
-                    this['menu button'].texture = this.getTexture('menu.png');
-                }
-                break;
-
             case 'autoplay okBtn':
                 this.buttonHandleAutoStartButton();
                 this.showAutoplayContainer(false);
@@ -7251,7 +7238,7 @@ App.Gameplay = new Screen({
                         }
                         this['wincoins bar text'].text = coins.toString();
                     }, 1000 / (this.server_win_amount.value + 1));
-                    setTimeout(() => {
+                    this.wonBarTimeout = setTimeout(() => {
                         clearInterval(countCoinsInterval);
                         this['win bar'].visible = false;
                         if (this.spinCombination.winData.winLines.length == 1) {
@@ -7282,7 +7269,7 @@ App.Gameplay = new Screen({
                     }, 500);
                 }
 
-                let logoTween = this.tween({
+                /*let logoTween = this.tween({
                     to: [
                         ['scale', [1.05, 1.05], 300, Power1.easeInOut],
                         ['position', [0, 20], 300, Power1.easeInOut],
@@ -7307,7 +7294,7 @@ App.Gameplay = new Screen({
                 setTimeout(() => {
                     this.stopTween(logoTween);
                     this.stopTween(logoTitleTween);
-                }, 1200);
+                }, 1200);*/
                 // this['win bar text'].text = this.server_win_amount.value;
 
                 // this.animatePassiveLines(this.spinCombination.winData);
