@@ -5343,9 +5343,7 @@ App.Gameplay = new Screen({
         },
 
         'Gameplay new jackpot': function (data) {
-
             App.escalibur.Jackpot.value = parseFloat(data.amount);
-
         },
     },
 
@@ -6066,6 +6064,9 @@ App.Gameplay = new Screen({
 
     tweensBySprites: function (activeSprites, passiveSprites, highlightSprites, textSprites, lineSprites, textValue, lineNum, callback, winAmountLabelPos) {
 
+        console.log(activeSprites);
+        console.log(highlightSprites);
+        console.log(passiveSprites);
         this.currentTweens.showTweens = [];
         this.currentTweens.hideTweens = [];
         this.currentTweens.hideQuickTweens = [];
@@ -6104,7 +6105,7 @@ App.Gameplay = new Screen({
             this.currentTweens.hideQuickTweens.push(this.tween({
                 name: 'win-animation',
                 to: [
-                    ['visible', false, 200],
+                    ['visible', false],
                 ]
             }, highlightSprites));
 
@@ -6132,9 +6133,9 @@ App.Gameplay = new Screen({
                 to: [
                     ['scale', [0.1, 0.1], 100, Power1.easeInOut]
                 ],
-                next: [
-                    ['visible', false]
-                ]
+                next: {
+                    to: ['visible', false]
+                }
             }, 'line win amount wrapper'));
 
             this.staticTweens.hideTweens[this.staticTweens.hideTweens.length - 1].stop();
@@ -6232,6 +6233,7 @@ App.Gameplay = new Screen({
         }
 
         if (this.state === 'ready') {
+            this.passiveTweens.show();
             this.currentTweens.show();
             this.staticTweens.show();
             this.tween({
@@ -6252,7 +6254,7 @@ App.Gameplay = new Screen({
             }
 
             if (this.state === 'ready') {
-                this.passiveTweens.show();
+                // this.passiveTweens.show();
                 this.currentTweens.hide();
                 if(this.spinCombination.winData.winLines.length > 1){
                     this.staticTweens.hide();
@@ -6288,7 +6290,7 @@ App.Gameplay = new Screen({
             }
 
         }, 2500);
-},
+    },
 
 
     allanimatepassive: function (activeSprites, passiveSprites) {
@@ -6378,12 +6380,6 @@ App.Gameplay = new Screen({
                         if (highlightSprites.length < matched_symbol_cnt) {
                             spritesModel[i][j] = 'highlight';
                             highlightSprites.push(this.reels[i].sprite.children[this.ROWS_COUNT + 1 + j].children[0].params.name.replace('crisp', 'highlight'));
-                            if (topHighlightSpriteName !== 'bonus') {
-                                if (line[1][i].name === 'bonus' || App.SymbolsNames[line[1][i].name] > App.SymbolsNames[topHighlightSpriteName]) {
-                                    winAmountLabelPos = [j, i];
-                                    topHighlightSpriteName = line[1][i].name;
-                                }
-                            }
                         }
                     } else {
                         spritesModel[i][j] = 'active';
@@ -6393,7 +6389,11 @@ App.Gameplay = new Screen({
                 }
             }
         }
-
+        if(matched_symbol_cnt === 2 || matched_symbol_cnt === 3) {
+            winAmountLabelPos = [spritesModel[1].indexOf("highlight"), 1];
+        } else {
+            winAmountLabelPos = [spritesModel[2].indexOf("highlight"), 2];
+        }
         if (this.wildSprites.length !== 0)
             this.wildCardAnimation();
 
@@ -6475,7 +6475,6 @@ App.Gameplay = new Screen({
 
         let win = 0;
 
-        console.log(winLines)
         for (let i = 0; i < winLines.length; i++) {
             win += winLines[i][5];
         }
@@ -6489,7 +6488,6 @@ App.Gameplay = new Screen({
             let lineNum = i;
 
             if (this.state !== 'ready' || this.winAnimationMode === false) {
-                console.log('stopped')
                 callback = null;
                 return;
             }
@@ -6505,6 +6503,7 @@ App.Gameplay = new Screen({
 
                 if (this.state === 'ready' && this.spinCombination)
                     this.staticTweens.hide();
+                this.passiveTweens.hide();
                 this.animateLine(lineData, () => {
                     if (this.spinCombination) {
                         if (this.spinCombination.winData.winLines.length - 1 === lineNum) {
@@ -7292,7 +7291,7 @@ App.Gameplay = new Screen({
                     }, 500);
                 }
 
-                /*let logoTween = this.tween({
+                let logoTween = this.tween({
                     to: [
                         ['scale', [1.05, 1.05], 300, Power1.easeInOut],
                         ['position', [0, 20], 300, Power1.easeInOut],
@@ -7302,21 +7301,21 @@ App.Gameplay = new Screen({
                         ['position', [0, 0], 50, Power1.easeInOut]
                     ],
                     loop: true
-                }, 'logo caption');*/
+                }, 'logo caption');
 
-                // let logoTitleTween = this.tween({
-                //     to: [
-                //         ['tint', 0xfffcca, 100, Power1.easeInOut] // 0xfcff00,
-                //     ],
-                //     next: [
-                //         ['tint', 0xffffff, 50, Power1.easeInOut]
-                //     ],
-                //     loop: true
-                // }, 'title');
+                let logoTitleTween = this.tween({
+                    to: [
+                        ['tint', 0xfffcca, 100, Power1.easeInOut] // 0xfcff00,
+                    ],
+                    next: [
+                        ['tint', 0xffffff, 50, Power1.easeInOut]
+                    ],
+                    loop: true
+                }, 'title');
 
                 setTimeout(() => {
-                    // this.stopTween(logoTween);
-                    // this.stopTween(logoTitleTween);
+                    this.stopTween(logoTween);
+                    this.stopTween(logoTitleTween);
                 }, 1200);
                 // this['win bar text'].text = this.server_win_amount.value;
 
@@ -8407,72 +8406,42 @@ App.Gameplay = new Screen({
     },
 
     interval: 0,
-    server_initMatrix:
-        [],
-    server_arrRetVal:
-        [],
-    server_scatters:
-        [],
-    base_amount:
-        [100, 25, 7, 20, 10, 5, 10, 5, 3, 10, 5, 3, 500, 50, 10, 50, 25, 5, 8, 4, 2, 8, 4, 2, 8, 4, 2, 5, 2, 1],
+    server_initMatrix: [],
+    server_arrRetVal: [],
+    server_scatters: [],
     api_url: "http://198.13.47.67:90/game/",
     // api_url: "http://localhost:90/game/",
-    server_win_amount:
-        {
-            value: 0,
-            drawed:
-                0
-    },
+    server_win_amount: { value: 0, drawed: 0 },
     gamesession_id: "",
-    session_id:
-        0,
+    session_id: 0,
 
-    freeze_status:
-        false,
+    freeze_status: false,
 
-    first_reel:
-        0,
+    first_reel: 0,
     bonusCardPositions: [],
     bonusCardSprites: [],
     bonusCount: 0,
 
-    freespin_animation:
-        false,
-    freespin_count:
-        0,
-    isfreespin:
-        false,
-    freespin_index:
-        0,
-    freespin_first_animation:
-        false,
-    total_freespin_amount:
-        0,
-    freespin_end:
-        false,
-    base_sound:
-        null,
-    roll_sound:
-        null,
-    roll_sound_play:
-        false,
+    freespin_animation: false,
+    freespin_count: 0,
+    isfreespin: false,
+    freespin_index: 0,
+    freespin_first_animation: false,
+    total_freespin_amount: 0,
+    freespin_end: false,
+    base_sound: null,
+    roll_sound: null,
+    roll_sound_play: false,
 
-    nomean_multiplier:
-        2,
+    nomean_multiplier: 2,
 
-    levelup_state:
-        false,
-    leveldown_state:
-        false,
-    coinup_state:
-        false,
-    coindown_state:
-        false,
+    levelup_state: false,
+    leveldown_state: false,
+    coinup_state: false,
+    coindown_state: false,
 
-    bonus_highlights:
-        [],
-    bonus_active:
-        [],
+    bonus_highlights: [],
+    bonus_active: [],
     wildSprites: [],
 
     collectInterval: null,
