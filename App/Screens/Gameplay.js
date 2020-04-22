@@ -5386,12 +5386,6 @@ App.Gameplay = new Screen({
     },
 
     spin: function () {
-        /*this.expandReelArray = [0, 1];
-        this.expandCardIdx = 0;
-        this.expandReelAnimation(() => {
-            console.log("ended");
-        });
-        return;*/
         this.winAnimationMode = false;
         this.is_bonus = false;
         // this.hideLinecontainer();
@@ -5561,7 +5555,6 @@ App.Gameplay = new Screen({
 
                 this.server_arrRetVal = newArrRetval;
                 this.expandArrRetVal = expandArrRetval;
-                console.log(this.expandArrRetVal)
 
                 if (arrRetval.length !== 0) {
                     if (arrRetval[0].retType === 3) {
@@ -6063,10 +6056,6 @@ App.Gameplay = new Screen({
     },
 
     tweensBySprites: function (activeSprites, passiveSprites, highlightSprites, textSprites, lineSprites, textValue, lineNum, callback, winAmountLabelPos) {
-
-        console.log(activeSprites);
-        console.log(highlightSprites);
-        console.log(passiveSprites);
         this.currentTweens.showTweens = [];
         this.currentTweens.hideTweens = [];
         this.currentTweens.hideQuickTweens = [];
