@@ -5950,7 +5950,7 @@ App.Gameplay = new Screen({
                         this.state = 'ready';
                         this.winAnimationMode = true;
                         this.isCollected = 0;
-                        this.winAnimation();
+                        this.showWinAnimation();
                         this.showCollectAnimation();
                     }
                 }
@@ -7270,6 +7270,8 @@ App.Gameplay = new Screen({
                                     this['Won text'].visible = true;
                                 }, 1000);
                             }, 500);
+                        } else {
+                            this['Won text'].visible = true;
                         }
                     }, this.spinCombination.winData.winLines.length > 1 ? 3000 : 1500);
                 }
